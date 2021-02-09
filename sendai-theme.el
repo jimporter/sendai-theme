@@ -50,14 +50,14 @@
       (violet "#8578db")
       (magenta "#bc4d99")
 
-      (red-dark "#862c35")
-      (orange-dark "#834732")
-      (yellow-dark "#7a6c30")
-      (green-dark "#316438")
-      (cyan-dark "#1e6264")
-      (blue-dark "#2a527e")
-      (violet-dark "#494a83")
-      (magenta-dark "#763363")
+      (red-dark "#72262d")
+      (orange-dark "#7d412c")
+      (yellow-dark "#76682c")
+      (green-dark "#24572b")
+      (cyan-dark "#145b5d")
+      (blue-dark "#274f7c")
+      (violet-dark "#44457e")
+      (magenta-dark "#702e5e")
 
       (red-light "#de6d6e")
       (orange-light "#ec9f63")
@@ -140,14 +140,32 @@
    `(font-lock-variable-name-face ((,class (:foreground ,yellow-light))))
    `(font-lock-warning-face ((,class (:foreground ,red))))
 
+   ; diff-mode
+   `(diff-header ((,class (:foreground ,fg-primary))))
+   `(diff-file-header ((,class (:foreground ,yellow :weight bold))))
+   `(diff-hunk-header ((,class (:foreground ,cyan-light))))
+   `(diff-added ((,class (:background ,green-dark))))
+   `(diff-removed ((,class (:background ,red-dark))))
+   `(diff-indicator-added
+     ((,class (:foreground ,green-light :inherit diff-added))))
+   `(diff-indicator-removed
+     ((,class (:foreground ,red-light :inherit diff-removed))))
+
+   ; dired
+   `(dired-header ((,class (:foreground ,green-light :weight bold))))
+   `(dired-directory ((,class (:foreground ,blue :weight bold))))
+   `(dired-symlink ((,class (:foreground ,cyan))))
+   `(dired-special ((,class (:foreground ,yellow-light))))
+   `(dired-marked ((,class (:foreground ,yellow :weight bold))))
+   `(dired-mark ((,class (:inherit dired-marked))))
+   `(dired-flagged ((,class (:foreground ,red :weight bold))))
+
    ; eshell
    `(eshell-prompt ((,class (:foreground ,fg-darker :weight bold))))
 
    ; gdb
    `(breakpoint-enabled ((,class (:foreground ,red))))
    `(breakpoint-disabled ((,class (:foreground ,fg-darker))))
-
-   ; diff-mode
 
    ; org-mode
    `(org-level-1 ((,class (:foreground ,yellow :weight bold))))
