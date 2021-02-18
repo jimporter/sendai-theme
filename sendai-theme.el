@@ -41,6 +41,24 @@
       (fg-primary "#c9d6e9")
       (fg-light "#f0f6fe")
 
+      (red-darker "#552429")
+      (orange-darker "#5d362a")
+      (yellow-darker "#5b512d")
+      (green-darker "#25432a")
+      (cyan-darker "#164748")
+      (blue-darker "#243e5e")
+      (violet-darker "#38375e")
+      (magenta-darker "#532a49")
+
+      (red-dark "#762930")
+      (orange-dark "#7d412c")
+      (yellow-dark "#76682c")
+      (green-dark "#24572b")
+      (cyan-dark "#145b5d")
+      (blue-dark "#274f7c")
+      (violet-dark "#44457e")
+      (magenta-dark "#702e5e")
+
       (red "#d33f4d")
       (orange "#da7341")
       (yellow "#ddb63a")
@@ -50,18 +68,9 @@
       (violet "#8578db")
       (magenta "#bc4d99")
 
-      (red-dark "#72262d")
-      (orange-dark "#7d412c")
-      (yellow-dark "#76682c")
-      (green-dark "#24572b")
-      (cyan-dark "#145b5d")
-      (blue-dark "#274f7c")
-      (violet-dark "#44457e")
-      (magenta-dark "#702e5e")
-
       (red-light "#de6d6e")
       (orange-light "#ec9f63")
-      (yellow-light "#e0d591")
+      (yellow-light "#ded692")
       (green-light "#7cc36e")
       (cyan-light "#3edbe6")
       (blue-light "#6cc2ff")
@@ -87,9 +96,11 @@
    `(highlight ((,class (:background ,cyan-dark))))
    `(region ((,class (:background ,blue-dark :foreground ,fg-primary))))
    `(secondary-selection ((,class (:background ,bg-lighter))))
+   `(match ((,class (:background ,yellow-light :foreground ,bg-primary))))
    `(isearch ((,class (:background ,yellow-light :foreground ,bg-primary))))
    `(isearch-fail ((,class (:background ,red-dark))))
    `(lazy-highlight ((,class (:background ,bg-lighter))))
+   `(completions-common-part ((,class (:foreground ,blue))))
    `(show-paren-match ((,class (:background ,cyan :foreground ,fg-light))))
    `(show-paren-mismatch ((,class (:background ,red :foreground ,fg-light))))
    `(trailing-whitespace ((,class (:background ,red))))
@@ -140,21 +151,47 @@
    `(font-lock-variable-name-face ((,class (:foreground ,yellow-light))))
    `(font-lock-warning-face ((,class (:foreground ,red))))
 
+   ; Terminal
+   `(term-color-black
+     ((,class (:background ,fg-darker :foreground ,fg-darker))))
+   `(term-color-white
+     ((,class (:background ,fg-light :foreground ,fg-light))))
+   `(term-color-red ((,class (:background ,red :foreground ,red))))
+   `(term-color-yellow
+     ((,class (:background ,yellow-light :foreground ,yellow-light))))
+   `(term-color-green ((,class (:background ,green :foreground ,green))))
+   `(term-color-cyan ((,class (:background ,cyan :foreground ,cyan))))
+   `(term-color-blue ((,class (:background ,blue :foreground ,blue))))
+   `(term-color-magenta ((,class (:background ,magenta :foreground ,magenta))))
+
+   ; compilation-mode
+   `(compilation-warning ((,class (:foreground ,yellow :weight bold))))
+   `(compilation-line-number ((,class (:foreground ,fg-darker))))
+   `(compilation-column-number ((,class (:foreground ,fg-darker))))
+   `(compilation-mode-line-exit ((,class (:foreground ,green :weight bold))))
+   `(compilation-mode-line-fail ((,class (:foreground ,red :weight bold))))
+   `(compilation-mode-line-run ((,class (:foreground ,yellow :weight bold))))
+
    ; diff-mode
    `(diff-header ((,class (:foreground ,fg-primary))))
    `(diff-file-header ((,class (:foreground ,yellow :weight bold))))
    `(diff-hunk-header ((,class (:foreground ,cyan-light))))
-   `(diff-added ((,class (:background ,green-dark))))
-   `(diff-removed ((,class (:background ,red-dark))))
+   `(diff-added ((,class (:background ,green-darker))))
+   `(diff-removed ((,class (:background ,red-darker))))
    `(diff-indicator-added
      ((,class (:foreground ,green-light :inherit diff-added))))
    `(diff-indicator-removed
      ((,class (:foreground ,red-light :inherit diff-removed))))
+   `(diff-indicator-changed
+     ((,class (:foreground ,yellow-light :inherit diff-changed))))
+   `(diff-refine-added ((,class (:background ,green-dark))))
+   `(diff-refine-removed ((,class (:background ,red-dark))))
+   `(diff-refine-changed ((,class (:background ,yellow-dark))))
 
    ; dired
    `(dired-header ((,class (:foreground ,green-light :weight bold))))
    `(dired-directory ((,class (:foreground ,blue :weight bold))))
-   `(dired-symlink ((,class (:foreground ,cyan))))
+   `(dired-symlink ((,class (:foreground ,cyan-light))))
    `(dired-special ((,class (:foreground ,yellow-light))))
    `(dired-marked ((,class (:foreground ,yellow :weight bold))))
    `(dired-mark ((,class (:inherit dired-marked))))
@@ -162,6 +199,17 @@
 
    ; eshell
    `(eshell-prompt ((,class (:foreground ,fg-darker :weight bold))))
+   `(eshell-ls-directory ((,class (:foreground ,blue :weight bold))))
+   `(eshell-ls-archive ((,class (:foreground ,magenta :weight bold))))
+   `(eshell-ls-executable ((,class (:foreground ,green-light))))
+   `(eshell-ls-product ((,class (:foreground ,cyan))))
+   `(eshell-ls-readonly ((,class (:foreground ,orange-light))))
+   `(eshell-ls-symlink ((,class (:foreground ,cyan-light))))
+   `(eshell-ls-special ((,class (:foreground ,yellow-light))))
+   `(eshell-ls-backup ((,class (:foreground ,fg-darker))))
+   `(eshell-ls-missing ((,class (:foreground ,red :weight bold))))
+   `(eshell-ls-clutter ((,class (:foreground ,red :weight bold))))
+   `(eshell-ls-unreadable ((,class (:foreground ,orange))))
 
    ; gdb
    `(breakpoint-enabled ((,class (:foreground ,red))))
@@ -179,12 +227,25 @@
    `(org-todo ((,class (:foreground ,red-light :weight bold))))
    `(org-done ((,class (:foreground ,green-light :weight bold))))
 
+   ; markdown-mode
+   `(markdown-inline-code-face ((,class (:foreground ,fg-darker))))
+   `(markdown-pre-face ((,class (:foreground ,fg-darker))))
+   `(markdown-language-keyword-face ((,class (:foreground ,blue-light))))
+
    ; which-key
    `(which-key-key-face ((,class (:foreground ,yellow))))
    `(which-key-command-description-face ((,class (:foreground ,blue-light))))
    `(which-key-group-description-face
      ((,class (:foreground ,cyan :weight bold))))
+
+   ; yaml-mode
+   `(yaml-tab-face ((,class (:background ,red))))
    ))
+
+(custom-theme-set-variables
+ 'sendai
+ '(ansi-color-names-vector
+   [,fg-darker ,red ,green ,yellow ,blue ,magenta ,cyan ,white]))
 
 (provide-theme 'sendai)
 
