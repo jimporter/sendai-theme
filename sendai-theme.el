@@ -227,6 +227,17 @@
    `(org-todo ((,class (:foreground ,red-light :weight bold))))
    `(org-done ((,class (:foreground ,green-light :weight bold))))
 
+   ; js2-mode
+   `(js2-external-variable ((,class (:foreground ,orange))))
+   `(js2-function-param ((,class (:foreground ,green))))
+   `(js2-jsdoc-tag ((,class (:inherit c-annotation-face))))
+   `(js2-jsdoc-type ((,class (:inherit font-lock-type-face))))
+   `(js2-jsdoc-value ((,class (:inherit font-lock-variable-name-face))))
+   `(js2-jsdoc-html-tag-delimiter ((,class (:foreground ,fg-primary))))
+   `(js2-jsdoc-html-tag-name ((,class (:foreground ,yellow))))
+   `(js2-error ((,class (:foreground ,red))))
+   `(js2-warning ((,class (:underline (:color ,orange :style wave)))))
+
    ; markdown-mode
    `(markdown-inline-code-face ((,class (:foreground ,fg-darker))))
    `(markdown-pre-face ((,class (:foreground ,fg-darker))))
