@@ -91,7 +91,7 @@
    `(escape-glyph ((,class (:foreground ,red :weight bold))))
    `(cursor ((,class (:background ,fg-primary))))
 
-   ; Highlighting
+   ;; Highlighting
    `(fringe ((,class (:background ,bg-primary))))
    `(highlight ((,class (:background ,cyan-dark))))
    `(region ((,class (:background ,blue-dark :foreground ,fg-primary))))
@@ -105,13 +105,13 @@
    `(show-paren-mismatch ((,class (:background ,red :foreground ,fg-light))))
    `(trailing-whitespace ((,class (:background ,red))))
 
-   ; Modeline
+   ;; Modeline
    `(mode-line ((,class (:background ,bg-light :foreground ,fg-light))))
    `(mode-line-inactive ((,class (:background ,bg-dark :foreground ,fg-dark))))
    `(mode-line-highlight
      ((,class (:box (:line-width 1 :color ,fg-darker)))))
 
-   ; Customize
+   ;; Customize
    `(custom-button ((,class (
       :background ,fg-primary :foreground ,bg-primary
       :box (:line-width 1 :style released-button)))))
@@ -126,7 +126,7 @@
      ((,class (:foreground ,red :weight bold :underline (:style wave)))))
    `(custom-variable-tag ((,class (:foreground ,blue-light :weight bold))))
 
-   ; Misc UI
+   ;; Misc UI
    `(minibuffer-prompt ((,class (:foreground ,blue :weight bold))))
    `(header-line ((,class (:background ,bg-lighter :foreground ,fg-primary))))
    `(header-line-highlight
@@ -136,7 +136,7 @@
    `(widget-field ((,class (:background ,bg-lighter))))
    `(widget-single-line-field ((,class (:background ,bg-lighter))))
 
-   ; Font lock
+   ;; Font lock
    `(font-lock-builtin-face ((,class (:foreground ,blue-light))))
    `(font-lock-comment-face ((,class (:foreground ,fg-darker))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
@@ -151,7 +151,7 @@
    `(font-lock-variable-name-face ((,class (:foreground ,yellow-light))))
    `(font-lock-warning-face ((,class (:foreground ,red))))
 
-   ; Terminal
+   ;; Terminal
    `(term-color-black
      ((,class (:background ,fg-darker :foreground ,fg-darker))))
    `(term-color-white
@@ -164,7 +164,7 @@
    `(term-color-blue ((,class (:background ,blue :foreground ,blue))))
    `(term-color-magenta ((,class (:background ,magenta :foreground ,magenta))))
 
-   ; compilation-mode
+   ;; compilation-mode
    `(compilation-warning ((,class (:foreground ,yellow :weight bold))))
    `(compilation-line-number ((,class (:foreground ,fg-darker))))
    `(compilation-column-number ((,class (:foreground ,fg-darker))))
@@ -172,7 +172,7 @@
    `(compilation-mode-line-fail ((,class (:foreground ,red :weight bold))))
    `(compilation-mode-line-run ((,class (:foreground ,yellow :weight bold))))
 
-   ; diff-mode
+   ;; diff-mode
    `(diff-header ((,class (:foreground ,fg-primary))))
    `(diff-file-header ((,class (:foreground ,yellow :weight bold))))
    `(diff-hunk-header ((,class (:foreground ,cyan-light))))
@@ -188,7 +188,7 @@
    `(diff-refine-removed ((,class (:background ,red-dark))))
    `(diff-refine-changed ((,class (:background ,yellow-dark))))
 
-   ; dired
+   ;; dired
    `(dired-header ((,class (:foreground ,green-light :weight bold))))
    `(dired-directory ((,class (:foreground ,blue :weight bold))))
    `(dired-symlink ((,class (:foreground ,cyan-light))))
@@ -197,7 +197,7 @@
    `(dired-mark ((,class (:inherit dired-marked))))
    `(dired-flagged ((,class (:foreground ,red :weight bold))))
 
-   ; eshell
+   ;; eshell
    `(eshell-prompt ((,class (:foreground ,fg-darker :weight bold))))
    `(eshell-ls-directory ((,class (:foreground ,blue :weight bold))))
    `(eshell-ls-archive ((,class (:foreground ,magenta :weight bold))))
@@ -211,11 +211,11 @@
    `(eshell-ls-clutter ((,class (:foreground ,red :weight bold))))
    `(eshell-ls-unreadable ((,class (:foreground ,orange))))
 
-   ; gdb
+   ;; gdb
    `(breakpoint-enabled ((,class (:foreground ,red))))
    `(breakpoint-disabled ((,class (:foreground ,fg-darker))))
 
-   ; org-mode
+   ;; org-mode
    `(org-level-1 ((,class (:foreground ,yellow :weight bold))))
    `(org-level-2 ((,class (:foreground ,green :weight bold))))
    `(org-level-3 ((,class (:foreground ,cyan :weight bold))))
@@ -227,7 +227,7 @@
    `(org-todo ((,class (:foreground ,red-light :weight bold))))
    `(org-done ((,class (:foreground ,green-light :weight bold))))
 
-   ; js2-mode
+   ;; js2-mode
    `(js2-external-variable ((,class (:foreground ,orange))))
    `(js2-function-param ((,class (:foreground ,green))))
    `(js2-jsdoc-tag ((,class (:inherit c-annotation-face))))
@@ -238,18 +238,18 @@
    `(js2-error ((,class (:foreground ,red))))
    `(js2-warning ((,class (:underline (:color ,orange :style wave)))))
 
-   ; markdown-mode
+   ;; markdown-mode
    `(markdown-inline-code-face ((,class (:foreground ,fg-darker))))
    `(markdown-pre-face ((,class (:foreground ,fg-darker))))
    `(markdown-language-keyword-face ((,class (:foreground ,blue-light))))
 
-   ; which-key
+   ;; which-key
    `(which-key-key-face ((,class (:foreground ,yellow))))
    `(which-key-command-description-face ((,class (:foreground ,blue-light))))
    `(which-key-group-description-face
      ((,class (:foreground ,cyan :weight bold))))
 
-   ; yaml-mode
+   ;; yaml-mode
    `(yaml-tab-face ((,class (:background ,red))))
    ))
 
