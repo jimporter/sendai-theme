@@ -79,15 +79,19 @@
 
   (custom-theme-set-faces
    'sendai
+
+   ;; ----------
+   ;; Core faces
+   ;; ----------
+
+   ;; Basics
    `(default ((,class (:background ,bg-primary :foreground ,fg-primary))))
    `(shadow ((,class (:foreground ,fg-darker))))
    `(link ((,class (:foreground ,blue-primary :underline t))))
    `(link-visited ((,class (:foreground ,violet-primary :underline t))))
-
    `(success ((,class (:foreground ,green-primary :weight bold))))
    `(warning ((,class (:foreground ,orange-primary :weight bold))))
    `(error ((,class (:foreground ,red-primary :weight bold))))
-
    `(escape-glyph ((,class (:foreground ,red-primary :weight bold))))
    `(cursor ((,class (:background ,fg-primary))))
 
@@ -156,6 +160,10 @@
    `(font-lock-type-face ((,class (:foreground ,cyan-light))))
    `(font-lock-variable-name-face ((,class (:foreground ,yellow-light))))
    `(font-lock-warning-face ((,class (:foreground ,red-primary))))
+
+   ;; -----------------
+   ;; Built-in packages
+   ;; -----------------
 
    ;; Terminal
    `(term-color-black
@@ -247,6 +255,10 @@
    `(outline-7 ((,class (:foreground ,violet-light :weight bold))))
    `(outline-8 ((,class (:foreground ,blue-light :weight bold))))
 
+   ;; --------------------
+   ;; Third-party packages
+   ;; --------------------
+
    ;; js2-mode
    `(js2-external-variable ((,class (:foreground ,orange-primary))))
    `(js2-function-param ((,class (:foreground ,green-primary))))
@@ -271,13 +283,18 @@
 
    ;; yaml-mode
    `(yaml-tab-face ((,class (:background ,red-primary))))
-   ))
+   )
 
-(custom-theme-set-variables
- 'sendai
- '(ansi-color-names-vector
-   [,fg-darker ,red-primary ,green-primary ,yellow-primary ,blue-primary
-               ,magenta-primary ,cyan-primary ,fg-lighter]))
+  (custom-theme-set-variables
+   'sendai
+   `(ansi-color-names-vector
+     [,fg-darker ,red-primary ,green-primary ,yellow-primary ,blue-primary
+                 ,magenta-primary ,cyan-primary ,fg-light])
+
+   `(hl-todo-keyword-faces '(("FIXME" . ,red-primary)
+                             ("TODO"  . ,orange-primary)
+                             ("XXX"   . ,orange-primary))))
+  )
 
 (provide-theme 'sendai)
 
