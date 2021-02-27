@@ -41,14 +41,14 @@
       (fg-primary "#c9d6e9")
       (fg-light "#f0f6fe")
 
-      (red-darker "#552429")
-      (orange-darker "#5d362a")
-      (yellow-darker "#5b512d")
-      (green-darker "#25432a")
-      (cyan-darker "#164748")
-      (blue-darker "#243e5e")
-      (violet-darker "#38375e")
-      (magenta-darker "#532a49")
+      (red-darker "#4f282a")
+      (orange-darker "#4e3227")
+      (yellow-darker "#4e462b")
+      (green-darker "#263c29")
+      (cyan-darker "#1e3d3e")
+      (blue-darker "#24364e")
+      (violet-darker "#33324d")
+      (magenta-darker "#462b3f")
 
       (red-dark "#792c32")
       (orange-dark "#762930")
@@ -243,7 +243,12 @@
    `(org-done ((,class (:foreground ,green-light :weight bold))))
    `(org-checkbox ((,class (:foreground ,fg-darker :weight bold))))
    `(org-hide ((,class (:foreground ,bg-primary))))
-   `(org-block ((,class (:foreground ,fg-primary))))
+   `(org-block
+     ((,class (:background ,blue-darker :foreground ,fg-primary :extend t))))
+   `(org-block-begin-line
+     ((,class (:underline ,bg-lighter :extend t :inherit org-meta-line))))
+   `(org-block-end-line
+     ((,class (:overline ,bg-lighter :extend t :inherit org-meta-line))))
 
    ;; outline-mode
    `(outline-1 ((,class (:foreground ,yellow-primary :weight bold))))
@@ -273,7 +278,15 @@
    ;; markdown-mode
    `(markdown-inline-code-face ((,class (:foreground ,fg-darker))))
    `(markdown-pre-face ((,class (:foreground ,fg-darker))))
-   `(markdown-language-keyword-face ((,class (:foreground ,blue-light))))
+   `(markdown-code-face ((,class (:background ,blue-darker :extend t))))
+   `(markdown-language-keyword-face ((,class (:foreground ,cyan-light))))
+
+   ;; rainbow-delimiters
+   `(rainbow-delimiters-depth-1-face ((,class (:foreground ,fg-primary))))
+   `(rainbow-delimiters-depth-2-face ((,class (:foreground ,fg-darker))))
+   `(rainbow-delimiters-depth-3-face ((,class (:foreground ,fg-light))))
+   `(rainbow-delimiters-depth-4-face ((,class (:foreground ,fg-dark))))
+   `(rainbow-delimiters-base-error-face ((,class (:foreground ,red-primary))))
 
    ;; which-key
    `(which-key-key-face ((,class (:foreground ,yellow-primary))))
@@ -293,8 +306,9 @@
 
    `(hl-todo-keyword-faces '(("FIXME" . ,red-primary)
                              ("TODO"  . ,orange-primary)
-                             ("XXX"   . ,orange-primary))))
-  )
+                             ("XXX"   . ,orange-primary)))
+
+   `(rainbow-delimiters-max-face-count 4)))
 
 (provide-theme 'sendai)
 
