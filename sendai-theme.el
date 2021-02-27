@@ -42,7 +42,7 @@
       (fg-light "#f0f6fe")
 
       (red-darker "#4f282a")
-      (orange-darker "#4e3227")
+      (orange-darker "#4d3225")
       (yellow-darker "#4e462b")
       (green-darker "#263c29")
       (cyan-darker "#1e3d3e")
@@ -51,7 +51,7 @@
       (magenta-darker "#462b3f")
 
       (red-dark "#792c32")
-      (orange-dark "#762930")
+      (orange-dark "#7d452b")
       (yellow-dark "#7d412c")
       (green-dark "#26592d")
       (cyan-dark "#185d5f")
@@ -60,7 +60,7 @@
       (magenta-dark "#702e5e")
 
       (red-primary "#d33f4d")
-      (orange-primary "#da7341")
+      (orange-primary "#d47732")
       (yellow-primary "#ddb63a")
       (green-primary "#4ba33f")
       (cyan-primary "#26a19f")
@@ -68,7 +68,7 @@
       (violet-primary "#8578db")
       (magenta-primary "#bc4d99")
 
-      (red-light "#de6d6e")
+      (red-light "#e97173")
       (orange-light "#ec9f63")
       (yellow-light "#ded692")
       (green-light "#7cc36e")
@@ -183,6 +183,12 @@
    `(term-color-magenta
      ((,class (:background ,magenta-primary :foreground ,magenta-primary))))
 
+   ;; calendar
+   `(calendar-month-header
+     ((,class (:foreground ,yellow-primary :weight bold))))
+   `(calendar-weekday-header ((,class (:foreground ,blue-primary))))
+   `(calendar-weekend-header ((,class (:foreground ,blue-light))))
+
    ;; compilation-mode
    `(compilation-warning ((,class (:foreground ,yellow-primary :weight bold))))
    `(compilation-line-number ((,class (:foreground ,fg-darker))))
@@ -239,16 +245,42 @@
 
    ;; org-mode
    ;; Note: `org-level-N' is inherited from `outline-N'.
+   `(org-document-info-keyword ((,class (:inherit org-meta-line))))
+   `(org-document-title
+     ((,class (:foreground ,blue-light :weight bold))))
+   `(org-document-info ((,class (:foreground ,blue-light))))
+   `(org-hide ((,class (:foreground ,bg-primary))))
+   `(org-checkbox ((,class (:foreground ,fg-darker :weight bold))))
+   `(org-latex-and-related ((,class (:foreground ,fg-darker))))
+   `(org-footnote ((,class (:foreground ,blue-primary :underline t))))
+   `(org-date ((,class (:foreground ,cyan-primary :underline t))))
+   `(org-sexp-date ((,class (:foreground ,cyan-primary))))
    `(org-todo ((,class (:foreground ,red-light :weight bold))))
    `(org-done ((,class (:foreground ,green-light :weight bold))))
-   `(org-checkbox ((,class (:foreground ,fg-darker :weight bold))))
-   `(org-hide ((,class (:foreground ,bg-primary))))
+   `(org-tag ((,class (:foreground ,yellow-light :weight normal))))
+   `(org-tag-group
+     ((,class (:foreground ,yellow-light :weight normal :slant italic))))
+   `(org-priority ((,class (:foreground ,orange-light))))
+   `(org-macro ((,class (:foreground ,magenta-light))))
    `(org-block
      ((,class (:background ,blue-darker :foreground ,fg-primary :extend t))))
-   `(org-block-begin-line
-     ((,class (:underline ,bg-lighter :extend t :inherit org-meta-line))))
-   `(org-block-end-line
-     ((,class (:overline ,bg-lighter :extend t :inherit org-meta-line))))
+   `(org-quote ((,class (:slant italic))))
+   `(org-verse ((,class (:slant italic))))
+   `(org-table ((,class (:background ,blue-darker :foreground ,blue-light))))
+   `(org-drawer ((,class (:foreground ,blue-light))))
+   `(org-special-keyword ((,class (:foreground ,blue-primary))))
+   `(org-date-selected
+     ((,class (:background ,yellow-light :foreground ,bg-primary))))
+   `(org-agenda-structure ((,class (:foreground ,fg-darker))))
+   `(org-agenda-date ((,class (:foreground ,blue-primary))))
+   `(org-agenda-date-weekend ((,class (:foreground ,blue-light))))
+   `(org-agenda-date-today ((,class (:foreground ,yellow-light))))
+   `(org-time-grid ((,class (:foreground ,fg-darker))))
+   `(org-agenda-current-time ((,class (:foreground ,yellow-light))))
+   `(org-agenda-done ((,class (:foreground ,violet-primary))))
+   `(org-scheduled ((,class (:foreground ,violet-light))))
+   `(org-scheduled-previously ((,class (:foreground ,orange-light))))
+   `(org-scheduled-today ((,class (:foreground ,violet-light))))
 
    ;; outline-mode
    `(outline-1 ((,class (:foreground ,yellow-primary :weight bold))))
@@ -276,6 +308,18 @@
    `(js2-warning ((,class (:underline (:color ,orange-primary :style wave)))))
 
    ;; markdown-mode
+   `(markdown-html-tag-delimiter-face ((,class (:inherit default))))
+   `(markdown-html-tag-name-face
+     ((,class (:inherit font-lock-function-name-face))))
+   `(markdown-html-attr-name-face
+     ((,class (:inherit font-lock-variable-name-face))))
+   `(markdown-html-attr-value-face ((,class (:inherit font-lock-string-face))))
+   `(markdown-html-entity-face
+     ((,class (:inherit font-lock-variable-name-face))))
+   `(markdown-gfm-checkbox-face
+     ((,class (:foreground ,fg-darker :weight bold))))
+   `(markdown-table-face
+     ((,class (:foreground ,blue-light :background ,blue-darker))))
    `(markdown-inline-code-face ((,class (:foreground ,fg-darker))))
    `(markdown-pre-face ((,class (:foreground ,fg-darker))))
    `(markdown-code-face ((,class (:background ,blue-darker :extend t))))
