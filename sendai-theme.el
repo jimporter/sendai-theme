@@ -52,7 +52,7 @@
 
       (red-dark "#792c32")
       (orange-dark "#7d452b")
-      (yellow-dark "#7d412c")
+      (yellow-dark "#796b2f")
       (green-dark "#26592d")
       (cyan-dark "#185d5f")
       (blue-dark "#2a527e")
@@ -206,6 +206,7 @@
    `(diff-hunk-header ((,class (:foreground ,cyan-light))))
    `(diff-added ((,class (:background ,green-darker))))
    `(diff-removed ((,class (:background ,red-darker))))
+   `(diff-changed ((,class (:background ,yellow-darker))))
    `(diff-indicator-added
      ((,class (:foreground ,green-light :inherit diff-added))))
    `(diff-indicator-removed
@@ -291,6 +292,22 @@
    `(outline-6 ((,class (:foreground ,cyan-light :weight bold))))
    `(outline-7 ((,class (:foreground ,violet-light :weight bold))))
    `(outline-8 ((,class (:foreground ,blue-light :weight bold))))
+
+   ;; tab-bar
+   `(tab-bar ((,class (:background ,bg-lighter :inherit variable-pitch))))
+   `(tab-bar-tab ((,class
+      (:background ,bg-primary :foreground ,fg-primary :box ,bg-primary))))
+   `(tab-bar-tab-inactive ((,class
+      (:background ,bg-dark :foreground ,fg-darker :box ,bg-dark))))
+
+   ;; tab-line
+   `(tab-line ((,class (:background ,bg-lighter :inherit variable-pitch))))
+   `(tab-line-tab ((,class
+      (:background ,bg-primary :foreground ,fg-darker :box ,bg-primary))))
+   `(tab-line-tab-current ((,class
+      (:background ,bg-primary :foreground ,fg-primary :box ,bg-primary))))
+   `(tab-line-tab-inactive ((,class
+      (:background ,bg-dark :foreground ,fg-darker :box ,bg-dark))))
 
    ;; --------------------
    ;; Third-party packages
