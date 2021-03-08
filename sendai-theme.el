@@ -44,16 +44,16 @@
       (red-darker "#4f282a")
       (orange-darker "#4d3225")
       (yellow-darker "#4e462b")
-      (green-darker "#263c29")
-      (cyan-darker "#1e3d3e")
-      (blue-darker "#24364e")
-      (violet-darker "#33324d")
+      (green-darker "#2b402e")
+      (cyan-darker "#204142")
+      (blue-darker "#273b55")
+      (violet-darker "#35334e")
       (magenta-darker "#462b3f")
 
       (red-dark "#792c32")
       (orange-dark "#7d452b")
       (yellow-dark "#796b2f")
-      (green-dark "#26592d")
+      (green-dark "#2a5d31")
       (cyan-dark "#185d5f")
       (blue-dark "#2a527e")
       (violet-dark "#474881")
@@ -86,6 +86,7 @@
 
    ;; Basics
    `(default ((,class (:background ,bg-primary :foreground ,fg-primary))))
+   `(cursor ((,class (:background ,fg-primary))))
    `(shadow ((,class (:foreground ,fg-darker))))
    `(link ((,class (:foreground ,blue-primary :underline t))))
    `(link-visited ((,class (:foreground ,violet-primary :underline t))))
@@ -93,7 +94,8 @@
    `(warning ((,class (:foreground ,orange-primary :weight bold))))
    `(error ((,class (:foreground ,red-primary :weight bold))))
    `(escape-glyph ((,class (:foreground ,red-primary :weight bold))))
-   `(cursor ((,class (:background ,fg-primary))))
+   `(homoglyph ((,class (:foreground ,cyan-light))))
+   `(nobreak-hyphen ((,class (:foreground ,cyan-light))))
 
    ;; Highlighting
    `(fringe ((,class (:background ,bg-primary))))
@@ -118,21 +120,6 @@
    `(mode-line-highlight
      ((,class (:box (:line-width 1 :color ,fg-darker)))))
 
-   ;; Customize
-   `(custom-button ((,class (
-      :background ,fg-primary :foreground ,bg-primary
-      :box (:line-width 1 :style released-button)))))
-   `(custom-button-mouse ((,class (
-      :background ,fg-light :foreground ,bg-primary
-      :box (:line-width 1 :style released-button)))))
-   `(custom-button-pressed ((,class (
-      :background ,fg-primary :foreground ,bg-primary
-      :box (:line-width 1 :style pressed-button)))))
-   `(custom-state ((,class (:foreground ,green-primary))))
-   `(custom-invalid ((,class (
-      :foreground ,red-primary :weight bold :underline (:style wave)))))
-   `(custom-variable-tag ((,class (:foreground ,blue-light :weight bold))))
-
    ;; Misc UI
    `(minibuffer-prompt ((,class (:foreground ,blue-primary :weight bold))))
    `(header-line ((,class (:background ,bg-lighter :foreground ,fg-primary))))
@@ -144,6 +131,10 @@
    `(line-number-minor-tick ((,class (:background ,bg-light))))
    `(widget-field ((,class (:background ,bg-lighter))))
    `(widget-single-line-field ((,class (:background ,bg-lighter))))
+   `(vertical-border ((,class (:foreground ,bg-lighter))))
+   `(window-divider ((,class (:foreground ,bg-lighter))))
+   `(window-divider-first-pixel ((,class (:foreground ,fg-darker))))
+   `(window-divider-last-pixel ((,class (:foreground ,bg-dark))))
 
    ;; Font lock
    `(font-lock-builtin-face ((,class (:foreground ,blue-light))))
@@ -165,24 +156,6 @@
    ;; Built-in packages
    ;; -----------------
 
-   ;; Terminal
-   `(term-color-black
-     ((,class (:background ,fg-darker :foreground ,fg-darker))))
-   `(term-color-white
-     ((,class (:background ,fg-light :foreground ,fg-light))))
-   `(term-color-red
-     ((,class (:background ,red-primary :foreground ,red-primary))))
-   `(term-color-yellow
-     ((,class (:background ,yellow-light :foreground ,yellow-light))))
-   `(term-color-green
-     ((,class (:background ,green-primary :foreground ,green-primary))))
-   `(term-color-cyan
-     ((,class (:background ,cyan-primary :foreground ,cyan-primary))))
-   `(term-color-blue
-     ((,class (:background ,blue-primary :foreground ,blue-primary))))
-   `(term-color-magenta
-     ((,class (:background ,magenta-primary :foreground ,magenta-primary))))
-
    ;; calendar
    `(calendar-month-header
      ((,class (:foreground ,yellow-primary :weight bold))))
@@ -199,6 +172,35 @@
      ((,class (:foreground ,red-primary :weight bold))))
    `(compilation-mode-line-run
      ((,class (:foreground ,yellow-primary :weight bold))))
+
+   ;; customize
+   `(custom-group-tag
+     ((,class (:foreground ,yellow-primary :weight bold :height 1.2))))
+   `(custom-group-tag-1
+     ((,class (:foreground ,cyan-light :weight bold :height 1.2))))
+   `(custom-state ((,class (:foreground ,green-primary))))
+   `(custom-changed ((,class (:foreground ,yellow-light))))
+   `(custom-modified ((,class (:foreground ,yellow-light))))
+   `(custom-themed ((,class (:foreground ,yellow-light))))
+   `(custom-set ((,class (:background ,green-light :foreground ,bg-primary))))
+   `(custom-invalid ((,class (
+      :foreground ,red-primary :weight bold :underline (:style wave)))))
+   `(custom-rogue ((,class (
+      :foreground ,orange-primary :weight bold :underline (:style wave)))))
+   `(custom-variable-tag ((,class (:foreground ,blue-light :weight bold))))
+   `(custom-variable-obsolete ((,class (:foreground ,fg-darker :weight bold))))
+   `(custom-button ((,class (
+      :background ,fg-primary :foreground ,bg-primary
+      :box (:line-width 1 :style released-button)))))
+   `(custom-button-mouse ((,class (
+      :background ,fg-light :foreground ,bg-primary
+      :box (:line-width 1 :style released-button)))))
+   `(custom-button-pressed ((,class (
+      :background ,fg-primary :foreground ,bg-primary
+      :box (:line-width 1 :style pressed-button)))))
+   `(custom-button-unraised ((,class (:inherit default :underline t))))
+   `(custom-button-pressed-unraised
+     ((,class (:inherit custom-button-unraised :foreground ,violet-primary))))
 
    ;; diff-mode
    `(diff-header ((,class (:foreground ,fg-primary))))
@@ -240,9 +242,24 @@
    `(eshell-ls-clutter ((,class (:foreground ,red-primary :weight bold))))
    `(eshell-ls-unreadable ((,class (:foreground ,orange-primary))))
 
+   ;; flyspell
+   `(flyspell-duplicate
+     ((,class (:underline (:color ,orange-primary :style wave)))))
+   `(flyspell-incorrect
+     ((,class (:underline (:color ,red-primary :style wave)))))
+
    ;; gdb
    `(breakpoint-enabled ((,class (:foreground ,red-primary))))
    `(breakpoint-disabled ((,class (:foreground ,fg-darker))))
+
+   ;; info-mode
+   `(info-title-1 ((,class (:height 1.5 :weight bold))))
+   `(info-title-2 ((,class (:height 1.4 :weight bold))))
+   `(info-title-3 ((,class (:height 1.3 :weight bold))))
+   `(info-title-4 ((,class (:height 1.1 :weight bold))))
+   `(info-menu-header ((,class (:weight bold))))
+   `(info-menu-star ((,class (:foreground ,yellow-primary))))
+   `(info-node ((,class (:foreground ,fg-light :weight bold :slant italic))))
 
    ;; org-mode
    ;; Note: `org-level-N' is inherited from `outline-N'.
@@ -293,6 +310,11 @@
    `(outline-7 ((,class (:foreground ,violet-light :weight bold))))
    `(outline-8 ((,class (:foreground ,blue-light :weight bold))))
 
+   ;; sh-mode
+   `(sh-escaped-newline ((,class (:foreground ,fg-darker))))
+   `(sh-heredoc ((,class (:foreground ,green-light))))
+   `(sh-quoted-exec ((,class (:foreground ,orange-light))))
+
    ;; tab-bar
    `(tab-bar ((,class (:background ,bg-lighter :inherit variable-pitch))))
    `(tab-bar-tab ((,class
@@ -309,9 +331,30 @@
    `(tab-line-tab-inactive ((,class
       (:background ,bg-dark :foreground ,fg-darker :box ,bg-dark))))
 
+   ;; term
+   `(term-color-black
+     ((,class (:background ,bg-lighter :foreground ,bg-lighter))))
+   `(term-color-red
+     ((,class (:background ,red-light :foreground ,red-light))))
+   `(term-color-green
+     ((,class (:background ,green-light :foreground ,green-light))))
+   `(term-color-yellow
+     ((,class (:background ,yellow-light :foreground ,yellow-light))))
+   `(term-color-blue
+     ((,class (:background ,blue-primary :foreground ,blue-primary))))
+   `(term-color-magenta
+     ((,class (:background ,magenta-primary :foreground ,magenta-primary))))
+   `(term-color-cyan
+     ((,class (:background ,cyan-primary :foreground ,cyan-primary))))
+   `(term-color-white
+     ((,class (:background ,fg-primary :foreground ,fg-primary))))
+
    ;; --------------------
    ;; Third-party packages
    ;; --------------------
+
+   ;; hl-todo
+   `(hl-todo ((,class (:foreground ,yellow-light :weight bold))))
 
    ;; js2-mode
    `(js2-external-variable ((,class (:foreground ,orange-primary))))
@@ -362,14 +405,21 @@
   (custom-theme-set-variables
    'sendai
    `(ansi-color-names-vector
-     [,fg-darker ,red-primary ,green-primary ,yellow-primary ,blue-primary
-                 ,magenta-primary ,cyan-primary ,fg-light])
+     [,bg-lighter ,red-light ,green-light ,yellow-light ,blue-primary
+                  ,magenta-primary ,cyan-primary ,fg-primary])
 
    `(hl-todo-keyword-faces '(("FIXME" . ,red-primary)
                              ("TODO"  . ,orange-primary)
                              ("XXX"   . ,orange-primary)))
 
-   `(rainbow-delimiters-max-face-count 4)))
+   `(rainbow-delimiters-max-face-count 4)
+
+   `(xterm-color-names
+     [,bg-lighter ,red-light ,green-light ,yellow-light ,blue-primary
+                  ,magenta-primary ,cyan-primary ,fg-primary])
+   `(xterm-color-names-bright
+     [,fg-darker ,red-primary ,green-primary ,yellow-primary ,blue-light
+                 ,magenta-light ,cyan-light ,fg-light])))
 
 (provide-theme 'sendai)
 
