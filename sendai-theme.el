@@ -261,6 +261,9 @@
    `(info-menu-star ((,class (:foreground ,yellow-primary))))
    `(info-node ((,class (:foreground ,fg-light :weight bold :slant italic))))
 
+   ;; makefile-mode
+   `(makefile-space ((,class (:background ,red-primary))))
+
    ;; org-mode
    ;; Note: `org-level-N' is inherited from `outline-N'.
    `(org-document-info-keyword ((,class (:inherit org-meta-line))))
