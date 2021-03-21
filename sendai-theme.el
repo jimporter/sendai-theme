@@ -30,52 +30,67 @@
 
 (deftheme sendai "A cool blue color theme")
 
+(defgroup sendai-theme nil
+  "Sendai-theme options."
+  :group 'faces)
+
+(defcustom sendai-theme-inherit-tty-colors nil
+  "Use basic TTY colors when in xterm-256color mode."
+  :type 'boolean
+  :group 'sendai-theme)
+
+(defun sendai--palettize (true-color xterm256-color &optional tty-color)
+  (if (or (display-graphic-p) (= (tty-display-color-cells) 16777216))
+      true-color
+    (if (and sendai-theme-inherit-tty-colors tty-color)
+        tty-color xterm256-color)))
+
 (let ((class '((class color) (min-colors 89)))
-      (bg-dark "#181e25")
-      (bg-primary "#232c38")
-      (bg-light "#364454")
-      (bg-lighter "#4a5b71")
+      (bg-dark    (sendai--palettize "#181e25" "#1c1c1c"))
+      (bg-primary (sendai--palettize "#232c38" "#303030"))
+      (bg-light   (sendai--palettize "#364454" "#444444"))
+      (bg-lighter (sendai--palettize "#4a5b71" "#5f5f5f" "black"))
 
-      (fg-darker "#7b96b7")
-      (fg-dark "#a2b6d0")
-      (fg-primary "#c9d6e9")
-      (fg-light "#f0f6fe")
+      (fg-darker  (sendai--palettize "#7b96b7" "#5f87af" "brightblack"))
+      (fg-dark    (sendai--palettize "#a2b6d0" "#87afd7"))
+      (fg-primary (sendai--palettize "#c9d6e9" "#d7d7d7" "white"))
+      (fg-light   (sendai--palettize "#f0f6fe" "#ffffff" "brightwhite"))
 
-      (red-darker "#4f282a")
-      (orange-darker "#4d3225")
-      (yellow-darker "#4e462b")
-      (green-darker "#2b402e")
-      (cyan-darker "#204142")
-      (blue-darker "#273b55")
-      (violet-darker "#35334e")
-      (magenta-darker "#462b3f")
+      (red-darker     (sendai--palettize "#4f282a" nil))
+      (orange-darker  (sendai--palettize "#4d3225" nil))
+      (yellow-darker  (sendai--palettize "#4e462b" nil))
+      (green-darker   (sendai--palettize "#2b402e" nil))
+      (cyan-darker    (sendai--palettize "#204142" nil))
+      (blue-darker    (sendai--palettize "#273b55" nil))
+      (violet-darker  (sendai--palettize "#35334e" nil))
+      (magenta-darker (sendai--palettize "#462b3f" nil))
 
-      (red-dark "#792c32")
-      (orange-dark "#7d452b")
-      (yellow-dark "#796b2f")
-      (green-dark "#2a5d31")
-      (cyan-dark "#185d5f")
-      (blue-dark "#2a527e")
-      (violet-dark "#474881")
-      (magenta-dark "#702e5e")
+      (red-dark     (sendai--palettize "#792c32" "#870000"))
+      (orange-dark  (sendai--palettize "#7d452b" "#875f00"))
+      (yellow-dark  (sendai--palettize "#796b2f" "#878700"))
+      (green-dark   (sendai--palettize "#2a5d31" "#005f00"))
+      (cyan-dark    (sendai--palettize "#185d5f" "#005f5f"))
+      (blue-dark    (sendai--palettize "#2a527e" "#005f87"))
+      (violet-dark  (sendai--palettize "#474881" "#5f5f87"))
+      (magenta-dark (sendai--palettize "#702e5e" "#5f005f"))
 
-      (red-primary "#d33f4d")
-      (orange-primary "#d47732")
-      (yellow-primary "#ddb63a")
-      (green-primary "#4ba33f")
-      (cyan-primary "#26a19f")
-      (blue-primary "#3491dc")
-      (violet-primary "#8578db")
-      (magenta-primary "#bc4d99")
+      (red-primary     (sendai--palettize "#d33f4d" "#d75f5f" "brightred"))
+      (orange-primary  (sendai--palettize "#d47732" "#d7875f"))
+      (yellow-primary  (sendai--palettize "#ddb63a" "#d7af5f" "brightyellow"))
+      (green-primary   (sendai--palettize "#4ba33f" "#5faf5f" "brightgreen"))
+      (cyan-primary    (sendai--palettize "#26a19f" "#00afaf" "cyan"))
+      (blue-primary    (sendai--palettize "#3491dc" "#5f87d7" "blue"))
+      (violet-primary  (sendai--palettize "#8578db" "#8787d7"))
+      (magenta-primary (sendai--palettize "#bc4d99" "#af5f87" "magenta"))
 
-      (red-light "#e97173")
-      (orange-light "#ec9f63")
-      (yellow-light "#ded692")
-      (green-light "#7cc36e")
-      (cyan-light "#3edbe6")
-      (blue-light "#6cc2ff")
-      (violet-light "#afa2f2")
-      (magenta-light "#db7fbb"))
+      (red-light     (sendai--palettize "#e97173" "#ff5f5f" "red"))
+      (orange-light  (sendai--palettize "#ec9f63" "#ffaf5f"))
+      (yellow-light  (sendai--palettize "#ded692" "#d7d787" "yellow"))
+      (green-light   (sendai--palettize "#7cc36e" "#87af5f" "green"))
+      (cyan-light    (sendai--palettize "#3edbe6" "#5fd7d7" "brightcyan"))
+      (blue-light    (sendai--palettize "#6cc2ff" "#5fafff" "brightblue"))
+      (violet-light  (sendai--palettize "#afa2f2" "#afafff"))
+      (magenta-light (sendai--palettize "#db7fbb" "#d787af" "brightmagenta")))
 
   (custom-theme-set-faces
    'sendai
@@ -85,7 +100,9 @@
    ;; ----------
 
    ;; Basics
-   `(default ((,class (:background ,bg-primary :foreground ,fg-primary))))
+   `(default ((,class (
+      :background ,(unless sendai-theme-inherit-tty-colors bg-primary)
+      :foreground ,fg-primary))))
    `(cursor ((,class (:background ,fg-primary))))
    `(shadow ((,class (:foreground ,fg-darker))))
    `(link ((,class (:foreground ,blue-primary :underline t))))
