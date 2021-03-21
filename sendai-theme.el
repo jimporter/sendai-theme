@@ -99,7 +99,7 @@
 
    ;; Highlighting
    `(fringe ((,class (:background ,bg-primary))))
-   `(highlight ((,class (:background ,cyan-dark))))
+   `(highlight ((,class (:background ,cyan-primary :foreground ,fg-light))))
    `(region ((,class (:background ,blue-dark :foreground ,fg-primary))))
    `(secondary-selection ((,class (:background ,bg-lighter))))
    `(match ((,class (:background ,yellow-light :foreground ,bg-primary))))
@@ -127,8 +127,10 @@
      ((,class (:background ,fg-darker :foreground ,bg-primary))))
    `(line-number ((,class (:foreground ,fg-darker))))
    `(line-number-current-line ((,class (:foreground ,fg-primary))))
-   `(line-number-major-tick ((,class (:background ,bg-lighter))))
-   `(line-number-minor-tick ((,class (:background ,bg-light))))
+   `(line-number-major-tick
+     ((,class (:background ,bg-lighter :foreground ,fg-dark))))
+   `(line-number-minor-tick
+     ((,class (:background ,bg-light :foreground ,fg-darker))))
    `(widget-field ((,class (:background ,bg-lighter))))
    `(widget-single-line-field ((,class (:background ,bg-lighter))))
    `(vertical-border ((,class (:foreground ,bg-lighter))))
@@ -227,6 +229,21 @@
    `(dired-marked ((,class (:foreground ,yellow-primary :weight bold))))
    `(dired-mark ((,class (:inherit dired-marked))))
    `(dired-flagged ((,class (:foreground ,red-primary :weight bold))))
+
+   ;; eww
+   `(eww-form-submit ((,class (
+      :background ,fg-primary :foreground ,bg-primary
+      :box (:line-width 1 :style released-button)))))
+   `(eww-form-file ((,class (:inherit eww-form-submit))))
+   `(eww-form-checkbox ((,class (
+      :background ,fg-darker :foreground ,bg-primary
+      :box (:line-width 1 :color ,fg-dark :style released-button)))))
+   `(eww-form-select ((,class (:inherit eww-form-checkbox))))
+   `(eww-form-text ((,class (
+      :background ,bg-lighter :box (:line-width 1 :color ,fg-darker)))))
+   `(eww-form-textarea ((,class (:background ,bg-lighter))))
+   `(eww-valid-certificate ((,class :foreground ,green-light :weight bold)))
+   `(eww-invalid-certificate ((,class :foreground ,red-primary :weight bold)))
 
    ;; eshell
    `(eshell-prompt ((,class (:foreground ,fg-darker :weight bold))))
