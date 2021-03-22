@@ -101,7 +101,9 @@
 
    ;; Basics
    `(default ((,class (
-      :background ,(unless sendai-theme-inherit-tty-colors bg-primary)
+      :background ,(when (or (display-graphic-p)
+                             (not sendai-theme-inherit-tty-colors))
+                     bg-primary)
       :foreground ,fg-primary))))
    `(cursor ((,class (:background ,fg-primary))))
    `(shadow ((,class (:foreground ,fg-darker))))
