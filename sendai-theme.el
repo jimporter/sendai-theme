@@ -70,7 +70,7 @@
       (yellow-dark  (sendai--palettize "#796b2f" "#878700"))
       (green-dark   (sendai--palettize "#2a5d31" "#005f00"))
       (cyan-dark    (sendai--palettize "#185d5f" "#005f5f"))
-      (blue-dark    (sendai--palettize "#2a527e" "#005f87"))
+      (blue-dark    (sendai--palettize "#245282" "#005f87"))
       (violet-dark  (sendai--palettize "#474881" "#5f5f87"))
       (magenta-dark (sendai--palettize "#702e5e" "#5f005f"))
 
@@ -87,7 +87,7 @@
       (orange-light  (sendai--palettize "#ec9f63" "#ffaf5f"))
       (yellow-light  (sendai--palettize "#ded692" "#d7d787" "yellow"))
       (green-light   (sendai--palettize "#7cc36e" "#87af5f" "green"))
-      (cyan-light    (sendai--palettize "#3edbe6" "#5fd7d7" "brightcyan"))
+      (cyan-light    (sendai--palettize "#4edae5" "#5fd7d7" "brightcyan"))
       (blue-light    (sendai--palettize "#6cc2ff" "#5fafff" "brightblue"))
       (violet-light  (sendai--palettize "#afa2f2" "#afafff"))
       (magenta-light (sendai--palettize "#db7fbb" "#d787af" "brightmagenta")))
