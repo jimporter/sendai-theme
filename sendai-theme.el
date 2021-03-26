@@ -314,6 +314,8 @@
    `(org-sexp-date ((,class (:foreground ,cyan-primary))))
    `(org-todo ((,class (:foreground ,red-light :weight bold))))
    `(org-done ((,class (:foreground ,green-light :weight bold))))
+   `(org-headline-todo ((,class (:foreground ,red-primary :weight bold))))
+   `(org-headline-done ((,class (:foreground ,green-primary))))
    `(org-tag ((,class (:foreground ,yellow-light :weight normal))))
    `(org-tag-group
      ((,class (:foreground ,yellow-light :weight normal :slant italic))))
@@ -324,6 +326,8 @@
    `(org-quote ((,class (:slant italic))))
    `(org-verse ((,class (:slant italic))))
    `(org-table ((,class (:background ,blue-darker :foreground ,blue-light))))
+   `(org-table-header
+     ((,class (:background ,blue-dark :foreground ,fg-primary))))
    `(org-drawer ((,class (:foreground ,blue-light))))
    `(org-special-keyword ((,class (:foreground ,blue-primary))))
    `(org-date-selected
