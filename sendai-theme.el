@@ -112,9 +112,10 @@
    `(success ((,class (:foreground ,green-primary :weight bold))))
    `(warning ((,class (:foreground ,orange-primary :weight bold))))
    `(error ((,class (:foreground ,red-primary :weight bold))))
-   `(escape-glyph ((,class (:foreground ,red-primary :weight bold))))
+   `(escape-glyph ((,class (:foreground ,magenta-light :weight bold))))
    `(homoglyph ((,class (:foreground ,cyan-light))))
-   `(nobreak-hyphen ((,class (:foreground ,cyan-light))))
+   `(nobreak-hyphen ((,class (:foreground ,magenta-light))))
+   `(nobreak-space ((,class (:foreground ,magenta-light :underline t))))
 
    ;; Highlighting
    `(fringe ((,class (:background ,bg-primary))))
@@ -136,8 +137,7 @@
    ;; Mode line
    `(mode-line ((,class (:background ,bg-light :foreground ,fg-light))))
    `(mode-line-inactive ((,class (:background ,bg-dark :foreground ,fg-dark))))
-   `(mode-line-highlight
-     ((,class (:box (:line-width 1 :color ,fg-darker)))))
+   `(mode-line-highlight ((,class (:box ,fg-darker))))
 
    ;; Misc UI
    `(minibuffer-prompt ((,class (:foreground ,blue-primary :weight bold))))
@@ -306,6 +306,7 @@
    `(org-document-title
      ((,class (:foreground ,blue-light :weight bold))))
    `(org-document-info ((,class (:foreground ,blue-light))))
+   `(org-ellipsis ((,class (:foreground ,fg-darker))))
    `(org-hide ((,class (:foreground ,bg-primary))))
    `(org-checkbox ((,class (:foreground ,fg-darker :weight bold))))
    `(org-latex-and-related ((,class (:foreground ,fg-darker))))
@@ -320,6 +321,7 @@
    `(org-tag-group
      ((,class (:foreground ,yellow-light :weight normal :slant italic))))
    `(org-priority ((,class (:foreground ,orange-light))))
+   `(org-formula ((,class (:foreground ,orange-light))))
    `(org-macro ((,class (:foreground ,magenta-light))))
    `(org-block
      ((,class (:background ,blue-darker :foreground ,fg-primary :extend t))))
@@ -332,6 +334,9 @@
    `(org-special-keyword ((,class (:foreground ,blue-primary))))
    `(org-date-selected
      ((,class (:background ,yellow-light :foreground ,bg-primary))))
+   `(org-column ((,class (
+      :background ,bg-light :box (:line-width -1 :style released-button)))))
+   `(org-column-title ((,class (:background ,bg-lighter :weight bold))))
    `(org-agenda-structure ((,class (:foreground ,fg-darker))))
    `(org-agenda-date ((,class (:foreground ,blue-primary))))
    `(org-agenda-date-weekend ((,class (:foreground ,blue-light))))
@@ -342,6 +347,7 @@
    `(org-scheduled ((,class (:foreground ,violet-light))))
    `(org-scheduled-previously ((,class (:foreground ,orange-light))))
    `(org-scheduled-today ((,class (:foreground ,violet-light))))
+   `(org-mode-line-clock-overrun ((,class (:background ,red-primary))))
 
    ;; outline-mode
    `(outline-1 ((,class (:foreground ,yellow-primary :weight bold))))
