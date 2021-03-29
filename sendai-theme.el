@@ -74,8 +74,8 @@
       (violet-dark  (sendai--palettize "#474881" "#5f5f87"))
       (magenta-dark (sendai--palettize "#702e5e" "#5f005f"))
 
-      (red-primary     (sendai--palettize "#d33f4d" "#d75f5f" "brightred"))
-      (orange-primary  (sendai--palettize "#d47732" "#d7875f"))
+      (red-primary     (sendai--palettize "#d33f4d" "#d70000" "brightred"))
+      (orange-primary  (sendai--palettize "#d47732" "#d78700"))
       (yellow-primary  (sendai--palettize "#ddb63a" "#d7af5f" "brightyellow"))
       (green-primary   (sendai--palettize "#4ba33f" "#5faf5f" "brightgreen"))
       (cyan-primary    (sendai--palettize "#26a19f" "#00afaf" "cyan"))
@@ -83,7 +83,7 @@
       (violet-primary  (sendai--palettize "#8578db" "#8787d7"))
       (magenta-primary (sendai--palettize "#bc4d99" "#af5f87" "magenta"))
 
-      (red-light     (sendai--palettize "#e97173" "#ff5f5f" "red"))
+      (red-light     (sendai--palettize "#e16a6d" "#d75f5f" "red"))
       (orange-light  (sendai--palettize "#ec9f63" "#ffaf5f"))
       (yellow-light  (sendai--palettize "#ded692" "#d7d787" "yellow"))
       (green-light   (sendai--palettize "#7cc36e" "#87af5f" "green"))
