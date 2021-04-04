@@ -241,8 +241,8 @@
    `(diff-refine-changed ((,class (:background ,yellow-dark))))
 
    ;; dired
-   `(dired-header ((,class (:foreground ,green-light :weight bold))))
-   `(dired-directory ((,class (:foreground ,blue-primary :weight bold))))
+   `(dired-header ((,class (:foreground ,blue-primary :weight bold))))
+   `(dired-directory ((,class (:foreground ,blue-light :weight bold))))
    `(dired-symlink ((,class (:foreground ,cyan-light))))
    `(dired-special ((,class (:foreground ,yellow-light))))
    `(dired-marked ((,class (:foreground ,yellow-primary :weight bold))))
@@ -266,7 +266,7 @@
 
    ;; eshell
    `(eshell-prompt ((,class (:foreground ,fg-darker :weight bold))))
-   `(eshell-ls-directory ((,class (:foreground ,blue-primary :weight bold))))
+   `(eshell-ls-directory ((,class (:foreground ,blue-light :weight bold))))
    `(eshell-ls-archive ((,class (:foreground ,magenta-primary :weight bold))))
    `(eshell-ls-executable ((,class (:foreground ,green-light))))
    `(eshell-ls-product ((,class (:foreground ,cyan-primary))))
