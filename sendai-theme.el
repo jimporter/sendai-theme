@@ -398,6 +398,22 @@
    `(term-color-white
      ((,class (:background ,fg-primary :foreground ,fg-primary))))
 
+   ;; whitespace-mode
+   `(whitespace-space ((,class (:foreground ,violet-primary))))
+   `(whitespace-hspace ((,class (:inherit whitespace-space))))
+   `(whitespace-tab ((,class (:inherit whitespace-space))))
+   `(whitespace-newline ((,class (:foreground ,bg-lighter))))
+   `(whitespace-line ((,class (:background ,magenta-dark))))
+   `(whitespace-indentation
+     ((,class (:background ,yellow-light :foreground ,bg-primary))))
+   `(whitespace-empty ((,class (:inherit whitespace-indentation))))
+   `(whitespace-space-after-tab ((,class (:inherit whitespace-indentation))))
+   `(whitespace-big-indent
+     ((,class (:background ,orange-primary :foreground ,fg-light))))
+   `(whitespace-trailing
+     ((,class (:background ,red-primary :foreground ,fg-light :weight bold))))
+   `(whitespace-space-before-tab ((,class (:inherit whitespace-trailing))))
+
    ;; --------------------
    ;; Third-party packages
    ;; --------------------
