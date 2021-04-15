@@ -46,33 +46,42 @@
         tty-color xterm256-color)))
 
 (let ((class '((class color) (min-colors 89)))
-      (bg-dark    (sendai--palettize "#181e25" "#1c1c1c"))
-      (bg-primary (sendai--palettize "#232c38" "#303030"))
-      (bg-light   (sendai--palettize "#364454" "#444444"))
-      (bg-lighter (sendai--palettize "#4a5b71" "#5f5f5f" "black"))
+      (bg-dark         (sendai--palettize "#181e25" "#1c1c1c"))
+      (bg-primary      (sendai--palettize "#232c38" "#303030"))
+      (bg-light        (sendai--palettize "#364454" "#444444"))
+      (bg-lighter      (sendai--palettize "#4a5b71" "#5f5f5f" "black"))
 
-      (fg-darker  (sendai--palettize "#7b96b7" "#5f87af" "brightblack"))
-      (fg-dark    (sendai--palettize "#a2b6d0" "#87afd7"))
-      (fg-primary (sendai--palettize "#c9d6e9" "#d7d7d7" "white"))
-      (fg-light   (sendai--palettize "#f0f6fe" "#ffffff" "brightwhite"))
+      (fg-darker       (sendai--palettize "#7b96b7" "#5f87af" "brightblack"))
+      (fg-dark         (sendai--palettize "#a2b6d0" "#87afd7"))
+      (fg-primary      (sendai--palettize "#c9d6e9" "#d7d7d7" "white"))
+      (fg-light        (sendai--palettize "#f0f6fe" "#ffffff" "brightwhite"))
 
-      (red-darker     (sendai--palettize "#4f282a" nil))
-      (orange-darker  (sendai--palettize "#4d3225" nil))
-      (yellow-darker  (sendai--palettize "#4e462b" nil))
-      (green-darker   (sendai--palettize "#2b402e" nil))
-      (cyan-darker    (sendai--palettize "#204142" nil))
-      (blue-darker    (sendai--palettize "#273b55" nil))
-      (violet-darker  (sendai--palettize "#35334e" nil))
-      (magenta-darker (sendai--palettize "#462b3f" nil))
+      (red-darker      (sendai--palettize "#4f282a" nil))
+      (orange-darker   (sendai--palettize "#4d3225" nil))
+      (yellow-darker   (sendai--palettize "#4e462b" nil))
+      (green-darker    (sendai--palettize "#2b402e" nil))
+      (cyan-darker     (sendai--palettize "#204142" nil))
+      (blue-darker     (sendai--palettize "#273b55" nil))
+      (violet-darker   (sendai--palettize "#35334e" nil))
+      (magenta-darker  (sendai--palettize "#462b3f" nil))
 
-      (red-dark     (sendai--palettize "#792c32" "#870000"))
-      (orange-dark  (sendai--palettize "#7d452b" "#875f00"))
-      (yellow-dark  (sendai--palettize "#796b2f" "#878700"))
-      (green-dark   (sendai--palettize "#2a5d31" "#005f00"))
-      (cyan-dark    (sendai--palettize "#185d5f" "#005f5f"))
-      (blue-dark    (sendai--palettize "#245282" "#005f87"))
-      (violet-dark  (sendai--palettize "#474881" "#5f5f87"))
-      (magenta-dark (sendai--palettize "#702e5e" "#5f005f"))
+      (red-dark        (sendai--palettize "#792c32" "#870000"))
+      (orange-dark     (sendai--palettize "#7d452b" "#875f00"))
+      (yellow-dark     (sendai--palettize "#796b2f" "#878700"))
+      (green-dark      (sendai--palettize "#2a5d31" "#005f00"))
+      (cyan-dark       (sendai--palettize "#185d5f" "#005f5f"))
+      (blue-dark       (sendai--palettize "#245282" "#005f87"))
+      (violet-dark     (sendai--palettize "#474881" "#5f5f87"))
+      (magenta-dark    (sendai--palettize "#702e5e" "#5f005f"))
+
+      (red-mid         (sendai--palettize "#ad3641" "#af0000"))
+      (orange-mid      (sendai--palettize "#b0622e" "#af5f00"))
+      (yellow-mid      (sendai--palettize "#b49635" "#afaf5f"))
+      (green-mid       (sendai--palettize "#3d8638" "#5f875f"))
+      (cyan-mid        (sendai--palettize "#1f8584" "#008787"))
+      (blue-mid        (sendai--palettize "#2d77b6" "#0087af"))
+      (violet-mid      (sendai--palettize "#6b63b5" "#5f5faf"))
+      (magenta-mid     (sendai--palettize "#9c4080" "#875f87"))
 
       (red-primary     (sendai--palettize "#d33f4d" "#d70000" "brightred"))
       (orange-primary  (sendai--palettize "#d47732" "#d78700"))
@@ -83,14 +92,14 @@
       (violet-primary  (sendai--palettize "#8578db" "#8787d7"))
       (magenta-primary (sendai--palettize "#bc4d99" "#af5f87" "magenta"))
 
-      (red-light     (sendai--palettize "#e16a6d" "#d75f5f" "red"))
-      (orange-light  (sendai--palettize "#ec9f63" "#ffaf5f"))
-      (yellow-light  (sendai--palettize "#ded692" "#d7d787" "yellow"))
-      (green-light   (sendai--palettize "#7cc36e" "#87af5f" "green"))
-      (cyan-light    (sendai--palettize "#4edae5" "#5fd7d7" "brightcyan"))
-      (blue-light    (sendai--palettize "#6cc2ff" "#5fafff" "brightblue"))
-      (violet-light  (sendai--palettize "#afa2f2" "#afafff"))
-      (magenta-light (sendai--palettize "#db7fbb" "#d787af" "brightmagenta")))
+      (red-light       (sendai--palettize "#e16a6d" "#d75f5f" "red"))
+      (orange-light    (sendai--palettize "#ec9f63" "#ffaf5f"))
+      (yellow-light    (sendai--palettize "#ded692" "#d7d787" "yellow"))
+      (green-light     (sendai--palettize "#7cc36e" "#87af5f" "green"))
+      (cyan-light      (sendai--palettize "#4edae5" "#5fd7d7" "brightcyan"))
+      (blue-light      (sendai--palettize "#6cc2ff" "#5fafff" "brightblue"))
+      (violet-light    (sendai--palettize "#afa2f2" "#afafff"))
+      (magenta-light   (sendai--palettize "#db7fbb" "#d787af" "brightmagenta")))
 
   (custom-theme-set-faces
    'sendai
@@ -417,6 +426,23 @@
    ;; --------------------
    ;; Third-party packages
    ;; --------------------
+
+   ;; company-mode
+   `(company-preview
+     ((,class (:foreground ,fg-primary :background ,blue-dark))))
+   `(company-template-field
+     ((,class (:foreground ,fg-primary :background ,bg-lighter))))
+   `(company-tooltip
+     ((,class (:foreground ,fg-primary :background ,bg-lighter))))
+   `(company-tooltip-selection ((,class (:background ,blue-mid))))
+   `(company-tooltip-search ((,class (:inherit isearch))))
+   `(company-tooltip-search-selection ((,class (:inherit isearch))))
+   `(company-scrollbar-fg ((,class (:background ,fg-darker))))
+   `(company-scrollbar-bg ((,class (:background ,bg-light))))
+   `(company-echo-common ((,class (:foreground ,yellow-primary))))
+   `(company-tooltip-common ((,class (:foreground ,yellow-primary))))
+   `(company-preview-common ((,class (:foreground ,yellow-primary))))
+   `(company-tooltip-annotation ((,class (:foreground ,cyan-light))))
 
    ;; hl-todo
    `(hl-todo ((,class (:foreground ,yellow-light :weight bold))))
