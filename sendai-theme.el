@@ -483,6 +483,10 @@
    `(rainbow-delimiters-depth-4-face ((,class (:foreground ,fg-dark))))
    `(rainbow-delimiters-base-error-face ((,class (:foreground ,red-primary))))
 
+   ;; telephone-line
+   `(telephone-line-accent-active ((,class (:background ,blue-mid))))
+   `(telephone-line-accent-inactive ((,class (:background ,blue-dark))))
+
    ;; which-key
    `(which-key-key-face ((,class (:foreground ,yellow-primary))))
    `(which-key-command-description-face ((,class (:foreground ,blue-light))))
