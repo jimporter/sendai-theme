@@ -192,8 +192,13 @@
    `(calendar-weekday-header ((,class (:foreground ,blue-primary))))
    `(calendar-weekend-header ((,class (:foreground ,blue-light))))
 
+   ;; comint-mode
+   `(comint-highlight-prompt ((,class (:foreground ,fg-darker :weight bold))))
+
    ;; compilation-mode
+   `(compilation-error ((,class (:foreground ,red-primary :weight bold))))
    `(compilation-warning ((,class (:foreground ,yellow-primary :weight bold))))
+   `(compilation-info ((,class (:foreground ,blue-primary :weight bold))))
    `(compilation-line-number ((,class (:foreground ,fg-darker))))
    `(compilation-column-number ((,class (:foreground ,fg-darker))))
    `(compilation-mode-line-exit
@@ -286,6 +291,14 @@
    `(eshell-ls-missing ((,class (:foreground ,red-primary :weight bold))))
    `(eshell-ls-clutter ((,class (:foreground ,red-primary :weight bold))))
    `(eshell-ls-unreadable ((,class (:foreground ,orange-primary))))
+
+   ;; flymake
+   `(flymake-error
+     ((,class (:underline (:color ,red-primary :style wave)))))
+   `(flymake-warning
+     ((,class (:underline (:color ,yellow-primary :style wave)))))
+   `(flymake-note
+     ((,class (:underline (:color ,blue-primary :style wave)))))
 
    ;; flyspell
    `(flyspell-duplicate
