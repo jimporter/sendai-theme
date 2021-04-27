@@ -323,6 +323,22 @@
    ;; makefile-mode
    `(makefile-space ((,class (:background ,red-primary))))
 
+   ;; message
+   `(message-header-name ((,class (:foreground ,blue-light))))
+   `(message-header-subject ((,class (:foreground ,fg-light :weight bold))))
+   `(message-header-to ((,class (:foreground ,yellow-light :weight bold))))
+   `(message-header-cc ((,class (:foreground ,green-light :weight bold))))
+   `(message-header-newsgroups
+     ((,class (:foreground ,yellow-primary :weight bold))))
+   `(message-header-other ((,class (:foreground ,fg-primary))))
+   `(message-header-xheader ((,class (:foreground ,blue-primary))))
+   `(message-separator ((,class (:foreground ,fg-darker))))
+   `(message-mml ((,class (:foreground ,yellow-primary))))
+   `(message-cited-text-1 ((,class (:foreground ,violet-light))))
+   `(message-cited-text-2 ((,class (:foreground ,green-light))))
+   `(message-cited-text-3 ((,class (:foreground ,magenta-light))))
+   `(message-cited-text-4 ((,class (:foreground ,cyan-light))))
+
    ;; org-mode
    ;; Note: `org-level-N' is inherited from `outline-N'.
    `(org-document-info-keyword ((,class (:inherit org-meta-line))))
@@ -457,6 +473,19 @@
    `(company-tooltip-common ((,class (:foreground ,yellow-primary))))
    `(company-preview-common ((,class (:foreground ,yellow-primary))))
    `(company-tooltip-annotation ((,class (:foreground ,cyan-light))))
+
+   ;; elfeed
+   `(elfeed-search-title-face ((,class (:foreground ,fg-primary))))
+   `(elfeed-search-unread-title-face ((,class (:weight bold :italic t))))
+   `(elfeed-search-date-face ((,class (:foreground ,fg-darker))))
+   `(elfeed-search-feed-face ((,class (:foreground ,blue-primary))))
+   `(elfeed-search-tag-face ((,class (:foreground ,yellow-light))))
+   `(elfeed-search-unread-count-face ((,class (:foreground ,blue-light))))
+   `(elfeed-log-date-face ((,class (:foreground ,cyan-primary))))
+   `(elfeed-log-error-level-face ((,class (:foreground ,red-primary))))
+   `(elfeed-log-warn-level-face ((,class (:foreground ,yellow-primary))))
+   `(elfeed-log-info-level-face ((,class (:foreground ,blue-primary))))
+   `(elfeed-log-debug-level-face ((,class (:foreground ,magenta-light))))
 
    ;; hl-todo
    `(hl-todo ((,class (:foreground ,yellow-light :weight bold))))
