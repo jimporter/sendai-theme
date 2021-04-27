@@ -137,8 +137,9 @@
    `(lazy-highlight
      ((,class (:background ,fg-darker :foreground ,bg-primary))))
    `(completions-common-part ((,class (:foreground ,blue-primary))))
-   `(show-paren-match ((,class (:foreground ,cyan-light :weight bold))))
-   `(show-paren-match-expression ((,class (:background ,blue-darker))))
+   `(show-paren-match
+     ((,class (:background ,violet-dark :foreground ,fg-light :weight bold))))
+   `(show-paren-match-expression ((,class (:background ,violet-darker))))
    `(show-paren-mismatch
      ((,class (:background ,red-primary :foreground ,fg-light))))
    `(trailing-whitespace ((,class (:background ,red-primary))))
