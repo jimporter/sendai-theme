@@ -1,4 +1,4 @@
-;;; sendai-theme.el --- A cool blue color theme
+;;; sendai-theme.el --- A cool blue color theme -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2021 Jim Porter
 
@@ -530,9 +530,5 @@
                  ,magenta-light ,cyan-light ,fg-light])))
 
 (provide-theme 'sendai)
-
-;; Local Variables:
-;; no-byte-compile: t
-;; End:
 
 ;;; sendai-theme.el ends here
