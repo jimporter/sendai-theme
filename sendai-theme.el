@@ -476,7 +476,7 @@
 
    ;; elfeed
    `(elfeed-search-title-face ((,class (:foreground ,fg-primary))))
-   `(elfeed-search-unread-title-face ((,class (:weight bold :italic t))))
+   `(elfeed-search-unread-title-face ((,class (:weight bold :slant italic))))
    `(elfeed-search-date-face ((,class (:foreground ,fg-darker))))
    `(elfeed-search-feed-face ((,class (:foreground ,blue-primary))))
    `(elfeed-search-tag-face ((,class (:foreground ,yellow-light))))
