@@ -166,6 +166,12 @@
    `(window-divider ((,class (:foreground ,bg-lighter))))
    `(window-divider-first-pixel ((,class (:foreground ,fg-darker))))
    `(window-divider-last-pixel ((,class (:foreground ,bg-dark))))
+   `(tty-menu-enabled-face
+     ((,class (:background ,bg-light :foreground ,fg-light))))
+   `(tty-menu-disabled-face
+     ((,class (:background ,bg-light :foreground ,fg-dark))))
+   `(tty-menu-selected-face
+     ((,class (:background ,cyan-primary :foreground ,fg-light))))
 
    ;; Font lock
    `(font-lock-builtin-face ((,class (:foreground ,blue-light))))
