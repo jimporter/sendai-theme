@@ -493,6 +493,10 @@
    `(elfeed-log-info-level-face ((,class (:foreground ,blue-primary))))
    `(elfeed-log-debug-level-face ((,class (:foreground ,magenta-light))))
 
+   ;; form-feed
+   `(form-feed-line ((,(cons '(type graphic) class)
+                      (:strike-through ,fg-darker))))
+
    ;; hl-todo
    `(hl-todo ((,class (:foreground ,yellow-light :weight bold))))
 
