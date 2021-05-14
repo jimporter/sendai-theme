@@ -142,6 +142,7 @@
    `(show-paren-match-expression ((,class (:background ,violet-darker))))
    `(show-paren-mismatch
      ((,class (:background ,red-primary :foreground ,fg-light))))
+   `(hl-line ((,class (:background ,bg-light))))
    `(trailing-whitespace ((,class (:background ,red-primary))))
 
    ;; Mode line
