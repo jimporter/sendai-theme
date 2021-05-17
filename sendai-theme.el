@@ -207,8 +207,8 @@
    `(compilation-error ((,class (:foreground ,red-primary :weight bold))))
    `(compilation-warning ((,class (:foreground ,yellow-primary :weight bold))))
    `(compilation-info ((,class (:foreground ,blue-primary :weight bold))))
-   `(compilation-line-number ((,class (:foreground ,fg-darker))))
-   `(compilation-column-number ((,class (:foreground ,fg-darker))))
+   `(compilation-line-number ((,class (:foreground ,blue-light))))
+   `(compilation-column-number ((,class (:foreground ,blue-light))))
    `(compilation-mode-line-exit
      ((,class (:foreground ,green-primary :weight bold))))
    `(compilation-mode-line-fail
