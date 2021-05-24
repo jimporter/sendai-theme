@@ -326,6 +326,7 @@
    `(info-menu-header ((,class (:weight bold))))
    `(info-menu-star ((,class (:foreground ,yellow-primary))))
    `(info-node ((,class (:foreground ,fg-light :weight bold :slant italic))))
+   `(info-header-xref ((,class (:foreground ,blue-light :underline t))))
 
    ;; makefile-mode
    `(makefile-space ((,class (:background ,red-primary))))
