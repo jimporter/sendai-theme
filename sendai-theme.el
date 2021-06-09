@@ -369,7 +369,7 @@
      ((,class (:foreground ,yellow-light :weight normal :slant italic))))
    `(org-priority ((,class (:foreground ,orange-light))))
    `(org-formula ((,class (:foreground ,orange-light))))
-   `(org-macro ((,class (:foreground ,magenta-light))))
+   `(org-macro ((,class (:foreground ,violet-light))))
    `(org-block
      ((,class (:background ,blue-darker :foreground ,fg-primary :extend t))))
    `(org-quote ((,class (:slant italic))))
