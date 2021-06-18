@@ -396,6 +396,24 @@
    `(org-scheduled-today ((,class (:foreground ,violet-light))))
    `(org-mode-line-clock-overrun ((,class (:background ,red-primary))))
 
+   ;; ruler-mode
+   `(ruler-mode-default ((,class (
+      :background ,bg-light :foreground ,fg-darker
+      :box (:line-width 1 :color ,bg-light :style released-button)))))
+   `(ruler-mode-column-number
+     ((,class (:foreground ,fg-primary :inherit ruler-mode-default))))
+   `(ruler-mode-current-column ((,class (
+      :foreground ,yellow-primary :weight bold :inherit ruler-mode-default))))
+   `(ruler-mode-comment-column
+     ((,class (:foreground ,cyan-light :inherit ruler-mode-default))))
+   `(ruler-mode-fill-column
+     ((,class (:foreground ,cyan-light :inherit ruler-mode-default))))
+   `(ruler-mode-goal-column
+     ((,class (:foreground ,cyan-light :inherit ruler-mode-default))))
+   `(ruler-mode-tab-stop
+     ((,class (:foreground ,blue-primary :inherit ruler-mode-default))))
+   `(ruler-mode-fringes ((,class (:inherit ruler-mode-default))))
+
    ;; outline-mode
    `(outline-1 ((,class (:foreground ,yellow-primary :weight bold))))
    `(outline-2 ((,class (:foreground ,cyan-light :weight bold))))
