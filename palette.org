@@ -1,6 +1,7 @@
 * Palette
 ** Background colors
-   - bg-dark         :: #181e25  rgb( 24,  30,  37)
+   - bg-darker       :: #161c23  rgb( 22,  28,  35)
+   - bg-dark         :: #1c242e  rgb( 28,  36,  46)
    - bg-primary      :: #232c38  rgb( 35,  44,  56)
    - bg-light        :: #364454  rgb( 54,  68,  84)
    - bg-lighter      :: #4a5b71  rgb( 74,  91, 113)

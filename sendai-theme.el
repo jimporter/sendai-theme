@@ -46,7 +46,8 @@
         tty-color xterm256-color)))
 
 (let ((class '((class color) (min-colors 89)))
-      (bg-dark         (sendai--palettize "#181e25" "#1c1c1c"))
+      (bg-darker       (sendai--palettize "#161c23" "#1c1c1c"))
+      (bg-dark         (sendai--palettize "#1c242e" "#262626"))
       (bg-primary      (sendai--palettize "#232c38" "#303030"))
       (bg-light        (sendai--palettize "#364454" "#444444"))
       (bg-lighter      (sendai--palettize "#4a5b71" "#5f5f5f" "black"))
@@ -147,7 +148,8 @@
 
    ;; Mode line
    `(mode-line ((,class (:background ,bg-light :foreground ,fg-light))))
-   `(mode-line-inactive ((,class (:background ,bg-dark :foreground ,fg-dark))))
+   `(mode-line-inactive
+     ((,class (:background ,bg-darker :foreground ,fg-dark))))
    `(mode-line-highlight ((,class (:box ,fg-darker))))
 
    ;; Misc UI
@@ -166,7 +168,7 @@
    `(vertical-border ((,class (:foreground ,bg-lighter))))
    `(window-divider ((,class (:foreground ,bg-lighter))))
    `(window-divider-first-pixel ((,class (:foreground ,fg-darker))))
-   `(window-divider-last-pixel ((,class (:foreground ,bg-dark))))
+   `(window-divider-last-pixel ((,class (:foreground ,bg-darker))))
    `(tty-menu-enabled-face
      ((,class (:background ,bg-light :foreground ,fg-light))))
    `(tty-menu-disabled-face
@@ -434,7 +436,7 @@
    `(tab-bar-tab ((,class
       (:background ,bg-primary :foreground ,fg-primary :box ,bg-primary))))
    `(tab-bar-tab-inactive ((,class
-      (:background ,bg-dark :foreground ,fg-darker :box ,bg-dark))))
+      (:background ,bg-darker :foreground ,fg-darker :box ,bg-darker))))
 
    ;; tab-line
    `(tab-line ((,class (:background ,bg-lighter :inherit variable-pitch))))
@@ -443,7 +445,7 @@
    `(tab-line-tab-current ((,class
       (:background ,bg-primary :foreground ,fg-primary :box ,bg-primary))))
    `(tab-line-tab-inactive ((,class
-      (:background ,bg-dark :foreground ,fg-darker :box ,bg-dark))))
+      (:background ,bg-darker :foreground ,fg-darker :box ,bg-darker))))
 
    ;; term
    `(term-color-black
@@ -555,6 +557,11 @@
    `(rainbow-delimiters-depth-3-face ((,class (:foreground ,fg-light))))
    `(rainbow-delimiters-depth-4-face ((,class (:foreground ,fg-dark))))
    `(rainbow-delimiters-base-error-face ((,class (:foreground ,red-primary))))
+
+   ;; solaire-mode
+   `(solaire-default-face
+     ((,class (:background ,bg-dark :foreground ,fg-primary))))
+   `(solaire-fringe-face ((,class (:background ,bg-dark))))
 
    ;; telephone-line
    `(telephone-line-accent-active ((,class (:background ,blue-mid))))
