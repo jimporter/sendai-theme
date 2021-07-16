@@ -17,7 +17,7 @@
    - green-darker    :: #2b402e  rgb( 43,  64,  46)
    - cyan-darker     :: #204142  rgb( 32,  65,  66)
    - blue-darker     :: #273b55  rgb( 39,  59,  85)
-   - violet-darker   :: #35334e  rgb( 53,  51,  78)
+   - violet-darker   :: #36354f  rgb( 54,  53,  79)
    - magenta-darker  :: #462b3f  rgb( 70,  43,  63)
 ** Dark colors
    - red-dark        :: #792c32  rgb(121,  44,  50)
@@ -26,7 +26,7 @@
    - green-dark      :: #2a5d31  rgb( 42,  93,  49)
    - cyan-dark       :: #185d5f  rgb( 24,  93,  95)
    - blue-dark       :: #2a527e  rgb( 42,  82, 126)
-   - violet-dark     :: #474881  rgb( 71,  72, 129)
+   - violet-dark     :: #484982  rgb( 72,  73, 130)
    - magenta-dark    :: #702e5e  rgb(112,  46,  94)
 ** Mid colors
    - red-mid         :: #ad3641  rgb(173,  54,  65)

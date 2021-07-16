@@ -63,7 +63,7 @@
       (green-darker    (sendai--palettize "#2b402e" nil))
       (cyan-darker     (sendai--palettize "#204142" nil))
       (blue-darker     (sendai--palettize "#273b55" nil))
-      (violet-darker   (sendai--palettize "#35334e" nil))
+      (violet-darker   (sendai--palettize "#36354f" nil))
       (magenta-darker  (sendai--palettize "#462b3f" nil))
 
       (red-dark        (sendai--palettize "#792c32" "#870000"))
@@ -72,7 +72,7 @@
       (green-dark      (sendai--palettize "#2a5d31" "#005f00"))
       (cyan-dark       (sendai--palettize "#185d5f" "#005f5f"))
       (blue-dark       (sendai--palettize "#245282" "#005f87"))
-      (violet-dark     (sendai--palettize "#474881" "#5f5f87"))
+      (violet-dark     (sendai--palettize "#484982" "#5f5f87"))
       (magenta-dark    (sendai--palettize "#702e5e" "#5f005f"))
 
       (red-mid         (sendai--palettize "#ad3641" "#af0000"))
