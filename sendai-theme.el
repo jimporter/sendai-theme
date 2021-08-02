@@ -398,6 +398,16 @@
    `(org-scheduled-today ((,class (:foreground ,violet-light))))
    `(org-mode-line-clock-overrun ((,class (:background ,red-primary))))
 
+   ;; outline-mode
+   `(outline-1 ((,class (:foreground ,yellow-primary :weight bold))))
+   `(outline-2 ((,class (:foreground ,cyan-light :weight bold))))
+   `(outline-3 ((,class (:foreground ,violet-light :weight bold))))
+   `(outline-4 ((,class (:foreground ,blue-light :weight bold))))
+   `(outline-5 ((,class (:foreground ,yellow-light :weight bold))))
+   `(outline-6 ((,class (:foreground ,cyan-light :weight bold))))
+   `(outline-7 ((,class (:foreground ,violet-light :weight bold))))
+   `(outline-8 ((,class (:foreground ,blue-light :weight bold))))
+
    ;; ruler-mode
    `(ruler-mode-default ((,class (
       :background ,bg-light :foreground ,fg-darker
@@ -415,16 +425,6 @@
    `(ruler-mode-tab-stop
      ((,class (:foreground ,blue-primary :inherit ruler-mode-default))))
    `(ruler-mode-fringes ((,class (:inherit ruler-mode-default))))
-
-   ;; outline-mode
-   `(outline-1 ((,class (:foreground ,yellow-primary :weight bold))))
-   `(outline-2 ((,class (:foreground ,cyan-light :weight bold))))
-   `(outline-3 ((,class (:foreground ,violet-light :weight bold))))
-   `(outline-4 ((,class (:foreground ,blue-light :weight bold))))
-   `(outline-5 ((,class (:foreground ,yellow-light :weight bold))))
-   `(outline-6 ((,class (:foreground ,cyan-light :weight bold))))
-   `(outline-7 ((,class (:foreground ,violet-light :weight bold))))
-   `(outline-8 ((,class (:foreground ,blue-light :weight bold))))
 
    ;; sh-mode
    `(sh-escaped-newline ((,class (:foreground ,fg-darker))))
