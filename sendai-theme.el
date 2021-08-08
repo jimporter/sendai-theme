@@ -273,6 +273,24 @@
    `(dired-mark ((,class (:inherit dired-marked))))
    `(dired-flagged ((,class (:foreground ,red-primary :weight bold))))
 
+   ;; ediff
+   `(ediff-even-diff-Ancestor ((,class (:background ,blue-darker))))
+   `(ediff-even-diff-A ((,class (:background ,blue-darker))))
+   `(ediff-even-diff-B ((,class (:background ,blue-darker))))
+   `(ediff-even-diff-C ((,class (:background ,blue-darker))))
+   `(ediff-odd-diff-Ancestor ((,class (:background ,blue-darker))))
+   `(ediff-odd-diff-A ((,class (:background ,blue-darker))))
+   `(ediff-odd-diff-B ((,class (:background ,blue-darker))))
+   `(ediff-odd-diff-C ((,class (:background ,blue-darker))))
+   `(ediff-current-diff-Ancestor ((,class (:background ,yellow-darker))))
+   `(ediff-current-diff-A ((,class (:background ,red-darker))))
+   `(ediff-current-diff-B ((,class (:background ,green-darker))))
+   `(ediff-current-diff-C ((,class (:background ,blue-darker))))
+   `(ediff-fine-diff-Ancestor ((,class (:background ,yellow-dark))))
+   `(ediff-fine-diff-A ((,class (:background ,red-dark))))
+   `(ediff-fine-diff-B ((,class (:background ,green-dark))))
+   `(ediff-fine-diff-C ((,class (:background ,blue-dark))))
+
    ;; eww
    `(eww-form-submit ((,class (
       :background ,fg-primary :foreground ,bg-primary
@@ -430,6 +448,14 @@
    `(sh-escaped-newline ((,class (:foreground ,fg-darker))))
    `(sh-heredoc ((,class (:foreground ,green-light))))
    `(sh-quoted-exec ((,class (:foreground ,orange-light))))
+
+   ;; smerge-mode
+   `(smerge-markers ((,class (:background ,blue-dark :foreground ,fg-light))))
+   `(smerge-upper ((,class (:background ,red-darker))))
+   `(smerge-lower ((,class (:background ,green-darker))))
+   `(smerge-base ((,class (:background ,yellow-darker))))
+   `(smerge-refined-removed ((,class (:background ,red-dark))))
+   `(smerge-refined-added ((,class (:background ,green-dark))))
 
    ;; tab-bar
    `(tab-bar ((,class (:background ,bg-lighter :inherit variable-pitch))))
