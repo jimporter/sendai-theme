@@ -450,7 +450,7 @@
    `(sh-quoted-exec ((,class (:foreground ,orange-light))))
 
    ;; smerge-mode
-   `(smerge-markers ((,class (:background ,blue-dark :foreground ,fg-light))))
+   `(smerge-markers ((,class (:background ,blue-darker :foreground ,fg-light))))
    `(smerge-upper ((,class (:background ,red-darker))))
    `(smerge-lower ((,class (:background ,green-darker))))
    `(smerge-base ((,class (:background ,yellow-darker))))
