@@ -129,7 +129,7 @@
 
    ;; Highlighting
    `(fringe ((,class (:background ,bg-primary))))
-   `(highlight ((,class (:background ,cyan-primary :foreground ,fg-light))))
+   `(highlight ((,class (:background ,blue-mid :foreground ,fg-light))))
    `(region ((,class (:background ,blue-dark :foreground ,fg-primary))))
    `(secondary-selection ((,class (:background ,bg-lighter))))
    `(match ((,class (:background ,yellow-light :foreground ,bg-primary))))
