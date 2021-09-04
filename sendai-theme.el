@@ -712,12 +712,26 @@ class names."
    ;; yaml-mode
    `(yaml-tab-face ,(sendai--face :background red-primary)))
 
+  ;; Define some faces for `hl-todo'.  Doing it this way allows us to define
+  ;; the face with multiple face specs for better `emacsclient' support.
+  (defface sendai-hl-todo-error
+    (sendai--face :inherit 'hl-todo :foreground red-primary)
+    "A face used to highlight error-level TODO-like keywords."
+    :group 'sendai-theme
+    :group 'hl-todo)
+
+  (defface sendai-hl-todo-warning
+    (sendai--face :inherit 'hl-todo :foreground orange-primary)
+    "A face used to highlight warning-level TODO-like keywords."
+    :group 'sendai-theme
+    :group 'hl-todo)
+
   (custom-theme-set-variables
    'sendai
    `(hl-todo-keyword-faces
-     '(("FIXME" . ,(funcall hl-todo-face red-primary))
-       ("TODO"  . ,(funcall hl-todo-face orange-primary))
-       ("XXX"   . ,(funcall hl-todo-face orange-primary)))))
+     '(("FIXME" . sendai-hl-todo-error)
+       ("TODO"  . sendai-hl-todo-warning)
+       ("XXX"   . sendai-hl-todo-warning))))
 
   (when-let ((class-name (sendai--active-class)))
     (custom-theme-set-variables
