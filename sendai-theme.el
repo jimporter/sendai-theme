@@ -190,10 +190,7 @@ class names."
       (cyan-light      (sendai--color "#4edae5" "#5fd7d7" "brightcyan"))
       (blue-light      (sendai--color "#6cc2ff" "#5fafff" "brightblue"))
       (violet-light    (sendai--color "#afa2f2" "#afafff"))
-      (magenta-light   (sendai--color "#db7fbb" "#d787af" "brightmagenta"))
-
-      (hl-todo-face
-       (lambda (color) (sendai--face :inherit 'hl-todo :foreground color))))
+      (magenta-light   (sendai--color "#db7fbb" "#d787af" "brightmagenta")))
 
   (custom-theme-set-faces
    'sendai
@@ -263,7 +260,7 @@ class names."
                                           :foreground fg-light))
    `(tty-menu-disabled-face ,(sendai--face :background bg-light
                                            :foreground fg-dark))
-   `(tty-menu-selected-face ,(sendai--face :background cyan-primary
+   `(tty-menu-selected-face ,(sendai--face :background blue-mid
                                            :foreground fg-light))
 
    ;; Font lock
