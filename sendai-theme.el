@@ -58,10 +58,19 @@ that face class.
 
 For example, when using `emacs --daemon' in a GUI environment, you
 likely want to set this to `true-color'."
-  :type `(choice (const :tag "Default"    nil)
+  :type '(choice (const :tag "Default"    nil)
                  (const :tag "True color" true-color)
                  (const :tag "256 color"  256-color)
                  (const :tag "TTY color"  tty-color))
+  :group 'sendai-theme)
+
+(defcustom sendai-tab-padding
+  (if (>= emacs-major-version 28) '(4 . 1) 1)
+  "The default padding around tabs in `tab-bar-mode' and `tab-line-mode'.
+This is passed to the `:box' face attribute and can be either an
+integer (to use the same width in all directions) or a pair of
+integers (to use separate widths on the X and Y axes)."
+  :type '(choice integer (cons integer integer))
   :group 'sendai-theme)
 
 (defun sendai--active-class ()
@@ -213,6 +222,11 @@ class names."
    `(homoglyph ,(sendai--face :foreground cyan-light))
    `(nobreak-hyphen ,(sendai--face :foreground magenta-light))
    `(nobreak-space ,(sendai--face :foreground magenta-light :underline t))
+   `(separator-line ,(sendai--face :foreground fg-darker))
+   `(help-argument-name ,(sendai--face :foreground blue-light))
+   `(help-key-binding
+     ,(sendai--face :foreground blue-light :background blue-darker
+                    :box `(:line-width (1 . -1) :color ,blue-mid)))
 
    ;; Highlighting
    `(fringe ,(sendai--face :background bg-primary))
@@ -222,6 +236,10 @@ class names."
    `(match ,(sendai--face :background yellow-light :foreground bg-primary))
    `(isearch ,(sendai--face :background yellow-light :foreground bg-primary))
    `(isearch-fail ,(sendai--face :background red-dark))
+   `(isearch-group-1 ,(sendai--face :background green-light
+                                    :foreground bg-primary))
+   `(isearch-group-2 ,(sendai--face :background green-primary
+                                    :foreground bg-primary))
    `(lazy-highlight ,(sendai--face :background fg-darker
                                    :foreground bg-primary))
    `(completions-common-part ,(sendai--face :foreground blue-primary))
@@ -267,6 +285,7 @@ class names."
    `(font-lock-builtin-face ,(sendai--face :foreground blue-light))
    `(font-lock-comment-face ,(sendai--face :foreground fg-darker))
    `(font-lock-doc-face ,(sendai--face :inherit font-lock-comment-face))
+   `(font-lock-doc-markup-face ,(sendai--face :foreground cyan-primary))
    `(font-lock-constant-face ,(sendai--face :foreground cyan-primary))
    `(font-lock-function-name-face ,(sendai--face :foreground yellow-primary
                                                  :weight 'bold))
@@ -344,9 +363,12 @@ class names."
    `(diff-header ,(sendai--face :foreground fg-primary))
    `(diff-file-header ,(sendai--face :foreground yellow-primary :weight 'bold))
    `(diff-hunk-header ,(sendai--face :foreground cyan-light))
+   `(diff-error ,(sendai--face :foreground red-primary :weight 'bold
+                               :underline '(:style wave)))
    `(diff-added ,(sendai--face :background green-darker))
    `(diff-removed ,(sendai--face :background red-darker))
    `(diff-changed ,(sendai--face :background yellow-darker))
+   `(diff-changed-unspecified ,(sendai--face :background yellow-darker))
    `(diff-indicator-added ,(sendai--face :foreground green-light
                                          :inherit 'diff-added))
    `(diff-indicator-removed ,(sendai--face :foreground red-light
@@ -361,6 +383,9 @@ class names."
    `(dired-header ,(sendai--face :foreground blue-primary :weight 'bold))
    `(dired-directory ,(sendai--face :foreground blue-light :weight 'bold))
    `(dired-symlink ,(sendai--face :foreground cyan-light))
+   `(dired-broken-symlink ,(sendai--face
+                            :underline `(:color ,red-primary :style wave)
+                            :inherit 'dired-symlink))
    `(dired-special ,(sendai--face :foreground yellow-light))
    `(dired-marked ,(sendai--face :foreground yellow-primary :weight 'bold))
    `(dired-mark ,(sendai--face :inherit 'dired-marked))
@@ -434,6 +459,11 @@ class names."
    ;; gdb
    `(breakpoint-enabled ,(sendai--face :foreground red-primary))
    `(breakpoint-disabled ,(sendai--face :foreground fg-darker))
+
+   ;; hexl-mode
+   `(hexl-address-region ,(sendai--face :background bg-lighter
+                                        :foreground fg-primary))
+   `(hexl-ascii-region ,(sendai--face :inherit 'hexl-address-region))
 
    ;; info-mode
    `(info-title-1 ,(sendai--face :height 1.5 :weight 'bold))
@@ -559,22 +589,34 @@ class names."
 
    ;; tab-bar
    `(tab-bar ,(sendai--face :background bg-lighter :inherit 'variable-pitch))
-   `(tab-bar-tab ,(sendai--face :background bg-primary :foreground fg-primary
-                                :box bg-primary))
-   `(tab-bar-tab-inactive ,(sendai--face :background bg-darker
-                                         :foreground fg-darker
-                                         :box bg-darker))
+   `(tab-bar-tab-group-current ,(sendai--face :inherit 'tab-bar-tab
+                                              :weight 'bold))
+   `(tab-bar-tab-group-inactive ,(sendai--face :inherit 'tab-bar-tab-inactive
+                                               :weight 'bold))
+   `(tab-bar-tab
+     ,(sendai--face :background bg-primary :foreground fg-primary
+                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
+   `(tab-bar-tab-inactive
+     ,(sendai--face :background bg-darker :foreground fg-darker
+                    :box `(:line-width ,sendai-tab-padding :color ,bg-darker)))
+   `(tab-bar-tab-ungrouped ,(sendai--face :inherit 'tab-bar-tab-inactive))
 
    ;; tab-line
    `(tab-line ,(sendai--face :background bg-lighter :inherit 'variable-pitch))
-   `(tab-line-tab ,(sendai--face :background bg-primary :foreground fg-darker
-                                 :box bg-primary))
-   `(tab-line-tab-current ,(sendai--face :background bg-primary
-                                         :foreground fg-primary
-                                         :box bg-primary))
-   `(tab-line-tab-inactive ,(sendai--face :background bg-darker
-                                          :foreground fg-darker
-                                          :box bg-darker))
+   `(tab-line-tab-group ,(sendai--face :inherit 'tab-line :weight 'bold))
+   `(tab-line-tab
+     ,(sendai--face :background bg-primary :foreground fg-darker
+                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
+   `(tab-line-tab-current
+     ,(sendai--face :background bg-primary :foreground fg-primary
+                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
+   `(tab-line-tab-inactive
+     ,(sendai--face :background bg-darker :foreground fg-darker
+                    :box `(:line-width ,sendai-tab-padding :color ,bg-darker)))
+   `(tab-line-tab-inactive-alternate
+     ,(sendai--face :background bg-dark :foreground fg-darker
+                    :box `(:line-width ,sendai-tab-padding :color ,bg-dark)))
+   `(tab-line-tab-special ,(sendai--face :slant 'italic))
 
    ;; term
    `(term-color-black ,(sendai--face :background bg-lighter
@@ -593,6 +635,19 @@ class names."
                                     :foreground cyan-primary))
    `(term-color-white ,(sendai--face :background fg-primary
                                      :foreground fg-primary))
+
+   ;; vc-dir
+   `(vc-dir-header ,(sendai--face :foreground blue-light))
+   `(vc-dir-header-value ,(sendai--face :foreground fg-primary))
+   `(vc-dir-directory ,(sendai--face :foreground blue-light))
+   `(vc-dir-file ,(sendai--face :foreground fg-primary))
+   `(vc-dir-status-up-to-date ,(sendai--face :foreground green-light))
+   `(vc-dir-status-edited ,(sendai--face :foreground yellow-light))
+   `(vc-dir-status-ignored ,(sendai--face :foreground fg-darker))
+   `(vc-dir-status-warning ,(sendai--face :foreground red-primary
+                                          :weight 'bold))
+   `(vc-dir-mark-indicator ,(sendai--face :foreground yellow-primary
+                                          :weight 'bold))
 
    ;; whitespace-mode
    `(whitespace-space ,(sendai--face :foreground violet-primary))
