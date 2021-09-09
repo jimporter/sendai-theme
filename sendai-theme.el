@@ -73,6 +73,20 @@ integers (to use separate widths on the X and Y axes)."
   :type '(choice integer (cons integer integer))
   :group 'sendai-theme)
 
+;; Define some faces.  Note that the actual styling is done below. Doing things
+;; this way makes it easier to define each face with multiple face specs for
+;; better `emacsclient' support.
+
+(defface sendai-hl-todo-error nil
+  "A face used to highlight error-level TODO-like keywords."
+  :group 'sendai-theme
+    :group 'hl-todo)
+
+(defface sendai-hl-todo-warning nil
+    "A face used to highlight warning-level TODO-like keywords."
+    :group 'sendai-theme
+    :group 'hl-todo)
+
 (defun sendai--active-class ()
   "Get the active face class to use when setting non-`defface' colors."
   (or sendai-default-class
@@ -707,6 +721,10 @@ class names."
 
    ;; hl-todo
    `(hl-todo ,(sendai--face :foreground yellow-light :weight 'bold))
+   `(sendai-hl-todo-error ,(sendai--face :inherit 'hl-todo
+                                         :foreground red-primary))
+   `(sendai-hl-todo-warning ,(sendai--face :inherit 'hl-todo
+                                           :foreground orange-primary))
 
    ;; js2-mode
    `(js2-external-variable ,(sendai--face :foreground orange-primary))
@@ -763,20 +781,6 @@ class names."
 
    ;; yaml-mode
    `(yaml-tab-face ,(sendai--face :background red-primary)))
-
-  ;; Define some faces for `hl-todo'.  Doing it this way allows us to define
-  ;; the face with multiple face specs for better `emacsclient' support.
-  (defface sendai-hl-todo-error
-    (sendai--face :inherit 'hl-todo :foreground red-primary)
-    "A face used to highlight error-level TODO-like keywords."
-    :group 'sendai-theme
-    :group 'hl-todo)
-
-  (defface sendai-hl-todo-warning
-    (sendai--face :inherit 'hl-todo :foreground orange-primary)
-    "A face used to highlight warning-level TODO-like keywords."
-    :group 'sendai-theme
-    :group 'hl-todo)
 
   (custom-theme-set-variables
    'sendai
