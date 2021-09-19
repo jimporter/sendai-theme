@@ -556,6 +556,22 @@ class names."
    `(org-scheduled-previously ,(sendai--face :foreground orange-light))
    `(org-scheduled-today ,(sendai--face :foreground violet-light))
    `(org-mode-line-clock-overrun ,(sendai--face :background red-primary))
+   `(org-habit-clear-face ,(sendai--face :background blue-darker
+                                         :foreground fg-light))
+   `(org-habit-clear-future-face ,(sendai--face :background blue-dark
+                                                :foreground fg-light))
+   `(org-habit-ready-face ,(sendai--face :background green-mid
+                                         :foreground fg-light))
+   `(org-habit-ready-future-face ,(sendai--face :background green-primary
+                                                :foreground fg-light))
+   `(org-habit-alert-face ,(sendai--face :background yellow-dark
+                                         :foreground fg-light))
+   `(org-habit-alert-future-face ,(sendai--face :background yellow-mid
+                                                :foreground fg-light))
+   `(org-habit-overdue-face ,(sendai--face :background red-mid
+                                           :foreground fg-light))
+   `(org-habit-overdue-future-face ,(sendai--face :background red-primary
+                                                  :foreground fg-light))
 
    ;; outline-mode
    `(outline-1 ,(sendai--face :foreground yellow-primary :weight 'bold))
@@ -728,7 +744,7 @@ class names."
 
    ;; js2-mode
    `(js2-external-variable ,(sendai--face :foreground orange-primary))
-   `(js2-function-param ,(sendai--face :foreground green-primary))
+   `(js2-function-param ,(sendai--face :foreground yellow-light))
    `(js2-jsdoc-tag ,(sendai--face :inherit 'c-annotation-face))
    `(js2-jsdoc-type ,(sendai--face :inherit 'font-lock-type-face))
    `(js2-jsdoc-value ,(sendai--face :inherit 'font-lock-variable-name-face))
