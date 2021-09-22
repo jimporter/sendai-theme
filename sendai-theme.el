@@ -80,12 +80,17 @@ integers (to use separate widths on the X and Y axes)."
 (defface sendai-hl-todo-error nil
   "A face used to highlight error-level TODO-like keywords."
   :group 'sendai-theme
-    :group 'hl-todo)
+  :group 'hl-todo)
 
 (defface sendai-hl-todo-warning nil
-    "A face used to highlight warning-level TODO-like keywords."
-    :group 'sendai-theme
-    :group 'hl-todo)
+  "A face used to highlight warning-level TODO-like keywords."
+  :group 'sendai-theme
+  :group 'hl-todo)
+
+(defface sendai-hl-todo-success nil
+  "A face used to highlight success-level TODO-like keywords."
+  :group 'sendai-theme
+  :group 'hl-todo)
 
 (defun sendai--active-class ()
   "Get the active face class to use when setting non-`defface' colors."
@@ -741,6 +746,8 @@ class names."
                                          :foreground red-primary))
    `(sendai-hl-todo-warning ,(sendai--face :inherit 'hl-todo
                                            :foreground orange-primary))
+   `(sendai-hl-todo-success ,(sendai--face :inherit 'hl-todo
+                                           :foreground green-primary))
 
    ;; js2-mode
    `(js2-external-variable ,(sendai--face :foreground orange-primary))
@@ -803,7 +810,8 @@ class names."
    `(hl-todo-keyword-faces
      '(("FIXME" . sendai-hl-todo-error)
        ("TODO"  . sendai-hl-todo-warning)
-       ("XXX"   . sendai-hl-todo-warning))))
+       ("XXX"   . sendai-hl-todo-warning)
+       ("DONE"  . sendai-hl-todo-success))))
 
   (when-let ((class-name (sendai--active-class)))
     (custom-theme-set-variables
