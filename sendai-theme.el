@@ -323,6 +323,40 @@ class names."
    ;; Built-in packages
    ;; -----------------
 
+   ;; ansi-color
+   `(ansi-color-black ,(sendai--face :background bg-lighter
+                                     :foreground bg-lighter))
+   `(ansi-color-red ,(sendai--face :background red-light
+                                   :foreground red-light))
+   `(ansi-color-green ,(sendai--face :background green-light
+                                     :foreground green-light))
+   `(ansi-color-yellow ,(sendai--face :background yellow-light
+                                      :foreground yellow-light))
+   `(ansi-color-blue ,(sendai--face :background blue-primary
+                                    :foreground blue-primary))
+   `(ansi-color-magenta ,(sendai--face :background magenta-primary
+                                       :foreground magenta-primary))
+   `(ansi-color-cyan ,(sendai--face :background cyan-primary
+                                    :foreground cyan-primary))
+   `(ansi-color-white ,(sendai--face :background fg-primary
+                                     :foreground fg-primary)))
+   `(ansi-color-bright-black ,(sendai--face :background fg-darker
+                                            :foreground fg-darker))
+   `(ansi-color-bright-red ,(sendai--face :background red-primary
+                                          :foreground red-primary))
+   `(ansi-color-bright-green ,(sendai--face :background green-primary
+                                            :foreground green-primary))
+   `(ansi-color-bright-yellow ,(sendai--face :background yellow-primary
+                                             :foreground yellow-primary))
+   `(ansi-color-bright-blue ,(sendai--face :background blue-light
+                                           :foreground blue-light))
+   `(ansi-color-bright-magenta ,(sendai--face :background magenta-light
+                                              :foreground magenta-light))
+   `(ansi-color-bright-cyan ,(sendai--face :background cyan-light
+                                           :foreground cyan-light))
+   `(ansi-color-bright-white ,(sendai--face :background fg-light
+                                            :foreground fg-light)))
+
    ;; calendar
    `(calendar-month-header ,(sendai--face :foreground yellow-primary
                                           :weight 'bold))
@@ -653,24 +687,6 @@ class names."
                     :box `(:line-width ,sendai-tab-padding :color ,bg-dark)))
    `(tab-line-tab-special ,(sendai--face :slant 'italic))
 
-   ;; term
-   `(term-color-black ,(sendai--face :background bg-lighter
-                                     :foreground bg-lighter))
-   `(term-color-red ,(sendai--face :background red-light
-                                   :foreground red-light))
-   `(term-color-green ,(sendai--face :background green-light
-                                     :foreground green-light))
-   `(term-color-yellow ,(sendai--face :background yellow-light
-                                      :foreground yellow-light))
-   `(term-color-blue ,(sendai--face :background blue-primary
-                                    :foreground blue-primary))
-   `(term-color-magenta ,(sendai--face :background magenta-primary
-                                       :foreground magenta-primary))
-   `(term-color-cyan ,(sendai--face :background cyan-primary
-                                    :foreground cyan-primary))
-   `(term-color-white ,(sendai--face :background fg-primary
-                                     :foreground fg-primary))
-
    ;; vc-dir
    `(vc-dir-header ,(sendai--face :foreground blue-light))
    `(vc-dir-header-value ,(sendai--face :foreground fg-primary))
@@ -805,6 +821,27 @@ class names."
    ;; yaml-mode
    `(yaml-tab-face ,(sendai--face :background red-primary)))
 
+  (when (< emacs-major-version 28)
+    (custom-theme-set-faces
+     'sendai
+     ;; Backwards compatibility for term
+     `(term-color-black ,(sendai--face :background bg-lighter
+                                       :foreground bg-lighter))
+     `(term-color-red ,(sendai--face :background red-light
+                                     :foreground red-light))
+     `(term-color-green ,(sendai--face :background green-light
+                                       :foreground green-light))
+     `(term-color-yellow ,(sendai--face :background yellow-light
+                                        :foreground yellow-light))
+     `(term-color-blue ,(sendai--face :background blue-primary
+                                      :foreground blue-primary))
+     `(term-color-magenta ,(sendai--face :background magenta-primary
+                                         :foreground magenta-primary))
+     `(term-color-cyan ,(sendai--face :background cyan-primary
+                                      :foreground cyan-primary))
+     `(term-color-white ,(sendai--face :background fg-primary
+                                       :foreground fg-primary))))
+
   (custom-theme-set-variables
    'sendai
    `(hl-todo-keyword-faces
@@ -814,13 +851,14 @@ class names."
        ("DONE"  . sendai-hl-todo-success))))
 
   (when-let ((class-name (sendai--active-class)))
-    (custom-theme-set-variables
-     'sendai
-     `(ansi-color-names-vector
-       ,(sendai--subst
-         class-name
-         (vector bg-lighter red-light green-light yellow-light
-                 blue-primary magenta-primary cyan-primary fg-primary)))
+    (when (< emacs-major-version 28)
+      (custom-theme-set-variables
+       'sendai
+       `(ansi-color-names-vector
+         ,(sendai--subst
+           class-name
+           (vector bg-lighter red-light green-light yellow-light
+                   blue-primary magenta-primary cyan-primary fg-primary))))
 
      `(rainbow-delimiters-max-face-count 4)
 
