@@ -339,7 +339,7 @@ class names."
    `(ansi-color-cyan ,(sendai--face :background cyan-primary
                                     :foreground cyan-primary))
    `(ansi-color-white ,(sendai--face :background fg-primary
-                                     :foreground fg-primary)))
+                                     :foreground fg-primary))
    `(ansi-color-bright-black ,(sendai--face :background fg-darker
                                             :foreground fg-darker))
    `(ansi-color-bright-red ,(sendai--face :background red-primary
@@ -355,7 +355,7 @@ class names."
    `(ansi-color-bright-cyan ,(sendai--face :background cyan-light
                                            :foreground cyan-light))
    `(ansi-color-bright-white ,(sendai--face :background fg-light
-                                            :foreground fg-light)))
+                                            :foreground fg-light))
 
    ;; calendar
    `(calendar-month-header ,(sendai--face :foreground yellow-primary
