@@ -252,7 +252,8 @@ class names."
    `(highlight ,(sendai--face :background blue-mid :foreground fg-light))
    `(region ,(sendai--face :background blue-dark :foreground fg-primary))
    `(secondary-selection ,(sendai--face :background bg-lighter))
-   `(match ,(sendai--face :background yellow-light :foreground bg-primary))
+   `(match ,(sendai--face :background yellow-light :foreground bg-primary
+                          :distant-foreground fg-primary))
    `(isearch ,(sendai--face :background yellow-light :foreground bg-primary))
    `(isearch-fail ,(sendai--face :background red-dark))
    `(isearch-group-1 ,(sendai--face :background green-light
@@ -811,6 +812,15 @@ class names."
    ;; telephone-line
    `(telephone-line-accent-active ,(sendai--face :background blue-mid))
    `(telephone-line-accent-inactive ,(sendai--face :background blue-dark))
+
+   ;; wgrep
+   `(wgrep-face ,(sendai--face :background violet-dark))
+   `(wgrep-done-face ,(sendai--face :foreground green-light
+                                    :distant-foreground green-dark))
+   `(wgrep-delete-face ,(sendai--face :background red-darker
+                                      :foreground fg-dark))
+   `(wgrep-reject-face ,(sendai--face :weight 'bold :foreground red-primary))
+   `(wgrep-file-face ,(sendai--face :background bg-light))
 
    ;; which-key
    `(which-key-key-face ,(sendai--face :foreground yellow-primary))
