@@ -364,6 +364,16 @@ class names."
    `(calendar-weekday-header ,(sendai--face :foreground blue-primary))
    `(calendar-weekend-header ,(sendai--face :foreground blue-light))
 
+   ;; change-log-mode
+   `(change-log-date ,(sendai--face :foreground cyan-primary))
+   `(change-log-name ,(sendai--face :foreground yellow-light))
+   `(change-log-email ,(sendai--face :foreground blue-primary))
+   `(change-log-file ,(sendai--face :foreground yellow-primary :weight 'bold))
+   `(change-log-list ,(sendai--face :foreground blue-light))
+   `(change-log-conditionals ,(sendai--face :foreground green-light))
+   `(change-log-function ,(sendai--face :foreground green-light))
+   `(change-log-acknowledgment ,(sendai--face :foreground fg-darker))
+
    ;; comint-mode
    `(comint-highlight-prompt ,(sendai--face :foreground fg-darker
                                             :weight 'bold))
@@ -434,8 +444,8 @@ class names."
    `(diff-refine-changed ,(sendai--face :background yellow-dark))
 
    ;; dired
-   `(dired-header ,(sendai--face :foreground blue-primary :weight 'bold))
-   `(dired-directory ,(sendai--face :foreground blue-light :weight 'bold))
+   `(dired-header ,(sendai--face :foreground blue-light :weight 'bold))
+   `(dired-directory ,(sendai--face :foreground blue-primary :weight 'bold))
    `(dired-symlink ,(sendai--face :foreground cyan-light))
    `(dired-broken-symlink ,(sendai--face
                             :underline `(:color ,red-primary :style wave)
@@ -483,7 +493,7 @@ class names."
 
    ;; eshell
    `(eshell-prompt ,(sendai--face :foreground fg-darker :weight 'bold))
-   `(eshell-ls-directory ,(sendai--face :foreground blue-light :weight 'bold))
+   `(eshell-ls-directory ,(sendai--face :foreground blue-primary :weight 'bold))
    `(eshell-ls-archive ,(sendai--face :foreground magenta-primary
                                       :weight 'bold))
    `(eshell-ls-executable ,(sendai--face :foreground green-light))
@@ -691,7 +701,7 @@ class names."
    ;; vc-dir
    `(vc-dir-header ,(sendai--face :foreground blue-light))
    `(vc-dir-header-value ,(sendai--face :foreground fg-primary))
-   `(vc-dir-directory ,(sendai--face :foreground blue-light))
+   `(vc-dir-directory ,(sendai--face :foreground blue-primary :weight 'bold))
    `(vc-dir-file ,(sendai--face :foreground fg-primary))
    `(vc-dir-status-up-to-date ,(sendai--face :foreground green-light))
    `(vc-dir-status-edited ,(sendai--face :foreground yellow-light))
