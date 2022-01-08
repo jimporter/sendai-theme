@@ -65,7 +65,7 @@ likely want to set this to `true-color'."
   :group 'sendai-theme)
 
 (defcustom sendai-tab-padding
-  (if (>= emacs-major-version 28) '(4 . 1) 1)
+  (if (>= emacs-major-version 28) '(4 . 2) 2)
   "The default padding around tabs in `tab-bar-mode' and `tab-line-mode'.
 This is passed to the `:box' face attribute and can be either an
 integer (to use the same width in all directions) or a pair of
