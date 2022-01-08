@@ -681,8 +681,8 @@ class names."
      ,(sendai-face :background bg-primary :foreground fg-primary
                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
    `(tab-bar-tab-inactive
-     ,(sendai-face :background bg-darker :foreground fg-darker
-                   :box `(:line-width ,sendai-tab-padding :color ,bg-darker)))
+     ,(sendai-face :background bg-light :foreground fg-dark
+                   :box `(:line-width ,sendai-tab-padding :color ,bg-light)))
    `(tab-bar-tab-ungrouped ,(sendai-face :inherit 'tab-bar-tab-inactive))
 
    ;; tab-line
@@ -695,10 +695,13 @@ class names."
      ,(sendai-face :background bg-primary :foreground fg-primary
                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
    `(tab-line-tab-inactive
-     ,(sendai-face :background bg-darker :foreground fg-darker
-                   :box `(:line-width ,sendai-tab-padding :color ,bg-darker)))
+     ,(sendai-face :background bg-light :foreground fg-dark
+                   :box `(:line-width ,sendai-tab-padding :color ,bg-light)))
    `(tab-line-tab-inactive-alternate
-     ,(sendai-face :background bg-dark :foreground fg-darker
+     ,(sendai-face :background fg-darker :foreground bg-primary
+                   :box `(:line-width ,sendai-tab-padding :color ,fg-darker)))
+   `(tab-line-highlight
+     ,(sendai-face :background bg-dark :foreground fg-light
                    :box `(:line-width ,sendai-tab-padding :color ,bg-dark)))
    `(tab-line-tab-special ,(sendai-face :slant 'italic))
 
