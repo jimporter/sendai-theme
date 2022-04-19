@@ -258,7 +258,7 @@ class names."
    `(help-argument-name ,(sendai-face :foreground blue-light))
    `(help-key-binding
      ,(sendai-face :foreground blue-light :background blue-darker
-                   :box `(:line-width (1 . -1) :color ,blue-mid)))
+                   :box `(:line-width (1 . -1) :color ,blue-dark)))
 
    ;; Highlighting
    `(fringe ,(sendai-face :background bg-primary))
