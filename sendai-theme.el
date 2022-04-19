@@ -258,7 +258,8 @@ class names."
    `(help-argument-name ,(sendai-face :foreground blue-light))
    `(help-key-binding
      ,(sendai-face :foreground blue-light :background blue-darker
-                   :box `(:line-width (1 . -1) :color ,blue-dark)))
+                   :box (when (>= emacs-major-version 28)
+                          `(:line-width (1 . -1) :color ,blue-dark))))
 
    ;; Highlighting
    `(fringe ,(sendai-face :background bg-primary))
@@ -275,11 +276,15 @@ class names."
                                    :foreground bg-primary))
    `(lazy-highlight ,(sendai-face :background fg-darker :foreground bg-primary))
    `(completions-common-part ,(sendai-face :foreground blue-primary))
-   `(show-paren-match ,(sendai-face :background violet-dark :foreground fg-light
-                                    :weight 'bold))
+   `(show-paren-match
+     ,(sendai-face :background violet-dark :foreground fg-light :weight 'bold
+                   :box (when (>= emacs-major-version 28)
+                          `(:line-width (-1 . -1) :color ,violet-mid))))
    `(show-paren-match-expression ,(sendai-face :background violet-darker))
-   `(show-paren-mismatch ,(sendai-face :background red-primary
-                                       :foreground fg-light))
+   `(show-paren-mismatch
+     ,(sendai-face :background red-mid :foreground fg-light :weight 'bold
+                   :box (when (>= emacs-major-version 28)
+                          `(:line-width (-1 . -1) :color ,red-primary))))
    `(hl-line ,(sendai-face :background bg-light))
    `(trailing-whitespace ,(sendai-face :background red-primary))
 
