@@ -488,6 +488,12 @@ class names."
    `(ediff-fine-diff-B ,(sendai-face :background green-dark))
    `(ediff-fine-diff-C ,(sendai-face :background blue-dark))
 
+   ;; ert
+   `(ert-test-result-expected ,(sendai-face :background green-primary
+                                            :foreground fg-light))
+   `(ert-test-result-unexpected ,(sendai-face :background red-primary
+                                              :foreground fg-light))
+
    ;; eww
    `(eww-form-submit
      ,(sendai-face :background fg-primary :foreground bg-primary
@@ -621,7 +627,7 @@ class names."
    `(org-habit-clear-future-face ,(sendai-face :background blue-dark
                                                :foreground fg-light))
    `(org-habit-ready-face ,(sendai-face :background green-mid
-                                         :foreground fg-light))
+                                        :foreground fg-light))
    `(org-habit-ready-future-face ,(sendai-face :background green-primary
                                                :foreground fg-light))
    `(org-habit-alert-face ,(sendai-face :background yellow-dark
