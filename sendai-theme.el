@@ -585,6 +585,10 @@ class names."
    `(org-hide ,(sendai-face :foreground bg-primary))
    `(org-checkbox ,(sendai-face :foreground fg-darker :weight 'bold))
    `(org-latex-and-related ,(sendai-face :foreground fg-darker))
+   `(org-target
+     ,(sendai-face :background bg-light :foreground fg-dark
+                   :box (when (>= emacs-major-version 28)
+                          `(:line-width (-1 . -1) :color ,fg-darker))))
    `(org-footnote ,(sendai-face :foreground blue-primary :underline t))
    `(org-date ,(sendai-face :foreground cyan-primary :underline t))
    `(org-sexp-date ,(sendai-face :foreground cyan-primary))
