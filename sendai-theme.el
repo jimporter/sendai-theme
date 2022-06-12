@@ -584,13 +584,15 @@ class names."
    `(org-ellipsis ,(sendai-face :foreground fg-darker))
    `(org-hide ,(sendai-face :foreground bg-primary))
    `(org-checkbox ,(sendai-face :foreground fg-darker :weight 'bold))
+   `(org-code ,(sendai-face :foreground cyan-primary :inherit 'fixed-pitch))
+   `(org-verbatim ,(sendai-face :foreground cyan-primary :inherit 'fixed-pitch))
    `(org-latex-and-related ,(sendai-face :foreground fg-darker))
    `(org-target
      ,(sendai-face :background bg-light :foreground fg-dark
                    :box (when (>= emacs-major-version 28)
                           `(:line-width (-1 . -1) :color ,fg-darker))))
    `(org-footnote ,(sendai-face :foreground blue-primary :underline t))
-   `(org-date ,(sendai-face :foreground cyan-primary :underline t))
+   `(org-date ,(sendai-face :foreground magenta-light :underline t))
    `(org-sexp-date ,(sendai-face :foreground cyan-primary))
    `(org-todo ,(sendai-face :foreground red-light :weight 'bold))
    `(org-done ,(sendai-face :foreground green-light :weight 'bold))
@@ -823,7 +825,7 @@ class names."
                                               :weight 'bold))
    `(markdown-table-face ,(sendai-face :foreground blue-light
                                        :background blue-darker))
-   `(markdown-inline-code-face ,(sendai-face :foreground fg-darker))
+   `(markdown-inline-code-face ,(sendai-face :foreground cyan-primary))
    `(markdown-pre-face ,(sendai-face :foreground fg-darker))
    `(markdown-code-face ,(sendai-face :background blue-darker :extend t))
    `(markdown-language-keyword-face ,(sendai-face :foreground cyan-light))
