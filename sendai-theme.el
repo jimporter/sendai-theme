@@ -812,6 +812,19 @@ class names."
      ,(sendai-face :underline `(:color ,orange-primary :style wave)))
 
    ;; markdown-mode
+   `(markdown-header-face ,(sendai-face :underline t))
+   `(markdown-header-face-1
+     ,(sendai-face :inherit '(outline-1 markdown-header-face)))
+   `(markdown-header-face-2
+     ,(sendai-face :inherit '(outline-2 markdown-header-face)))
+   `(markdown-header-face-3
+     ,(sendai-face :inherit '(outline-3 markdown-header-face)))
+   `(markdown-header-face-4
+     ,(sendai-face :inherit '(outline-4 markdown-header-face)))
+   `(markdown-header-face-5
+     ,(sendai-face :inherit '(outline-5 markdown-header-face)))
+   `(markdown-header-face-6
+     ,(sendai-face :inherit '(outline-6 markdown-header-face)))
    `(markdown-html-tag-delimiter-face ,(sendai-face :inherit 'default))
    `(markdown-html-tag-name-face
      ,(sendai-face :inherit 'font-lock-function-name-face))
