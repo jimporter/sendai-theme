@@ -257,7 +257,7 @@ class names."
    `(separator-line ,(sendai-face :foreground fg-darker))
    `(help-argument-name ,(sendai-face :foreground blue-light))
    `(help-key-binding
-     ,(sendai-face :foreground blue-light :background blue-darker
+     ,(sendai-face :background blue-darker :foreground blue-light
                    :box (when (>= emacs-major-version 28)
                           `(:line-width (1 . -1) :color ,blue-dark))))
 
@@ -322,7 +322,7 @@ class names."
    ;; Font lock
    `(font-lock-builtin-face ,(sendai-face :foreground blue-light))
    `(font-lock-comment-face ,(sendai-face :foreground fg-darker))
-   `(font-lock-doc-face ,(sendai-face :inherit font-lock-comment-face))
+   `(font-lock-doc-face ,(sendai-face :inherit 'font-lock-comment-face))
    `(font-lock-doc-markup-face ,(sendai-face :foreground cyan-primary))
    `(font-lock-constant-face ,(sendai-face :foreground cyan-primary))
    `(font-lock-function-name-face ,(sendai-face :foreground yellow-primary
