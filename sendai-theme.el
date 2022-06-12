@@ -381,6 +381,7 @@ class names."
                                          :weight 'bold))
    `(calendar-weekday-header ,(sendai-face :foreground blue-primary))
    `(calendar-weekend-header ,(sendai-face :foreground blue-light))
+   `(diary ,(sendai-face :foreground cyan-light))
 
    ;; change-log-mode
    `(change-log-date ,(sendai-face :foreground cyan-primary))
@@ -681,6 +682,12 @@ class names."
    `(sh-heredoc ,(sendai-face :foreground green-light))
    `(sh-quoted-exec ,(sendai-face :foreground orange-light))
 
+   ;; shr
+   `(shr-selected-link
+     ,(sendai-face :background cyan-primary :foreground fg-light
+                   :box (when (>= emacs-major-version 28)
+                          `(:line-width (-1 . -1) :color ,cyan-light))))
+
    ;; smerge-mode
    `(smerge-markers ,(sendai-face :background blue-darker :foreground fg-light))
    `(smerge-upper ,(sendai-face :background red-darker))
@@ -758,19 +765,20 @@ class names."
    ;; company-mode
    `(company-preview ,(sendai-face :foreground fg-primary
                                     :background blue-dark))
+   `(company-preview-common ,(sendai-face :foreground yellow-primary))
+   `(company-preview-search ,(sendai-face :inherit 'isearch))
    `(company-template-field ,(sendai-face :foreground fg-primary
                                           :background bg-lighter))
    `(company-tooltip ,(sendai-face :foreground fg-primary
                                    :background bg-lighter))
+   `(company-tooltip-common ,(sendai-face :foreground yellow-primary))
+   `(company-tooltip-annotation ,(sendai-face :foreground cyan-light))
    `(company-tooltip-selection ,(sendai-face :background blue-mid))
    `(company-tooltip-search ,(sendai-face :inherit 'isearch))
    `(company-tooltip-search-selection ,(sendai-face :inherit 'isearch))
    `(company-scrollbar-fg ,(sendai-face :background fg-darker))
    `(company-scrollbar-bg ,(sendai-face :background bg-light))
    `(company-echo-common ,(sendai-face :foreground yellow-primary))
-   `(company-tooltip-common ,(sendai-face :foreground yellow-primary))
-   `(company-preview-common ,(sendai-face :foreground yellow-primary))
-   `(company-tooltip-annotation ,(sendai-face :foreground cyan-light))
 
    ;; elfeed
    `(elfeed-search-title-face ,(sendai-face :foreground fg-primary))
