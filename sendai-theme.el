@@ -747,16 +747,18 @@ class names."
    `(whitespace-hspace ,(sendai-face :inherit 'whitespace-space))
    `(whitespace-tab ,(sendai-face :inherit 'whitespace-space))
    `(whitespace-newline ,(sendai-face :foreground bg-lighter))
-   `(whitespace-line ,(sendai-face :background magenta-dark))
-   `(whitespace-indentation ,(sendai-face :background yellow-light
-                                          :foreground bg-primary))
+   `(whitespace-indentation ,(sendai-face :background violet-dark
+                                          :foreground fg-primary))
    `(whitespace-empty ,(sendai-face :inherit 'whitespace-indentation))
-   `(whitespace-space-after-tab ,(sendai-face :inherit 'whitespace-indentation))
-   `(whitespace-big-indent ,(sendai-face :background orange-primary
+   `(whitespace-big-indent ,(sendai-face :background violet-primary
                                          :foreground fg-light))
+   `(whitespace-line ,(sendai-face :background red-dark))
    `(whitespace-trailing ,(sendai-face :background red-primary
-                                       :foreground fg-light :weight 'bold))
+                                       :foreground fg-light))
+   `(whitespace-missing-newline-at-eof
+     ,(sendai-face :inherit 'whitespace-trailing))
    `(whitespace-space-before-tab ,(sendai-face :inherit 'whitespace-trailing))
+   `(whitespace-space-after-tab ,(sendai-face :inherit 'whitespace-indentation))
 
    ;; --------------------
    ;; Third-party packages
