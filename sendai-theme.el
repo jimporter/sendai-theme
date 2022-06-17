@@ -6,7 +6,7 @@
 ;; URL: https://github.com/jimporter/sendai-theme
 ;; Version: 0.1
 ;; Keywords:
-;; Package-Requires: ((emacs "24"))
+;; Package-Requires: ((emacs "27.1"))
 
 ;; This program is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by the Free
