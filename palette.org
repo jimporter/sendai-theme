@@ -25,7 +25,7 @@
    - yellow-dark     :: #796b2f  rgb(121, 107,  47)
    - green-dark      :: #2a5d31  rgb( 42,  93,  49)
    - cyan-dark       :: #185d5f  rgb( 24,  93,  95)
-   - blue-dark       :: #2a527e  rgb( 42,  82, 126)
+   - blue-dark       :: #245282  rgb( 36,  82, 130)
    - violet-dark     :: #484982  rgb( 72,  73, 130)
    - magenta-dark    :: #702e5e  rgb(112,  46,  94)
 ** Mid colors
@@ -47,11 +47,11 @@
    - violet-primary  :: #8578db  rgb(133, 120, 219)
    - magenta-primary :: #bc4d99  rgb(188,  77, 153)
 ** Light colors
-   - red-light       :: #e97173  rgb(233, 113, 115)
+   - red-light       :: #e16a6d  rgb(225, 106, 109)
    - orange-light    :: #ec9f63  rgb(236, 159,  99)
    - yellow-light    :: #ded692  rgb(222, 214, 146)
    - green-light     :: #7cc36e  rgb(124, 195, 110)
-   - cyan-light      :: #3edbe6  rgb( 62, 219, 230)
+   - cyan-light      :: #4edae5  rgb( 78, 218, 229)
    - blue-light      :: #6cc2ff  rgb(108, 194, 255)
    - violet-light    :: #afa2f2  rgb(175, 162, 242)
    - magenta-light   :: #db7fbb  rgb(219, 127, 187)
@@ -61,7 +61,7 @@
    - Foreground     :: fg-primary      #c9d6e9  rgb(201, 214, 233)
 ** Basic colors
    - Black          :: bg-lighter      #4a5b71  rgb( 74,  91, 113)
-   - Red            :: red-light       #e97173  rgb(233, 113, 115)
+   - Red            :: red-light       #e16a6d  rgb(225, 106, 109)
    - Green          :: green-light     #7cc36e  rgb(124, 195, 110)
    - Yellow         :: yellow-light    #ded692  rgb(222, 214, 146)
    - Blue           :: blue-primary    #3491dc  rgb( 52, 145, 220)
@@ -75,5 +75,5 @@
    - Bright Yellow  :: yellow-primary  #ddb63a  rgb(221, 182,  58)
    - Bright Blue    :: blue-light      #6cc2ff  rgb(108, 194, 255)
    - Bright Magenta :: magenta-light   #db7fbb  rgb(219, 127, 187)
-   - Bright Cyan    :: cyan-light      #3edbe6  rgb( 62, 219, 230)
+   - Bright Cyan    :: cyan-light      #4edae5  rgb( 78, 218, 229)
    - Bright White   :: fg-light        #f0f6fe  rgb(240, 246, 254)
