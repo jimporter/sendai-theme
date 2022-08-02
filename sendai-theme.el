@@ -288,7 +288,7 @@ class names."
                    :box (when (>= emacs-major-version 28)
                           `(:line-width (-1 . -1) :color ,red-primary))))
    `(hl-line ,(sendai-face :background bg-light))
-   `(bookmark-face ,(sendai-face :foreground cyan-light))
+   `(bookmark-face ,(sendai-face :foreground magenta-light))
    `(trailing-whitespace ,(sendai-face :background red-primary))
 
    ;; Mode line
