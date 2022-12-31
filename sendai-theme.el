@@ -690,6 +690,32 @@ class names."
    `(outline-7 ,(sendai-face :foreground violet-light :weight 'bold))
    `(outline-8 ,(sendai-face :foreground blue-light :weight 'bold))
 
+   ;; proced
+   `(proced-user ,(sendai-face :weight 'bold))
+   `(proced-emacs-pid ,(sendai-face :foreground violet-primary))
+   `(proced-pid ,(sendai-face :foreground blue-primary))
+   `(proced-session-leader-pid ,(sendai-face :foreground blue-primary
+                                             :underline t))
+   `(proced-ppid ,(sendai-face :foreground blue-mid))
+   `(proced-pgrp ,(sendai-face :foreground blue-mid))
+   `(proced-sess ,(sendai-face :foreground blue-mid))
+   `(proced-cpu ,(sendai-face :foreground cyan-primary :weight 'bold))
+   `(proced-mem ,(sendai-face :foreground cyan-mid))
+   `(proced-memory-low-usage ,(sendai-face :foreground green-primary))
+   `(proced-memory-medium-usage ,(sendai-face :foreground yellow-primary))
+   `(proced-memory-high-usage ,(sendai-face :foreground orange-primary))
+   `(proced-run-status-code ,(sendai-face :foreground green-light))
+   `(proced-interruptible-sleep-status-code
+     ,(sendai-face :foreground bg-lighter))
+   `(proced-uninterruptible-sleep-status-code
+     ,(sendai-face :foreground red-primary))
+   `(proced-time-colon ,(sendai-face :foreground fg-darker))
+   `(proced-executable ,(sendai-face :foreground blue-light))
+   `(proced-mark ,(sendai-face :foreground yellow-primary :weight 'bold))
+   `(proced-marked ,(sendai-face :inherit 'proced-mark))
+   `(proced-sort-header ,(sendai-face :foreground fg-dark :inverse-video t
+                                      :weight 'bold))
+
    ;; ruler-mode
    `(ruler-mode-default
      ,(sendai-face :background bg-light :foreground fg-darker
