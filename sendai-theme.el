@@ -1,6 +1,6 @@
 ;;; sendai-theme.el --- A cool blue color theme -*- lexical-binding: t -*-
 
-;; Copyright (C) 2021-2022 Jim Porter
+;; Copyright (C) 2021-2023 Jim Porter
 
 ;; Author: Jim Porter
 ;; URL: https://github.com/jimporter/sendai-theme
