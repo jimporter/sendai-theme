@@ -626,7 +626,7 @@ class names."
                    :box (when (>= emacs-major-version 28)
                           `(:line-width (-1 . -1) :color ,fg-darker))))
    `(org-footnote ,(sendai-face :foreground blue-primary :underline t))
-   `(org-date ,(sendai-face :foreground magenta-light :underline t))
+   `(org-date ,(sendai-face :foreground violet-primary :underline t))
    `(org-sexp-date ,(sendai-face :foreground cyan-primary))
    `(org-todo ,(sendai-face :foreground red-light :weight 'bold))
    `(org-done ,(sendai-face :foreground green-light :weight 'bold))
