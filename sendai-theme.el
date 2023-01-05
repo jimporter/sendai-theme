@@ -228,20 +228,25 @@ extra classifications to apply to the resulting list.  If any
 classification in DISPLAY-EXTRA conflicts with one in
 CLASS-NAMES, that display class is ignored entirely."
   (when attrs
-    (or (mapcan
-         (lambda (class-name)
-           (let* ((entry (alist-get class-name sendai--face-classes))
-                  (display-class (car entry)))
-             (catch 'conflict
-               ;; Make sure the extra display rules don't conflict with the main
-               ;; display class.
-               (dolist (i display-extra)
-                 (when (assq (car i) display-class)
-                   (throw 'conflict nil)))
-               (list (cons (append display-extra display-class)
-                           (sendai--do-subst attrs (cdr entry)))))))
-         class-names)
-        (error "Unable to parameterize color definitions"))))
+    (if (not (eq display-extra t))
+        (or (mapcan
+             (lambda (class-name)
+               (let* ((entry (alist-get class-name sendai--face-classes))
+                      (display-class (car entry)))
+                 (catch 'conflict
+                   ;; Make sure the extra display rules don't conflict with the
+                   ;; main display class.
+                   (dolist (i display-extra)
+                     (when (assq (car i) display-class)
+                       (throw 'conflict nil)))
+                   (list (cons (append display-extra display-class)
+                               (sendai--do-subst attrs (cdr entry)))))))
+             class-names)
+            (error "Unable to parameterize color definitions"))
+      ;; DISPLAY-EXTRA is t, so we can't do color substitutions.
+      (when (sendai--subst-p attrs)
+        (error "Abstract color definitions not allowed here"))
+      (list (cons t attrs)))))
 
 (defun sendai--filter-face-attrs (attrs)
   "Filter a face attribute list (ATTRS) into constant and substitutable parts."
@@ -262,7 +267,7 @@ CLASS-NAMES, that display class is ignored entirely."
          (default-attrs)
          (result (mapcan
                   (lambda (elem)
-                    (when (eq (car elem) t)
+                    (unless (car elem)
                       (let ((filtered (sendai--filter-face-attrs (cdr elem))))
                         (setq default-attrs (car filtered)
                               elem `(nil . ,(cdr filtered)))))
@@ -276,7 +281,7 @@ CLASS-NAMES, that display class is ignored entirely."
   "Fill a face attribute list (ATTRS) with real color, the easy way.
 This is just a shorthand for `sendai-make-face' using the default
 class names."
-  (sendai-make-face `(t . ,attrs)))
+  (sendai-make-face `(nil . ,attrs)))
 
 (defmacro sendai-let-palette (&rest body)
   "Evaluate BODY with all the entries of `sendai-palette' in scope."

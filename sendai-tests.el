@@ -166,7 +166,7 @@
   "Check that `sendai-make-face' applies the correct color spec."
   (let ((color (sendai--color "red" "blue" "green")))
     (should (equal
-             (sendai-make-face `(t :foreground ,color))
+             (sendai-make-face `(nil :foreground ,color))
              '((((class color) (min-colors 16777216)) :foreground "red")
                (((class color) (min-colors 256)) :foreground "blue"))))))
 
@@ -187,18 +187,17 @@
         (color (sendai--color "red" "blue" "green")))
     (should (equal
              (sendai-make-face `(((type graphic)) :foreground ,color)
-                               `(t :background ,color :weight bold))
+                               `(nil :background ,color :weight bold)
+                               '(t :underline t))
              '((default :weight bold)
                (((type graphic) (class color) (min-colors 16777216))
                 :foreground "red")
                (((type graphic) (class color) (min-colors 256))
                 :foreground "blue")
-               (((class color) (min-colors 16777216))
-                :background "red")
-               (((class color) (min-colors 256) (type tty))
-                :background "green")
-               (((class color) (min-colors 256))
-                :background "blue"))))))
+               (((class color) (min-colors 16777216)) :background "red")
+               (((class color) (min-colors 256) (type tty)) :background "green")
+               (((class color) (min-colors 256)) :background "blue")
+               (t :underline t))))))
 
 (ert-deftest sendai-tests/let-palette ()
   "Check that `sendai-let-palette' works."
