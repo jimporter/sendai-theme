@@ -93,48 +93,6 @@
                                  'tty-color)
                    '(:underline (:color "green" :style wave))))))
 
-(ert-deftest sendai-tests/make-face/constant ()
-  "Check that `sendai-make-face' doesn't do anything to constants."
-  (should (equal (sendai-make-face '(256-color) nil :foreground "red")
-                 '((default :foreground "red"))))
-  (should (equal (sendai-make-face '(256-color) nil
-                                   :box '(:line-width (1 . -1) :color "blue"))
-                 '((default :box (:line-width (1 . -1) :color "blue"))))))
-
-(ert-deftest sendai-tests/make-face/color ()
-  "Check that `sendai-make-face' applies the correct color spec."
-  (let ((color (sendai--color "red" "blue" "green")))
-    (should (equal
-             (sendai-make-face '(256-color) nil :foreground color)
-             '((((class color) (min-colors 256)) :foreground "blue"))))
-    (should (equal
-             (sendai-make-face '(256-color) nil
-                               :box `(:line-width (1 . -1) :color ,color))
-             '((((class color) (min-colors 256))
-                :box (:line-width (1 . -1) :color "blue")))))))
-
-(ert-deftest sendai-tests/make-face/mixed ()
-  "Check that `sendai-make-face' properly splits constant and variable specs."
-  (let ((color (sendai--color "red" "blue" "green")))
-    (should (equal
-             (sendai-make-face '(256-color) nil
-                               :weight 'bold
-                               :box `(:line-width (1 . -1) :color ,color))
-             '((default :weight bold)
-               (((class color) (min-colors 256))
-                :box (:line-width (1 . -1) :color "blue")))))))
-
-(ert-deftest sendai-tests/make-face/extra ()
-  "Check that `sendai-make-face' applies the correct color spec."
-  (let ((color (sendai--color "red" "blue" "green")))
-    (should (equal
-             (sendai-make-face '(256-color) '((type graphic))
-                               :weight 'bold
-                               :box `(:line-width (1 . -1) :color ,color))
-             '((default :weight bold)
-               (((type graphic) (class color) (min-colors 256))
-                :box (:line-width (1 . -1) :color "blue")))))))
-
 (ert-deftest sendai-tests/face/constant ()
   "Check that `sendai-face' doesn't do anything to constants."
   (should (equal
@@ -203,6 +161,44 @@
                 :box (:line-width (1 . -1) :color "green"))
                (((class color) (min-colors 256))
                 :box (:line-width (1 . -1) :color "blue")))))))
+
+(ert-deftest sendai-tests/make-face/default ()
+  "Check that `sendai-make-face' applies the correct color spec."
+  (let ((color (sendai--color "red" "blue" "green")))
+    (should (equal
+             (sendai-make-face `(t :foreground ,color))
+             '((((class color) (min-colors 16777216)) :foreground "red")
+               (((class color) (min-colors 256)) :foreground "blue"))))))
+
+(ert-deftest sendai-tests/make-face/extra-spec ()
+  "Check that `sendai-make-face' skips conflicting display rules."
+  (let ((sendai-theme-inherit-tty-colors t)
+        (color (sendai--color "red" "blue" "green")))
+    (should (equal
+             (sendai-make-face `(((type graphic)) :foreground ,color))
+             '((((type graphic) (class color) (min-colors 16777216))
+                :foreground "red")
+               (((type graphic) (class color) (min-colors 256))
+                :foreground "blue"))))))
+
+(ert-deftest sendai-tests/make-face/mixed ()
+  "Check that `sendai-make-face' works for multiple display rules."
+  (let ((sendai-theme-inherit-tty-colors t)
+        (color (sendai--color "red" "blue" "green")))
+    (should (equal
+             (sendai-make-face `(((type graphic)) :foreground ,color)
+                               `(t :background ,color :weight bold))
+             '((default :weight bold)
+               (((type graphic) (class color) (min-colors 16777216))
+                :foreground "red")
+               (((type graphic) (class color) (min-colors 256))
+                :foreground "blue")
+               (((class color) (min-colors 16777216))
+                :background "red")
+               (((class color) (min-colors 256) (type tty))
+                :background "green")
+               (((class color) (min-colors 256))
+                :background "blue"))))))
 
 (ert-deftest sendai-tests/let-palette ()
   "Check that `sendai-let-palette' works."
