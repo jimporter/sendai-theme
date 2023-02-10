@@ -551,6 +551,12 @@ class names."
    `(ediff-fine-diff-B ,(sendai-face :background green-dark))
    `(ediff-fine-diff-C ,(sendai-face :background blue-dark))
 
+   ;; emacs-news
+   `(emacs-news-is-documented
+     ,(sendai-face :foreground green-light :weight 'bold))
+   `(emacs-news-does-not-need-documentation
+     ,(sendai-face :foreground fg-darker :weight 'bold))
+
    ;; ert
    `(ert-test-result-expected ,(sendai-face :background green-primary
                                             :foreground fg-light))
