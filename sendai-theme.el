@@ -551,7 +551,13 @@ class names."
    `(ediff-fine-diff-B ,(sendai-face :background green-dark))
    `(ediff-fine-diff-C ,(sendai-face :background blue-dark))
 
-   ;; emacs-news
+   ;; emacs-authors-mode
+   `(emacs-authors-default ,(sendai-face :foreground fg-darker :italic t))
+   `(emacs-authors-author ,(sendai-face :foreground yellow-primary
+                                        :weight 'bold))
+   `(emacs-authors-descriptor ,(sendai-face :foreground blue-light))
+
+   ;; emacs-news-mode
    `(emacs-news-is-documented
      ,(sendai-face :foreground green-light :weight 'bold))
    `(emacs-news-does-not-need-documentation
