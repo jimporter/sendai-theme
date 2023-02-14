@@ -730,6 +730,18 @@ class names."
    `(outline-7 ,(sendai-face :foreground violet-light :weight 'bold))
    `(outline-8 ,(sendai-face :foreground blue-light :weight 'bold))
 
+   ;; package
+   `(package-status-built-in ,(sendai-face :foreground blue-light))
+   `(package-status-installed ,(sendai-face :foreground green-light))
+   `(package-status-from-source ,(sendai-face :foreground cyan-primary))
+   `(package-status-dependency ,(sendai-face :foreground yellow-light))
+   `(package-status-held ,(sendai-face :foreground violet-light))
+   `(package-status-disabled ,(sendai-face :foreground fg-darker))
+   `(package-status-new ,(sendai-face :foreground fg-light :weight 'bold))
+   `(package-status-avail-obso ,(sendai-face :foreground fg-darker))
+   `(package-status-unsigned
+     ,(sendai-face :underline `(:color ,red-primary :style wave)))
+
    ;; proced
    `(proced-user ,(sendai-face :weight 'bold))
    `(proced-emacs-pid ,(sendai-face :foreground violet-primary))
@@ -782,6 +794,7 @@ class names."
    `(sh-quoted-exec ,(sendai-face :foreground orange-light))
 
    ;; shr
+   `(shr-mark ,(sendai-face :background yellow-primary :foreground bg-primary))
    `(shr-selected-link
      ,(sendai-face :background cyan-primary :foreground fg-light
                    :box (when (>= emacs-major-version 28)
