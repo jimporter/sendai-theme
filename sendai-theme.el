@@ -621,6 +621,11 @@ class names."
                                        :foreground fg-primary))
    `(hexl-ascii-region ,(sendai-face :inherit 'hexl-address-region))
 
+   ;; image-dired
+   `(image-dired-thumb-header-file-size ,(sendai-face :foreground blue-light))
+   `(image-dired-thumb-mark ,(sendai-face :background yellow-primary))
+   `(image-dired-thumb-flagged ,(sendai-face :background red-primary))
+
    ;; info-mode
    `(info-title-1 ,(sendai-face :height 1.5 :weight 'bold))
    `(info-title-2 ,(sendai-face :height 1.4 :weight 'bold))
