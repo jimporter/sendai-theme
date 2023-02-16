@@ -471,6 +471,12 @@ class names."
    `(compilation-mode-line-run ,(sendai-face :foreground yellow-primary
                                              :weight 'bold))
 
+   ;; cua-mode
+   `(cua-global-mark ,(sendai-face :background yellow-primary
+                                   :foreground bg-primary))
+   `(cua-rectangle ,(sendai-face :inherit 'region))
+   `(cua-rectangle-noselect ,(sendai-face :inherit 'secondary-selection))
+
    ;; customize
    `(custom-group-tag ,(sendai-face :foreground yellow-primary :weight 'bold
                                     :height 1.2))
@@ -620,6 +626,19 @@ class names."
    `(hexl-address-region ,(sendai-face :background bg-lighter
                                        :foreground fg-primary))
    `(hexl-ascii-region ,(sendai-face :inherit 'hexl-address-region))
+
+   ;; hi-lock-mode
+   `(hi-yellow ,(sendai-face :background yellow-primary :foreground bg-primary))
+   `(hi-pink ,(sendai-face :background red-light :foreground bg-primary))
+   `(hi-green ,(sendai-face :background green-light :foreground bg-primary))
+   `(hi-blue ,(sendai-face :background blue-light :foreground bg-primary))
+   `(hi-salmon ,(sendai-face :background orange-primary :foreground bg-primary))
+   `(hi-aquamarine ,(sendai-face :background cyan-light :foreground bg-primary))
+   `(hi-black-b ,(sendai-face :weight 'bold))
+   `(hi-blue-b ,(sendai-face :foreground blue-primary :weight 'bold))
+   `(hi-green-b ,(sendai-face :foreground green-primary :weight 'bold))
+   `(hi-red-b ,(sendai-face :foreground red-primary :weight 'bold))
+   `(hi-black-hb ,(sendai-face :foreground fg-light :weight 'bold))
 
    ;; image-dired
    `(image-dired-thumb-header-file-size ,(sendai-face :foreground blue-light))
