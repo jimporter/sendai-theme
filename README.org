@@ -1,0 +1,11 @@
+#+TITLE: sendai-theme - A cool blue theme for Emacs
+
+Sendai is a cool blue theme for Emacs, aiming for medium levels of contrast to
+maintain readability without straining your eyes with garish colors.
+
+#+CAPTION: Sendai in action
+[[screenshot.png]]
+
+* License
+  This code is licensed under the terms of the GNU General Public License,
+  version 3 or later.
