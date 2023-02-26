@@ -311,10 +311,13 @@ class names."
    `(success ,(sendai-face :foreground green-primary :weight 'bold))
    `(warning ,(sendai-face :foreground orange-primary :weight 'bold))
    `(error ,(sendai-face :foreground red-primary :weight 'bold))
-   `(escape-glyph ,(sendai-face :foreground magenta-light :weight 'bold))
+   `(escape-glyph
+     ,(sendai-face :foreground magenta-light :weight 'bold
+                   :box (when (>= emacs-major-version 28)
+                          `(:line-width (1 . -1) :color ,magenta-dark))))
    `(homoglyph ,(sendai-face :foreground cyan-light))
-   `(nobreak-hyphen ,(sendai-face :foreground magenta-light))
-   `(nobreak-space ,(sendai-face :foreground magenta-light :underline t))
+   `(nobreak-space ,(sendai-face :underline `(:color ,magenta-primary)))
+   `(nobreak-hyphen ,(sendai-face :inherit 'nobreak-space))
    `(separator-line ,(sendai-face :foreground fg-darker))
    `(help-argument-name ,(sendai-face :foreground blue-light))
    `(help-key-binding
