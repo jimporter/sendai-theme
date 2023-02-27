@@ -162,24 +162,73 @@
                (((class color) (min-colors 256))
                 :box (:line-width (1 . -1) :color "blue")))))))
 
-(ert-deftest sendai-tests/make-face/default ()
+(ert-deftest sendai-tests/make-face/basic ()
   "Check that `sendai-make-face' applies the correct color spec."
   (let ((color (sendai--color "red" "blue" "green")))
     (should (equal
              (sendai-make-face `(nil :foreground ,color))
              '((((class color) (min-colors 16777216)) :foreground "red")
-               (((class color) (min-colors 256)) :foreground "blue"))))))
+               (((class color) (min-colors 256)) :foreground "blue"))))
+    (should (equal
+             (sendai-make-face `(nil :foreground ,color :weight bold))
+             '((((class color) (min-colors 16777216))
+                :foreground "red" :weight bold)
+               (((class color) (min-colors 256))
+                :foreground "blue" :weight bold))))))
 
 (ert-deftest sendai-tests/make-face/extra-spec ()
   "Check that `sendai-make-face' skips conflicting display rules."
   (let ((sendai-theme-inherit-tty-colors t)
         (color (sendai--color "red" "blue" "green")))
     (should (equal
+             (sendai-make-face `(((type graphic)) :foreground "red"))
+             '((((type graphic)) :foreground "red"))))
+    (should (equal
              (sendai-make-face `(((type graphic)) :foreground ,color))
              '((((type graphic) (class color) (min-colors 16777216))
                 :foreground "red")
                (((type graphic) (class color) (min-colors 256))
                 :foreground "blue"))))))
+
+(ert-deftest sendai-tests/make-face/all-terminals ()
+  "Check that `sendai-make-face' handles the all-terminal display rule."
+  (let ((color (sendai--color "red" "blue" "green")))
+    (should (equal
+             (sendai-make-face `(nil :foreground ,color)
+                               '(t :foreground "black"))
+             '((((class color) (min-colors 16777216)) :foreground "red")
+               (((class color) (min-colors 256)) :foreground "blue")
+               (t :foreground "black"))))
+    (should (equal
+             (sendai-make-face `(nil :foreground ,color :weight bold)
+                               '(t :foreground "black"))
+             '((((class color) (min-colors 16777216))
+                :foreground "red" :weight bold)
+               (((class color) (min-colors 256))
+                :foreground "blue" :weight bold)
+               (t :foreground "black"))))))
+
+(ert-deftest sendai-tests/make-face/default ()
+  "Check that `sendai-make-face' accepts an explicit `default' rule."
+  (let ((color (sendai--color "red" "blue" "green")))
+    (should (equal
+             (sendai-make-face '(default :weight bold)
+                               `(nil :foreground ,color :underline t))
+             '((default :weight bold)
+               (((class color) (min-colors 16777216))
+                :foreground "red" :underline t)
+               (((class color) (min-colors 256))
+                :foreground "blue" :underline t))))
+    (should (equal
+             (sendai-make-face '(default :weight bold)
+                               `(nil :foreground ,color :underline t)
+                               '(t :foreground "black"))
+             '((default :weight bold)
+               (((class color) (min-colors 16777216))
+                :foreground "red" :underline t)
+               (((class color) (min-colors 256))
+                :foreground "blue" :underline t)
+               (t :foreground "black"))))))
 
 (ert-deftest sendai-tests/make-face/mixed ()
   "Check that `sendai-make-face' works for multiple display rules."
@@ -189,14 +238,16 @@
              (sendai-make-face `(((type graphic)) :foreground ,color)
                                `(nil :background ,color :weight bold)
                                '(t :underline t))
-             '((default :weight bold)
-               (((type graphic) (class color) (min-colors 16777216))
+             '((((type graphic) (class color) (min-colors 16777216))
                 :foreground "red")
                (((type graphic) (class color) (min-colors 256))
                 :foreground "blue")
-               (((class color) (min-colors 16777216)) :background "red")
-               (((class color) (min-colors 256) (type tty)) :background "green")
-               (((class color) (min-colors 256)) :background "blue")
+               (((class color) (min-colors 16777216))
+                :background "red" :weight bold)
+               (((class color) (min-colors 256) (type tty))
+                :background "green" :weight bold)
+               (((class color) (min-colors 256))
+                :background "blue" :weight bold)
                (t :underline t))))))
 
 (ert-deftest sendai-tests/let-palette ()
