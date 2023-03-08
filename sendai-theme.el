@@ -335,7 +335,7 @@ rule."
    `(isearch-group-2 ,(sendai-face :background green-primary
                                    :foreground bg-primary))
    `(lazy-highlight ,(sendai-face :background fg-darker :foreground bg-primary))
-   `(completions-common-part ,(sendai-face :foreground blue-primary))
+   `(completions-common-part ,(sendai-face :foreground yellow-primary))
    `(show-paren-match
      ,(sendai-face :background violet-dark :foreground fg-light :weight 'bold
                    :box (when (>= emacs-major-version 28)
@@ -916,6 +916,12 @@ rule."
    `(company-scrollbar-fg ,(sendai-face :background fg-darker))
    `(company-scrollbar-bg ,(sendai-face :background bg-light))
    `(company-echo-common ,(sendai-face :foreground yellow-primary))
+
+   ;; corfu-mode
+   `(corfu-default ,(sendai-face :foreground fg-primary :background bg-lighter))
+   `(corfu-border ,(sendai-face :background bg-darker))
+   `(corfu-bar ,(sendai-face :background fg-darker))
+   `(corfu-current ,(sendai-face :background blue-mid))
 
    ;; elfeed
    `(elfeed-search-title-face ,(sendai-face :foreground fg-primary))
