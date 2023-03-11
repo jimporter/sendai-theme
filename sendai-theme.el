@@ -336,6 +336,7 @@ rule."
                                    :foreground bg-primary))
    `(lazy-highlight ,(sendai-face :background fg-darker :foreground bg-primary))
    `(completions-common-part ,(sendai-face :foreground yellow-primary))
+   `(completions-highlight ,(sendai-face :background blue-mid))
    `(show-paren-match
      ,(sendai-face :background violet-dark :foreground fg-light :weight 'bold
                    :box (when (>= emacs-major-version 28)
