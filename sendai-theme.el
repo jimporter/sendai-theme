@@ -623,7 +623,7 @@ rule."
    `(breakpoint-disabled ,(sendai-face :foreground fg-darker))
 
    ;; hexl-mode
-   `(hexl-address-region ,(sendai-face :background bg-lighter
+   `(hexl-address-region ,(sendai-face :background blue-darker
                                        :foreground fg-primary))
    `(hexl-ascii-region ,(sendai-face :inherit 'hexl-address-region))
 
