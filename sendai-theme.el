@@ -939,10 +939,10 @@ rule."
    `(elfeed-log-debug-level-face ,(sendai-face :foreground magenta-light))
 
    ;; form-feed
-   `(form-feed-line
-     ,(sendai-make-face
-       `(((supports :strike-through t)) :strike-through ,fg-darker)
-       `(nil :foreground ,fg-darker :underline t)))
+   `(form-feed-line ,(sendai-make-face
+                      `(((supports :strike-through t))
+                        :foreground ,fg-darker :strike-through t)
+                      `(nil :foreground ,fg-darker :underline t)))
 
    ;; hl-todo
    `(hl-todo ,(sendai-face :foreground yellow-light :weight 'bold))
