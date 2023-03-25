@@ -834,12 +834,12 @@ rule."
 
    ;; tab-bar
    `(tab-bar ,(sendai-face :background bg-lighter :inherit 'variable-pitch))
-   `(tab-bar-tab-group-current ,(sendai-face :inherit 'tab-bar-tab
-                                             :weight 'bold))
+   `(tab-bar-tab-group-current ,(sendai-face :weight 'bold))
    `(tab-bar-tab-group-inactive ,(sendai-face :inherit 'tab-bar-tab-inactive
                                               :weight 'bold))
    `(tab-bar-tab
      ,(sendai-face :background bg-primary :foreground fg-primary
+                   :overline yellow-primary
                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
    `(tab-bar-tab-inactive
      ,(sendai-face :background bg-light :foreground fg-dark
@@ -851,19 +851,18 @@ rule."
    `(tab-line-tab-group ,(sendai-face :inherit 'tab-line :weight 'bold))
    `(tab-line-tab
      ,(sendai-face :background bg-primary :foreground fg-darker
+                   :overline yellow-dark
                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
    `(tab-line-tab-current
      ,(sendai-face :background bg-primary :foreground fg-primary
+                   :overline yellow-primary
                    :box `(:line-width ,sendai-tab-padding :color ,bg-primary)))
    `(tab-line-tab-inactive
      ,(sendai-face :background bg-light :foreground fg-dark
+                   :overline bg-light
                    :box `(:line-width ,sendai-tab-padding :color ,bg-light)))
-   `(tab-line-tab-inactive-alternate
-     ,(sendai-face :background fg-darker :foreground bg-primary
-                   :box `(:line-width ,sendai-tab-padding :color ,fg-darker)))
-   `(tab-line-highlight
-     ,(sendai-face :background bg-dark :foreground fg-light
-                   :box `(:line-width ,sendai-tab-padding :color ,bg-dark)))
+   `(tab-line-tab-inactive-alternate ,(sendai-face :overline blue-mid))
+   `(tab-line-highlight ,(sendai-face :foreground fg-light))
    `(tab-line-tab-special ,(sendai-face :slant 'italic))
 
    ;; vc-dir
