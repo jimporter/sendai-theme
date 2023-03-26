@@ -558,7 +558,7 @@ rule."
    `(ediff-fine-diff-C ,(sendai-face :background blue-dark))
 
    ;; emacs-authors-mode
-   `(emacs-authors-default ,(sendai-face :foreground fg-darker :italic t))
+   `(emacs-authors-default ,(sendai-face :foreground fg-darker :slant 'italic))
    `(emacs-authors-author ,(sendai-face :foreground yellow-primary
                                         :weight 'bold))
    `(emacs-authors-descriptor ,(sendai-face :foreground blue-light))
