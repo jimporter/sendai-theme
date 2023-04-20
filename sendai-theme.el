@@ -28,7 +28,7 @@
 
 ;;; Code:
 
-(deftheme sendai "A cool blue color theme")
+(deftheme sendai "A cool blue color theme.")
 
 (defvar sendai--face-classes
   '((true-color ((class color) (min-colors 16777216))       . 0)
