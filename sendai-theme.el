@@ -99,7 +99,7 @@ COLOR-TRUE is the color to use in true color (24-bit) modes, COLOR-256
 the color to use in 8-bit modes, and COLOR-TTY the color to use in
 8-bit TTY modes.  If COLOR-TTY isn't specified, COLOR-256 is used for
 TTY modes instead."
-    (list 'sendai--color color-true color-256 (or color-tty color-256)))
+    `'(sendai--color ,color-true ,color-256 ,(or color-tty color-256)))
 
   (defconst sendai-palette
     `((bg-darker       ,(sendai--color "#161c23" "#1c1c1c"))
@@ -113,14 +113,14 @@ TTY modes instead."
       (fg-primary      ,(sendai--color "#c9d6e9" "#d7d7d7" "white"))
       (fg-light        ,(sendai--color "#f0f6fe" "#ffffff" "brightwhite"))
 
-      (red-darker      ,(sendai--color "#4f282a" nil))
-      (orange-darker   ,(sendai--color "#4d3225" nil))
-      (yellow-darker   ,(sendai--color "#4e462b" nil))
-      (green-darker    ,(sendai--color "#2b402e" nil))
-      (cyan-darker     ,(sendai--color "#204142" nil))
-      (blue-darker     ,(sendai--color "#273b55" nil))
-      (violet-darker   ,(sendai--color "#36354f" nil))
-      (magenta-darker  ,(sendai--color "#462b3f" nil))
+      (red-darker      ,(sendai--color "#4f282a" 'unspecified))
+      (orange-darker   ,(sendai--color "#4d3225" 'unspecified))
+      (yellow-darker   ,(sendai--color "#4e462b" 'unspecified))
+      (green-darker    ,(sendai--color "#2b402e" 'unspecified))
+      (cyan-darker     ,(sendai--color "#204142" 'unspecified))
+      (blue-darker     ,(sendai--color "#273b55" 'unspecified))
+      (violet-darker   ,(sendai--color "#36354f" 'unspecified))
+      (magenta-darker  ,(sendai--color "#462b3f" 'unspecified))
 
       (red-dark        ,(sendai--color "#792c32" "#870000"))
       (orange-dark     ,(sendai--color "#7d452b" "#875f00"))
@@ -167,7 +167,7 @@ Each value is a `sendai--color'."))
   "Modify COLOR to indicate that the TTY-mode color should be the default.
 This is useful for inheriting the default foreground/background from
 the terminal."
-  (butlast color))
+  (append (butlast color) '(unspecified)))
 
 (defun sendai-active-class ()
   "Get the active face class to use when setting non-`defface' colors."
