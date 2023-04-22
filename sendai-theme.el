@@ -314,6 +314,13 @@ rule."
    `(homoglyph ,(sendai-face :foreground cyan-light))
    `(nobreak-space ,(sendai-face :underline `(:color ,magenta-primary)))
    `(nobreak-hyphen ,(sendai-face :inherit 'nobreak-space))
+   `(confusingly-reordered
+     ,(sendai-make-face (when (>= emacs-major-version 28)
+                          `(((supports :box t))
+                            :box (:line-width (-1 . -1) :color ,red-mid)))
+                        `(((supports :undefrline ,red-primary))
+                          :underline (:color ,red-primary :style wave))
+                        `(nil :foreground ,red-primary)))
    `(separator-line ,(sendai-face :foreground fg-darker))
    `(help-argument-name ,(sendai-face :foreground blue-light))
    `(help-key-binding
