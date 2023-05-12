@@ -25,6 +25,7 @@
 ;;; Code:
 
 (require 'ert)
+(require 'sendai-theme)
 
 ;;; Tests:
 
