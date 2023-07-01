@@ -564,6 +564,11 @@ rule."
    `(ediff-fine-diff-B ,(sendai-face :background green-dark))
    `(ediff-fine-diff-C ,(sendai-face :background blue-dark))
 
+   ;; eglot
+   `(eglot-highlight-symbol-face
+     ,(sendai-face :background blue-darker
+                   :box `(:line-width (-1 . -1) :color ,blue-dark)))
+
    ;; emacs-authors-mode
    `(emacs-authors-default ,(sendai-face :foreground fg-darker :slant 'italic))
    `(emacs-authors-author ,(sendai-face :foreground yellow-primary
