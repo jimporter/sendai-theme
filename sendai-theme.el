@@ -804,6 +804,23 @@ rule."
    `(proced-sort-header ,(sendai-face :foreground fg-dark :inverse-video t
                                       :weight 'bold))
 
+   ;; rst-mode
+   `(rst-level-1 ,(sendai-face :inherit '(outline-1)))
+   `(rst-level-2 ,(sendai-face :inherit '(outline-2)))
+   `(rst-level-3 ,(sendai-face :inherit '(outline-3)))
+   `(rst-level-4 ,(sendai-face :inherit '(outline-4)))
+   `(rst-level-5 ,(sendai-face :inherit '(outline-5)))
+   `(rst-level-6 ,(sendai-face :inherit '(outline-6)))
+   `(rst-adornment ,(sendai-face :foreground fg-darker))
+   `(rst-block ,(sendai-face :foreground fg-darker))
+   `(rst-comment ,(sendai-face :foreground fg-darker))
+   `(rst-transition ,(sendai-face :foreground fg-darker))
+   `(rst-definition ,(sendai-face :foreground yellow-light))
+   `(rst-directive ,(sendai-face :foreground blue-light))
+   `(rst-external ,(sendai-face :foreground green-light))
+   `(rst-literal ,(sendai-face :foreground cyan-primary))
+   `(rst-reference ,(sendai-face :foreground blue-primary))
+
    ;; ruler-mode
    `(ruler-mode-default
      ,(sendai-face :background bg-light :foreground fg-darker
