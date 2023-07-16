@@ -348,6 +348,7 @@ rule."
      ,(sendai-face :background violet-dark :foreground fg-light :weight 'bold
                    :box (when (>= emacs-major-version 28)
                           `(:line-width (-1 . -1) :color ,violet-mid))))
+   `(blink-matching-paren-offscreen ,(sendai-face :inherit 'show-paren-match))
    `(show-paren-match-expression ,(sendai-face :background violet-darker))
    `(show-paren-mismatch
      ,(sendai-face :background red-mid :foreground fg-light :weight 'bold
