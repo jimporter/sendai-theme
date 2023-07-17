@@ -1052,9 +1052,9 @@ rule."
    `(wgrep-file-face ,(sendai-face :background bg-light))
 
    ;; which-key
-   `(which-key-key-face ,(sendai-face :foreground yellow-primary))
-   `(which-key-command-description-face ,(sendai-face :foreground blue-light))
-   `(which-key-group-description-face ,(sendai-face :foreground cyan-primary
+   `(which-key-key-face ,(sendai-face :inherit 'help-key-binding))
+   `(which-key-command-description-face ,(sendai-face :foreground yellow-light))
+   `(which-key-group-description-face ,(sendai-face :foreground yellow-primary
                                                     :weight 'bold))
 
    ;; yaml-mode
