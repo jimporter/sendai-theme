@@ -321,6 +321,15 @@ rule."
                         `(((supports :underline ,red-primary))
                           :underline (:color ,red-primary :style wave))
                         `(nil :foreground ,red-primary)))
+   `(textsec-suspicious
+     ,(sendai-make-face (when (>= emacs-major-version 28)
+                          `(((supports :box t))
+                            :foreground ,orange-primary
+                            :box (:line-width (-1 . -1) :color ,red-mid)))
+                        `(((supports :underline ,red-primary))
+                          :foreground ,orange-primary
+                          :underline (:color ,red-primary :style wave))
+                        `(nil :foreground ,red-primary)))
    `(separator-line ,(sendai-face :foreground fg-darker))
    `(help-argument-name ,(sendai-face :foreground blue-light))
    `(help-key-binding
