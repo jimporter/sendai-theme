@@ -1086,8 +1086,8 @@ rule."
 
    ;; which-key
    `(which-key-key-face ,(sendai-face :inherit 'help-key-binding))
-   `(which-key-command-description-face ,(sendai-face :foreground yellow-light))
-   `(which-key-group-description-face ,(sendai-face :foreground yellow-primary
+   `(which-key-command-description-face ,(sendai-face :foreground cyan-primary))
+   `(which-key-group-description-face ,(sendai-face :foreground cyan-light
                                                     :weight 'bold))
 
    ;; yaml-mode
