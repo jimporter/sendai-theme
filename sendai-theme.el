@@ -92,6 +92,11 @@ integers (to use separate widths on the X and Y axes)."
   :group 'sendai-theme
   :group 'hl-todo)
 
+(defface sendai-hl-todo-info nil
+  "A face used to highlight info-level TODO-like keywords."
+  :group 'sendai-theme
+  :group 'hl-todo)
+
 (eval-and-compile
   (defun sendai--color (color-true color-256 &optional color-tty)
     "Generate a color spec holding values for various environments.
@@ -1014,6 +1019,8 @@ rule."
                                           :foreground orange-primary))
    `(sendai-hl-todo-success ,(sendai-face :inherit 'hl-todo
                                           :foreground green-primary))
+   `(sendai-hl-todo-info ,(sendai-face :inherit 'hl-todo
+                                       :foreground blue-light))
 
    ;; js2-mode
    `(js2-external-variable ,(sendai-face :foreground orange-primary))
@@ -1119,8 +1126,10 @@ rule."
    `(hl-todo-keyword-faces
      '(("FIXME" . sendai-hl-todo-error)
        ("TODO"  . sendai-hl-todo-warning)
+       ("HACK"  . sendai-hl-todo-warning)
        ("XXX"   . sendai-hl-todo-warning)
-       ("DONE"  . sendai-hl-todo-success))))
+       ("DONE"  . sendai-hl-todo-success)
+       ("NOTE"  . sendai-hl-todo-info))))
 
   (when-let ((class-name (sendai-active-class)))
     (when (< emacs-major-version 28)
