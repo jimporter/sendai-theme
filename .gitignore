@@ -1,0 +1,3 @@
+*.elc
+/sendai-theme-autoloads.el
+/sendai-theme-pkg.el
