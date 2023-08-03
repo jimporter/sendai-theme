@@ -584,6 +584,9 @@ rule."
      ,(sendai-face :background blue-darker
                    :box `(:line-width (-1 . -1) :color ,blue-dark)))
 
+   ;; eldoc
+   `(eldoc-highlight-function-argument ,(sendai-face :foreground blue-light))
+
    ;; emacs-authors-mode
    `(emacs-authors-default ,(sendai-face :foreground fg-darker :slant 'italic))
    `(emacs-authors-author ,(sendai-face :foreground yellow-primary
