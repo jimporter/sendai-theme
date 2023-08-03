@@ -15,14 +15,38 @@
 # You should have received a copy of the GNU General Public License along with
 # this program.  If not, see <http://www.gnu.org/licenses/>.
 
+PACKAGE_NAME := sendai-theme
+PACKAGE_MAIN := $(PACKAGE_NAME).el
+AUTOLOADS := $(PACKAGE_NAME)-autoloads.el
+PKG_FILE := $(PACKAGE_NAME)-pkg.el
+TESTS := $(wildcard *-tests.el)
+TEST_OBJS := $(patsubst %.el,%.elc,$(TESTS))
+SRCS := $(filter-out $(AUTOLOADS) $(PKG_FILE) $(TESTS), $(wildcard *.el))
+OBJS := $(patsubst %.el,%.elc,$(SRCS))
+
 EMACS ?= emacs
 EMACS_SRC ?= ~/src/emacs
 export EMACS_SRC
 
-OBJS := $(patsubst %.el,%.elc,$(wildcard *.el))
-
 .PHONY: all
-all: $(OBJS)
+all: compile autoloads
+
+.PHONY: compile
+compile: $(OBJS)
+
+.PHONY: compile-tests
+compile-tests: $(TEST_OBJS)
+
+.PHONY: autoloads
+autoloads: $(AUTOLOADS)
+
+$(AUTOLOADS): GENERATE_AUTOLOADS = '$\
+  (package-generate-autoloads "$(PACKAGE_NAME)" default-directory)'
+$(AUTOLOADS): $(SRCS)
+	@echo AUTOLOAD $@
+	@$(EMACS) -Q --batch \
+	  --eval '(package-initialize)' \
+	  --eval $(GENERATE_AUTOLOADS)
 
 %.elc: %.el
 	@echo ELC $@
@@ -43,12 +67,14 @@ lint:
 	@$(MAKE) --always-make STRICT=1 all
 
 .PHONY: check
-check:
-	$(EMACS) -Q --batch -L . -l sendai-tests \
+check: $(if $(NO_COMPILE),,$(OBJS) $(TEST_OBJS))
+	@echo TEST $(patsubst %.el,%,$(TESTS))
+	@$(EMACS) -Q --batch \
+	  -L . $(patsubst %.el,-l %,$(TESTS)) \
 	  --eval '(ert-run-tests-batch-and-exit t)'
 
 .PHONY: clean
 clean:
-	rm -f *.elc
+	rm -f *.elc $(AUTOLOADS) $(PKG_FILE)
 
 FORCE:
