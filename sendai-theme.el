@@ -750,9 +750,9 @@ rule."
    `(org-agenda-date ,(sendai-face :foreground blue-primary))
    `(org-agenda-date-weekend ,(sendai-face :foreground blue-light))
    `(org-agenda-date-today ,(sendai-face :foreground yellow-light))
-   `(org-time-grid ,(sendai-face :foreground fg-darker))
    `(org-agenda-current-time ,(sendai-face :foreground yellow-light))
    `(org-agenda-done ,(sendai-face :foreground violet-primary))
+   `(org-time-grid ,(sendai-face :foreground fg-darker))
    `(org-scheduled ,(sendai-face :foreground violet-light))
    `(org-scheduled-previously ,(sendai-face :foreground orange-light))
    `(org-scheduled-today ,(sendai-face :foreground violet-light))
@@ -773,6 +773,7 @@ rule."
                                           :foreground fg-light))
    `(org-habit-overdue-future-face ,(sendai-face :background red-primary
                                                  :foreground fg-light))
+   `(org-dispatcher-highlight ,(sendai-face :inherit 'help-key-binding))
 
    ;; outline-mode
    `(outline-1 ,(sendai-face :foreground yellow-primary :weight 'bold))
