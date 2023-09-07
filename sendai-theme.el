@@ -481,7 +481,7 @@ rule."
 
    ;; compilation-mode
    `(compilation-error ,(sendai-face :foreground red-primary :weight 'bold))
-   `(compilation-warning ,(sendai-face :foreground yellow-primary
+   `(compilation-warning ,(sendai-face :foreground orange-primary
                                        :weight 'bold))
    `(compilation-info ,(sendai-face :foreground blue-primary :weight 'bold))
    `(compilation-line-number ,(sendai-face :foreground blue-light))
@@ -490,7 +490,7 @@ rule."
                                               :weight 'bold))
    `(compilation-mode-line-fail ,(sendai-face :foreground red-primary
                                               :weight 'bold))
-   `(compilation-mode-line-run ,(sendai-face :foreground yellow-primary
+   `(compilation-mode-line-run ,(sendai-face :foreground cyan-light
                                              :weight 'bold))
 
    ;; cua-mode
