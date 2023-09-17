@@ -480,18 +480,22 @@ rule."
    `(comint-highlight-prompt ,(sendai-face :foreground fg-darker :weight 'bold))
 
    ;; compilation-mode
-   `(compilation-error ,(sendai-face :foreground red-primary :weight 'bold))
-   `(compilation-warning ,(sendai-face :foreground orange-primary
-                                       :weight 'bold))
-   `(compilation-info ,(sendai-face :foreground blue-primary :weight 'bold))
+   `(compilation-error ,(sendai-face :foreground red-primary :weight 'bold
+                                     :distant-foreground red-light))
+   `(compilation-warning ,(sendai-face :foreground orange-primary :weight 'bold
+                                       :distant-foreground orange-light))
+   `(compilation-info ,(sendai-face :foreground blue-primary :weight 'bold
+                                    :distant-foreground blue-light))
    `(compilation-line-number ,(sendai-face :foreground blue-light))
    `(compilation-column-number ,(sendai-face :foreground blue-light))
-   `(compilation-mode-line-exit ,(sendai-face :foreground green-primary
-                                              :weight 'bold))
-   `(compilation-mode-line-fail ,(sendai-face :foreground red-primary
-                                              :weight 'bold))
-   `(compilation-mode-line-run ,(sendai-face :foreground cyan-light
-                                             :weight 'bold))
+   `(compilation-mode-line-exit
+     ,(sendai-face :foreground green-primary :weight 'bold
+                   :distant-foreground green-light))
+   `(compilation-mode-line-fail
+     ,(sendai-face :foreground red-primary :weight 'bold
+                   :distant-foreground red-light))
+   `(compilation-mode-line-run
+     ,(sendai-face :foreground cyan-light :weight 'bold))
 
    ;; cua-mode
    `(cua-global-mark ,(sendai-face :background yellow-primary
@@ -642,7 +646,7 @@ rule."
    ;; flymake
    `(flymake-error ,(sendai-face :underline `(:color ,red-primary :style wave)))
    `(flymake-warning
-     ,(sendai-face :underline `(:color ,yellow-primary :style wave)))
+     ,(sendai-face :underline `(:color ,orange-primary :style wave)))
    `(flymake-note ,(sendai-face :underline `(:color ,blue-primary :style wave)))
 
    ;; flyspell
