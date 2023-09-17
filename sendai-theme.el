@@ -543,12 +543,12 @@ rule."
    `(diff-removed ,(sendai-face :background red-darker))
    `(diff-changed ,(sendai-face :background yellow-darker))
    `(diff-changed-unspecified ,(sendai-face :background yellow-darker))
-   `(diff-indicator-added ,(sendai-face :foreground green-light
-                                        :inherit 'diff-added))
-   `(diff-indicator-removed ,(sendai-face :foreground red-light
-                                          :inherit 'diff-removed))
-   `(diff-indicator-changed ,(sendai-face :foreground yellow-light
-                                          :inherit 'diff-changed))
+   `(diff-indicator-added ,(sendai-face :inherit 'diff-added
+                                        :foreground green-light))
+   `(diff-indicator-removed ,(sendai-face :inherit 'diff-removed
+                                          :foreground red-light))
+   `(diff-indicator-changed ,(sendai-face :inherit 'diff-changed
+                                          :foreground yellow-light))
    `(diff-refine-added ,(sendai-face :background green-dark))
    `(diff-refine-removed ,(sendai-face :background red-dark))
    `(diff-refine-changed ,(sendai-face :background yellow-dark))
@@ -558,8 +558,8 @@ rule."
    `(dired-directory ,(sendai-face :foreground blue-primary :weight 'bold))
    `(dired-symlink ,(sendai-face :foreground cyan-light))
    `(dired-broken-symlink ,(sendai-face
-                            :underline `(:color ,red-primary :style wave)
-                            :inherit 'dired-symlink))
+                            :inherit 'dired-symlink
+                            :underline `(:color ,red-primary :style wave)))
    `(dired-special ,(sendai-face :foreground yellow-light))
    `(dired-marked ,(sendai-face :foreground yellow-primary :weight 'bold))
    `(dired-mark ,(sendai-face :inherit 'dired-marked))
@@ -725,8 +725,8 @@ rule."
    `(org-ellipsis ,(sendai-face :foreground fg-darker))
    `(org-hide ,(sendai-face :foreground bg-primary))
    `(org-checkbox ,(sendai-face :foreground fg-darker :weight 'bold))
-   `(org-code ,(sendai-face :foreground cyan-primary :inherit 'fixed-pitch))
-   `(org-verbatim ,(sendai-face :foreground cyan-primary :inherit 'fixed-pitch))
+   `(org-code ,(sendai-face :inherit 'fixed-pitch :foreground cyan-primary))
+   `(org-verbatim ,(sendai-face :inherit 'fixed-pitch :foreground cyan-primary))
    `(org-latex-and-related ,(sendai-face :foreground fg-darker))
    `(org-target
      ,(sendai-face :background bg-light :foreground fg-dark
@@ -858,19 +858,19 @@ rule."
      ,(sendai-face :background bg-light :foreground fg-darker
                     :box `(:line-width 1 :color ,bg-light
                            :style released-button)))
-   `(ruler-mode-column-number ,(sendai-face :foreground fg-primary
-                                            :inherit 'ruler-mode-default))
-   `(ruler-mode-current-column ,(sendai-face :foreground yellow-primary
-                                             :weight 'bold
-                                             :inherit 'ruler-mode-default))
-   `(ruler-mode-comment-column ,(sendai-face :foreground cyan-light
-                                             :inherit 'ruler-mode-default))
-   `(ruler-mode-fill-column ,(sendai-face :foreground cyan-light
-                                          :inherit 'ruler-mode-default))
-   `(ruler-mode-goal-column ,(sendai-face :foreground cyan-light
-                                          :inherit 'ruler-mode-default))
-   `(ruler-mode-tab-stop ,(sendai-face :foreground blue-primary
-                                       :inherit 'ruler-mode-default))
+   `(ruler-mode-column-number ,(sendai-face :inherit 'ruler-mode-default
+                                            :foreground fg-primary))
+   `(ruler-mode-current-column ,(sendai-face :inherit 'ruler-mode-default
+                                             :foreground yellow-primary
+                                             :weight 'bold))
+   `(ruler-mode-comment-column ,(sendai-face :inherit 'ruler-mode-default
+                                             :foreground cyan-light))
+   `(ruler-mode-fill-column ,(sendai-face :inherit 'ruler-mode-default
+                                          :foreground cyan-light))
+   `(ruler-mode-goal-column ,(sendai-face :inherit 'ruler-mode-default
+                                          :foreground cyan-light))
+   `(ruler-mode-tab-stop ,(sendai-face :inherit 'ruler-mode-default
+                                       :foreground blue-primary))
    `(ruler-mode-fringes ,(sendai-face :inherit 'ruler-mode-default))
 
    ;; sh-mode
@@ -894,7 +894,7 @@ rule."
    `(smerge-refined-added ,(sendai-face :background green-dark))
 
    ;; tab-bar
-   `(tab-bar ,(sendai-face :background bg-lighter :inherit 'variable-pitch))
+   `(tab-bar ,(sendai-face :inherit 'variable-pitch :background bg-lighter))
    `(tab-bar-tab-group-current ,(sendai-face :weight 'bold))
    `(tab-bar-tab-group-inactive ,(sendai-face :inherit 'tab-bar-tab-inactive
                                               :weight 'bold))
@@ -908,7 +908,7 @@ rule."
    `(tab-bar-tab-ungrouped ,(sendai-face :inherit 'tab-bar-tab-inactive))
 
    ;; tab-line
-   `(tab-line ,(sendai-face :background bg-lighter :inherit 'variable-pitch))
+   `(tab-line ,(sendai-face :inherit 'variable-pitch :background bg-lighter))
    `(tab-line-tab-group ,(sendai-face :inherit 'tab-line :weight 'bold))
    `(tab-line-tab
      ,(sendai-face :background bg-primary :foreground fg-darker
