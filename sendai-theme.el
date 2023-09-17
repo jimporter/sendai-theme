@@ -579,6 +579,9 @@ rule."
    `(ediff-fine-diff-B ,(sendai-face :background green-dark))
    `(ediff-fine-diff-C ,(sendai-face :background blue-dark))
 
+   ;; edmacro
+   `(edmacro-label ,(sendai-face :foreground blue-light))
+
    ;; eglot
    `(eglot-highlight-symbol-face
      ,(sendai-face :background blue-darker
