@@ -856,8 +856,9 @@ rule."
    ;; ruler-mode
    `(ruler-mode-default
      ,(sendai-face :background bg-light :foreground fg-darker
-                    :box `(:line-width 1 :color ,bg-light
-                           :style released-button)))
+                   :box `(:line-width ,(if (>= emacs-major-version 28)
+                                           '(-1 . 1) 1)
+                          :color ,bg-light :style released-button)))
    `(ruler-mode-column-number ,(sendai-face :inherit 'ruler-mode-default
                                             :foreground fg-primary))
    `(ruler-mode-current-column ,(sendai-face :inherit 'ruler-mode-default
@@ -872,6 +873,8 @@ rule."
    `(ruler-mode-tab-stop ,(sendai-face :inherit 'ruler-mode-default
                                        :foreground blue-primary))
    `(ruler-mode-fringes ,(sendai-face :inherit 'ruler-mode-default))
+   `(ruler-mode-pad ,(sendai-face :inherit 'ruler-mode-default
+                                  :foreground fg-primary))
 
    ;; sh-mode
    `(sh-escaped-newline ,(sendai-face :foreground fg-darker))
