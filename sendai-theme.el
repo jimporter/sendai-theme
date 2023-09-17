@@ -648,6 +648,12 @@ rule."
    `(flymake-warning
      ,(sendai-face :underline `(:color ,orange-primary :style wave)))
    `(flymake-note ,(sendai-face :underline `(:color ,blue-primary :style wave)))
+   ;; These faces inherit from `flymake-note' by default for some reason.  See
+   ;; Emacs bug#66041.
+   `(flymake-note-echo ,(sendai-face :inherit 'compilation-info))
+   `(flymake-note-echo-at-eol
+     ,(sendai-face :inherit '(flymake-end-of-line-diagnostics-face
+                              compilation-info)))
 
    ;; flyspell
    `(flyspell-duplicate
