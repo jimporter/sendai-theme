@@ -561,6 +561,8 @@ rule."
                             :inherit 'dired-symlink
                             :underline `(:color ,red-primary :style wave)))
    `(dired-special ,(sendai-face :foreground yellow-light))
+   `(dired-perm-write ,(sendai-face :foreground orange-light))
+   `(dired-set-id ,(sendai-face :foreground red-primary))
    `(dired-marked ,(sendai-face :foreground yellow-primary :weight 'bold))
    `(dired-mark ,(sendai-face :inherit 'dired-marked))
    `(dired-flagged ,(sendai-face :foreground red-primary :weight 'bold))
