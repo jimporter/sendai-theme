@@ -12,7 +12,7 @@
    - fg-light        :: #f0f6fe  rgb(240, 246, 254)
 ** Darker colors
    - red-darker      :: #4f282a  rgb( 79,  40,  42)
-   - orange-darker   :: #4d3225  rgb( 77,  50,  37)
+   - orange-darker   :: #513825  rgb( 81,  56,  37)
    - yellow-darker   :: #4e462b  rgb( 78,  70,  43)
    - green-darker    :: #2b402e  rgb( 43,  64,  46)
    - cyan-darker     :: #204142  rgb( 32,  65,  66)
@@ -21,7 +21,7 @@
    - magenta-darker  :: #462b3f  rgb( 70,  43,  63)
 ** Dark colors
    - red-dark        :: #792c32  rgb(121,  44,  50)
-   - orange-dark     :: #7d452b  rgb(125,  69,  43)
+   - orange-dark     :: #7b4d27  rgb(123,  77,  39)
    - yellow-dark     :: #796b2f  rgb(121, 107,  47)
    - green-dark      :: #2a5d31  rgb( 42,  93,  49)
    - cyan-dark       :: #185d5f  rgb( 24,  93,  95)
@@ -30,7 +30,7 @@
    - magenta-dark    :: #702e5e  rgb(112,  46,  94)
 ** Mid colors
    - red-mid         :: #ad3641  rgb(173,  54,  65)
-   - orange-mid      :: #b0622e  rgb(176,  98,  46)
+   - orange-mid      :: #ab6520  rgb(171, 101,  32)
    - yellow-mid      :: #b49635  rgb(180, 150,  53)
    - green-mid       :: #3d8638  rgb( 61, 134,  56)
    - cyan-mid        :: #1f8584  rgb( 31, 133, 132)
@@ -39,7 +39,7 @@
    - magenta-mid     :: #9c4080  rgb(156,  64, 128)
 ** Primary colors
    - red-primary     :: #d33f4d  rgb(211,  63,  77)
-   - orange-primary  :: #d47732  rgb(212, 119,  50)
+   - orange-primary  :: #d07a25  rgb(208, 122,  37)
    - yellow-primary  :: #ddb63a  rgb(221, 182,  58)
    - green-primary   :: #4ba33f  rgb( 75, 163,  63)
    - cyan-primary    :: #26a19f  rgb( 38, 161, 159)
@@ -47,8 +47,8 @@
    - violet-primary  :: #8578db  rgb(133, 120, 219)
    - magenta-primary :: #bc4d99  rgb(188,  77, 153)
 ** Light colors
-   - red-light       :: #e16a6d  rgb(225, 106, 109)
-   - orange-light    :: #ec9f63  rgb(236, 159,  99)
+   - red-light       :: #e86569  rgb(232, 101, 105)
+   - orange-light    :: #ee9e5f  rgb(238, 158,  95)
    - yellow-light    :: #ded692  rgb(222, 214, 146)
    - green-light     :: #7cc36e  rgb(124, 195, 110)
    - cyan-light      :: #4edae5  rgb( 78, 218, 229)

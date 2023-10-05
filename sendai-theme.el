@@ -119,7 +119,7 @@ TTY modes instead."
       (fg-light        ',(sendai--color "#f0f6fe" "#ffffff" "brightwhite"))
 
       (red-darker      ',(sendai--color "#4f282a" 'unspecified))
-      (orange-darker   ',(sendai--color "#4d3225" 'unspecified))
+      (orange-darker   ',(sendai--color "#513825" 'unspecified))
       (yellow-darker   ',(sendai--color "#4e462b" 'unspecified))
       (green-darker    ',(sendai--color "#2b402e" 'unspecified))
       (cyan-darker     ',(sendai--color "#204142" 'unspecified))
@@ -128,7 +128,7 @@ TTY modes instead."
       (magenta-darker  ',(sendai--color "#462b3f" 'unspecified))
 
       (red-dark        ',(sendai--color "#792c32" "#870000"))
-      (orange-dark     ',(sendai--color "#7d452b" "#875f00"))
+      (orange-dark     ',(sendai--color "#7b4d27" "#875f00"))
       (yellow-dark     ',(sendai--color "#796b2f" "#878700"))
       (green-dark      ',(sendai--color "#2a5d31" "#005f00"))
       (cyan-dark       ',(sendai--color "#185d5f" "#005f5f"))
@@ -137,7 +137,7 @@ TTY modes instead."
       (magenta-dark    ',(sendai--color "#702e5e" "#5f005f"))
 
       (red-mid         ',(sendai--color "#ad3641" "#af0000"))
-      (orange-mid      ',(sendai--color "#b0622e" "#af5f00"))
+      (orange-mid      ',(sendai--color "#ab6520" "#af5f00"))
       (yellow-mid      ',(sendai--color "#b49635" "#afaf5f"))
       (green-mid       ',(sendai--color "#3d8638" "#5f875f"))
       (cyan-mid        ',(sendai--color "#1f8584" "#008787"))
@@ -146,7 +146,7 @@ TTY modes instead."
       (magenta-mid     ',(sendai--color "#9c4080" "#875f87"))
 
       (red-primary     ',(sendai--color "#d33f4d" "#d70000" "brightred"))
-      (orange-primary  ',(sendai--color "#d47732" "#d78700"))
+      (orange-primary  ',(sendai--color "#d07a25" "#d78700"))
       (yellow-primary  ',(sendai--color "#ddb63a" "#d7af5f" "brightyellow"))
       (green-primary   ',(sendai--color "#4ba33f" "#5faf5f" "brightgreen"))
       (cyan-primary    ',(sendai--color "#26a19f" "#00afaf" "cyan"))
@@ -154,8 +154,8 @@ TTY modes instead."
       (violet-primary  ',(sendai--color "#8578db" "#8787d7"))
       (magenta-primary ',(sendai--color "#bc4d99" "#af5f87" "magenta"))
 
-      (red-light       ',(sendai--color "#e16a6d" "#d75f5f" "red"))
-      (orange-light    ',(sendai--color "#ec9f63" "#ffaf5f"))
+      (red-light       ',(sendai--color "#e86569" "#d75f5f" "red"))
+      (orange-light    ',(sendai--color "#ee9e5f" "#ffaf5f"))
       (yellow-light    ',(sendai--color "#ded692" "#d7d787" "yellow"))
       (green-light     ',(sendai--color "#7cc36e" "#87af5f" "green"))
       (cyan-light      ',(sendai--color "#4edae5" "#5fd7d7" "brightcyan"))
