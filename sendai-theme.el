@@ -1172,6 +1172,10 @@ rule."
                  blue-light magenta-light cyan-light fg-light)
          class-name)))))
 
-(provide-theme 'sendai)
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-directory load-file-name)))
 
+(provide-theme 'sendai)
 ;;; sendai-theme.el ends here
