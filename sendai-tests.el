@@ -1,6 +1,6 @@
 ;;; sendai-tests.el --- Tests for sendai -*- lexical-binding: t -*-
 
-;; Copyright (C) 2021-2023 Jim Porter
+;; Copyright (C) 2021-2024 Jim Porter
 
 ;; Author: Jim Porter
 ;; Keywords: tests
