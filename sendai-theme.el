@@ -590,8 +590,10 @@ rule."
 
    ;; eglot
    `(eglot-highlight-symbol-face
-     ,(sendai-face :background blue-darker
-                   :box `(:line-width (-1 . -1) :color ,blue-dark)))
+     ,(sendai-make-face `(((supports :box (:color ,blue-dark)))
+                          :background ,blue-darker
+                          :box (:line-width (-1 . -1) :color ,blue-dark))
+                        `(nil :background ,blue-darker :slant italic)))
 
    ;; eldoc
    `(eldoc-highlight-function-argument ,(sendai-face :foreground blue-light))
