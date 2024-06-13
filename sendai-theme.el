@@ -1010,9 +1010,9 @@ rule."
    `(corfu-current ,(sendai-face :background blue-mid))
 
    ;; elfeed
-   `(elfeed-search-title-face ,(sendai-face :foreground fg-primary))
-   `(elfeed-search-unread-title-face ,(sendai-face :weight 'bold
-                                                   :slant 'italic))
+   `(elfeed-search-title-face ,(sendai-face :foreground fg-dark))
+   `(elfeed-search-unread-title-face ,(sendai-face :foreground fg-primary
+                                                   :weight 'bold))
    `(elfeed-search-date-face ,(sendai-face :foreground fg-darker))
    `(elfeed-search-feed-face ,(sendai-face :foreground blue-primary))
    `(elfeed-search-tag-face ,(sendai-face :foreground yellow-light))
