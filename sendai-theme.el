@@ -1041,8 +1041,10 @@ rule."
                                        :foreground blue-light))
 
    ;; js2-mode
-   `(js2-external-variable ,(sendai-face :foreground orange-primary))
    `(js2-function-param ,(sendai-face :foreground yellow-light))
+   `(js2-function-call (nil))
+   `(js2-external-variable ,(sendai-face :foreground orange-primary))
+   `(js2-object-property (nil))
    `(js2-jsdoc-tag ,(sendai-face :inherit 'c-annotation-face))
    `(js2-jsdoc-type ,(sendai-face :inherit 'font-lock-type-face))
    `(js2-jsdoc-value ,(sendai-face :inherit 'font-lock-variable-name-face))
