@@ -28,6 +28,10 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (when (< emacs-major-version 29)
+    (require 'subr-x)))                 ; For `when-let*'
+
 (deftheme sendai "A cool blue color theme.")
 
 (defvar sendai--face-classes
@@ -1151,7 +1155,7 @@ rule."
        ("DONE"  . sendai-hl-todo-success)
        ("NOTE"  . sendai-hl-todo-info))))
 
-  (when-let ((class-name (sendai-active-class)))
+  (when-let* ((class-name (sendai-active-class)))
     (when (< emacs-major-version 28)
       (custom-theme-set-variables
        'sendai
