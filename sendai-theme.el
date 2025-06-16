@@ -884,6 +884,12 @@ rule."
    `(sh-quoted-exec ,(sendai-face :foreground orange-light))
 
    ;; shr
+   `(shr-h1 ,(sendai-face :height 2.00 :weight 'bold))
+   `(shr-h2 ,(sendai-face :height 1.50 :weight 'bold))
+   `(shr-h3 ,(sendai-face :height 1.17 :weight 'bold))
+   `(shr-h4 ,(sendai-face :height 1.00 :weight 'bold))
+   `(shr-h5 ,(sendai-face :height 0.83 :weight 'bold))
+   `(shr-h6 ,(sendai-face :height 0.67 :weight 'bold))
    `(shr-mark ,(sendai-face :background yellow-primary :foreground bg-primary))
    `(shr-selected-link
      ,(sendai-face :background cyan-primary :foreground fg-light
