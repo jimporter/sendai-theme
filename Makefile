@@ -62,6 +62,11 @@ etc/screenshot.png: FORCE
 	$(EMACS) -Q -L . -l etc/sendai-demo \
 	  --eval '(progn (sit-for 4) (kill-emacs))'
 
+.PHONY: run
+run: all
+	$(EMACS) -Q -L . \
+	  --eval '(progn (load "$(AUTOLOADS)") (load-theme '\''sendai t))'
+
 .PHONY: lint
 lint:
 	@$(MAKE) --always-make STRICT=1 all
