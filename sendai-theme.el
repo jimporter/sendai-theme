@@ -301,17 +301,26 @@ nonparameterized filter above doesn't apply."
      (ignore ,@(mapcar #'car sendai-palette))
      ,@body))
 
-(defmacro sendai-set-faces (&rest body)
+(defmacro sendai-set-theme-faces (theme &rest body)
+  "Set faces for the specified THEME.
+BODY is a list of face specs like (NAME SPEC...) or (NAME ATTRS...)
+which `sendai-face' will convert to the final specification."
   (declare (indent 0))
   `(sendai-let-palette
      (custom-theme-set-faces
-      'sendai
+      ,theme
       ,@(mapcar
          (lambda (face)
            (let ((name (car face))
                  (spec (cdr face)))
              (list '\` (list name (list '\, (cons 'sendai-face spec))))))
-        body))))
+         body))))
+
+(defmacro sendai-set-faces (&rest body)
+  "Set faces for the Sendai theme.
+BODY is a list of face specs like (NAME SPEC...) or (NAME ATTRS...)
+which `sendai-face' will convert to the final specification."
+  `(sendai-set-theme-faces 'sendai ,@body))
 
 
 ;; Face customizations
