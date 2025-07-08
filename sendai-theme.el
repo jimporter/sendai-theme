@@ -597,9 +597,9 @@ which `sendai-face' will convert to the final specification."
   (eww-form-file :inherit 'eww-form-submit)
   (eww-form-checkbox
    :background fg-darker :foreground bg-primary
-   :box '(:line-width 1 :color ,fg-dark :style released-button))
+   :box `(:line-width 1 :color ,fg-dark :style released-button))
   (eww-form-select :inherit 'eww-form-checkbox)
-  (eww-form-text :background bg-lighter :box '(:line-width 1 :color ,fg-darker))
+  (eww-form-text :background bg-lighter :box `(:line-width 1 :color ,fg-darker))
   (eww-form-textarea :background bg-lighter)
   (eww-valid-certificate :foreground green-light :weight 'bold)
   (eww-invalid-certificate :foreground red-primary :weight 'bold)
