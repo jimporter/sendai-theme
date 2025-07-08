@@ -237,6 +237,7 @@ ATTRS is a face attribute list, and DISPLAY-EXTRA is an alist of
 extra classifications to apply to the resulting list.  If any
 classification in DISPLAY-EXTRA conflicts with one in
 CLASS-NAMES, that display class is ignored entirely."
+  (setq display-extra (sendai--do-subst display-extra 0))
   (when attrs
     (cond
      ((not (sendai--subst-p attrs))
