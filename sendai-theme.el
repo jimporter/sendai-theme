@@ -393,6 +393,7 @@ which `sendai-face' will convert to the final specification."
   (hl-line :background bg-light)
   (bookmark-face :foreground magenta-light)
   (trailing-whitespace :background red-primary)
+  (pulse-highlight-start-face :background blue-mid)
 
   ;; Mode line
   (mode-line :background bg-light :foreground fg-light)
@@ -760,6 +761,8 @@ which `sendai-face' will convert to the final specification."
   (package-status-new :foreground fg-light :weight 'bold)
   (package-status-avail-obso :foreground fg-darker)
   (package-status-unsigned :underline `(:color ,red-primary :style wave))
+  (package-mark-install-line :background green-darker)
+  (package-mark-delete-line :background red-darker)
 
   ;; proced
   (proced-user :weight 'bold)
