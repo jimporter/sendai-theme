@@ -1020,6 +1020,13 @@ which `sendai-face' will convert to the final specification."
   (telephone-line-accent-active :background blue-mid)
   (telephone-line-accent-inactive :background blue-dark)
 
+  ;; tempel
+  (tempel-field :background violet-dark :foreground fg-primary
+                :box (when (>= emacs-major-version 28)
+                       `(:line-width (-1 . -1) :color ,violet-mid)))
+  (tempel-form :foreground magenta-light)
+  (tempel-default :foreground violet-light :slant 'italic)
+
   ;; wgrep
   (wgrep-face :background violet-dark)
   (wgrep-done-face :foreground green-light :distant-foreground green-dark)
