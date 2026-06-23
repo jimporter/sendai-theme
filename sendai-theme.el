@@ -30,7 +30,7 @@
 
 (require 'color)
 
-(eval-when-compile
+(eval-and-compile
   (when (< emacs-major-version 29)
     (require 'subr-x)))                 ; For `when-let*'
 
