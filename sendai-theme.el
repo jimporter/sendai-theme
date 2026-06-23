@@ -28,6 +28,8 @@
 
 ;;; Code:
 
+(require 'color)
+
 (eval-when-compile
   (when (< emacs-major-version 29)
     (require 'subr-x)))                 ; For `when-let*'
@@ -329,6 +331,25 @@ which `sendai-face' will convert to the final specification."
 BODY is a list of face specs like (NAME SPEC...) or (NAME ATTRS...)
 which `sendai-face' will convert to the final specification."
   `(sendai-set-theme-faces 'sendai ,@body))
+
+(defun sendai--color-gradient (start stop step-number)
+  "Return a list with STEP-NUMBER colors from START to STOP.
+Like `color-gradient', but works on hex strings."
+  (mapcar (lambda (c) (color-rgb-to-hex (car c) (cadr c) (caddr c) 2))
+          (color-gradient (color-name-to-rgb start)
+                          (color-name-to-rgb stop) step-number)))
+
+(defun sendai--interpolate-colors (colors step-number)
+  "Interpolate STEP-NUMBER colors between each successive color in COLORS."
+  (let (result)
+    (while (cdr colors)
+      (push (cons (car colors)
+                  (sendai--color-gradient (car colors) (cadr colors)
+                                          step-number))
+            result)
+      (pop colors))
+    (push colors result)
+    (apply #'nconc (nreverse result))))
 
 
 ;; Face customizations
@@ -1086,7 +1107,20 @@ which `sendai-face' will convert to the final specification."
               blue-primary magenta-primary cyan-primary fg-primary))
    `(xterm-color-names-bright
      ,(vector fg-darker red-primary green-primary yellow-primary
-              blue-light magenta-light cyan-light fg-light))))
+              blue-light magenta-light cyan-light fg-light)))
+
+  (when (eq (sendai-active-class) 'true-color)
+    (custom-theme-set-variables
+     'sendai
+     `(vc-annotate-color-map
+       ',(let ((colors (if (bound-and-true-p vc-annotate-background-mode)
+                           (list red-darker orange-darker yellow-darker
+                                 green-darker cyan-darker blue-darker)
+                         (list red-light orange-light yellow-light
+                                 green-light cyan-light blue-light)))
+              (age 0))
+          (mapcar (lambda (c) (cons (setq age (+ age 20)) c))
+                  (sendai--interpolate-colors colors 3)))))))
 
 ;;;###autoload
 (when load-file-name
