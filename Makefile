@@ -69,7 +69,7 @@ run: all
 
 .PHONY: lint
 lint:
-	@$(MAKE) --always-make STRICT=1 all
+	@$(MAKE) --always-make STRICT=1 compile compile-tests
 
 .PHONY: check
 check: $(if $(NO_COMPILE),,$(OBJS) $(TEST_OBJS))
