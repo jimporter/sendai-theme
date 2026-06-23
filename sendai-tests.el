@@ -27,6 +27,10 @@
 (require 'ert)
 (require 'sendai-theme)
 
+(defconst true-color-index 1)
+(defconst 256-color-index 2)
+(defconst tty-color-index 3)
+
 ;;; Tests:
 
 (ert-deftest sendai-tests/subst-p/basic ()
@@ -63,35 +67,35 @@
     (should (sendai--subst-p (list '(1 2 3) (vector color 5 6))))))
 
 (ert-deftest sendai-tests/subst/constant ()
-  "Check that `sendai-subst' doesn't do anything to constants."
-  (should (equal (sendai-subst '(:foreground "red") 'true-color)
+  "Check that `sendai--subst' doesn't do anything to constants."
+  (should (equal (sendai--subst '(:foreground "red") true-color-index)
                  '(:foreground "red")))
-  (should (equal (sendai-subst '(:foreground "red") '256-color)
+  (should (equal (sendai--subst '(:foreground "red") 256-color-index)
                  '(:foreground "red")))
-  (should (equal (sendai-subst '(:foreground "red") 'tty-color)
+  (should (equal (sendai--subst '(:foreground "red") tty-color-index)
                  '(:foreground "red"))))
 
 (ert-deftest sendai-tests/subst/color ()
-  "Check that `sendai-subst' applies the correct color spec."
+  "Check that `sendai--subst' applies the correct color spec."
   (let ((color (sendai--color "red" "blue" "green")))
-    (should (equal (sendai-subst `(:foreground ,color) 'true-color)
+    (should (equal (sendai--subst `(:foreground ,color) true-color-index)
                    '(:foreground "red")))
-    (should (equal (sendai-subst `(:foreground ,color) '256-color)
+    (should (equal (sendai--subst `(:foreground ,color) 256-color-index)
                    '(:foreground "blue")))
-    (should (equal (sendai-subst `(:foreground ,color) 'tty-color)
+    (should (equal (sendai--subst `(:foreground ,color) tty-color-index)
                    '(:foreground "green")))))
 
 (ert-deftest sendai-tests/subst/color-nested ()
-  "Check that `sendai-subst' applies the correct color spec to nested forms."
+  "Check that `sendai--subst' applies the correct color spec to nested forms."
   (let ((color (sendai--color "red" "blue" "green")))
-    (should (equal (sendai-subst `(:underline (:color ,color :style wave))
-                                 'true-color)
+    (should (equal (sendai--subst `(:underline (:color ,color :style wave))
+                                  true-color-index)
                    '(:underline (:color "red" :style wave))))
-    (should (equal (sendai-subst `(:underline (:color ,color :style wave))
-                                 '256-color)
+    (should (equal (sendai--subst `(:underline (:color ,color :style wave))
+                                  256-color-index)
                    '(:underline (:color "blue" :style wave))))
-    (should (equal (sendai-subst `(:underline (:color ,color :style wave))
-                                 'tty-color)
+    (should (equal (sendai--subst `(:underline (:color ,color :style wave))
+                                  tty-color-index)
                    '(:underline (:color "green" :style wave))))))
 
 (ert-deftest sendai-tests/face/constant ()
@@ -262,5 +266,10 @@
                 :box (:line-width (1 . -1) :color "#d33f4d"))
                (((class color) (min-colors 256))
                 :box (:line-width (1 . -1) :color "#d70000")))))))
+
+(ert-deftest sendai-tests/with-concrete-palette ()
+  "Check that `sendai-with-palette' works."
+  (sendai-with-concrete-palette 'true-color
+    (should (equal red-primary "#d33f4d"))))
 
 ;;; sendai-tests.el ends here
