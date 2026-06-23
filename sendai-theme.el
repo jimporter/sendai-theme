@@ -296,7 +296,7 @@ nonparameterized filter above doesn't apply."
                 attrs)))
     (apply #'sendai-make-face spec)))
 
-(defmacro sendai-let-palette (&rest body)
+(defmacro sendai-with-palette (&rest body)
   "Evaluate BODY with all the entries of `sendai-palette' in scope."
   (declare (indent 0))
   `(let ,sendai-palette
@@ -308,7 +308,7 @@ nonparameterized filter above doesn't apply."
 BODY is a list of face specs like (NAME SPEC...) or (NAME ATTRS...)
 which `sendai-face' will convert to the final specification."
   (declare (indent 0))
-  `(sendai-let-palette
+  `(sendai-with-palette
      (custom-theme-set-faces
       ,theme
       ,@(mapcar

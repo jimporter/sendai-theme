@@ -251,9 +251,9 @@
                 :background "blue" :weight bold)
                (t :underline t))))))
 
-(ert-deftest sendai-tests/let-palette ()
-  "Check that `sendai-let-palette' works."
-  (sendai-let-palette
+(ert-deftest sendai-tests/with-palette ()
+  "Check that `sendai-with-palette' works."
+  (sendai-with-palette
     (should (equal
              (sendai-face :weight 'bold
                           :box `(:line-width (1 . -1) :color ,red-primary))
