@@ -28,6 +28,20 @@ EMACS ?= emacs
 EMACS_SRC ?= ~/src/emacs
 export EMACS_SRC
 
+define DOC_EXPORT_SCRIPT
+(progn
+  (setq org-element-cache-persistent nil
+        org-export-with-toc nil
+        org-export-with-section-numbers nil
+        org-html-link-use-abs-url t
+        org-html-link-home (getenv "DOC_BASE_URL"))
+  (setq gc-cons-threshold (* 50 1000 1000))
+  (require (quote ox-html))
+  (org-html-export-to-html nil nil nil t))
+endef
+export DOC_BASE_URL
+export DOC_EXPORT_SCRIPT
+
 .PHONY: all
 all: compile autoloads
 
@@ -62,6 +76,11 @@ etc/screenshot.png: FORCE
 	$(EMACS) -Q -L . -l etc/sendai-demo \
 	  --eval '(progn (sit-for 4) (kill-emacs))'
 
+README.html: README.org
+	@echo EXPORT $@
+	@$(EMACS) -Q --batch \
+	  --find-file $< --eval "$$DOC_EXPORT_SCRIPT"
+
 .PHONY: run
 run: all
 	$(EMACS) -Q -L . \
@@ -80,6 +99,6 @@ check: $(if $(NO_COMPILE),,$(OBJS) $(TEST_OBJS))
 
 .PHONY: clean
 clean:
-	rm -f *.elc $(AUTOLOADS) $(PKG_FILE)
+	rm -f *.elc $(AUTOLOADS) $(PKG_FILE) README.html
 
 FORCE:
