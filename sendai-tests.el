@@ -1,6 +1,6 @@
 ;;; sendai-tests.el --- Tests for sendai -*- lexical-binding: t -*-
 
-;; Copyright (C) 2021-2026 Jim Porter
+;; Copyright (C) 2021-2026 Free Software Foundation, Inc.
 
 ;; Author: Jim Porter
 ;; Keywords: tests

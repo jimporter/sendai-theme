@@ -7,5 +7,14 @@
   [[file:etc/screenshot.png]]
 
 ** License
+
    This code is licensed under the terms of the GNU General Public License,
    version 3 or later.
+
+** Contributing
+
+   This project [[https://www.gnu.org/prep/maintain/html_node/Copyright-Papers.html][assigns copyright]] to the Free Software Foundation, so if you'd
+   like to contribute code, please make sure you've filled out the assignment
+   form and that it's up to date. In any case, before submitting patches, it's
+   probably best to send a message to [[https://lists.sr.ht/~jimporter/sendai-theme-devel][the mailing list]] first so that we can
+   discuss the best way to do things.
