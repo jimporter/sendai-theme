@@ -135,7 +135,7 @@
 
 (ert-deftest sendai-tests/face/color/inherit-tty ()
   "Check that `sendai-face' applies the correct color spec."
-  (let ((sendai-theme-inherit-tty-colors t)
+  (let ((sendai-inherit-tty-colors t)
         (color (sendai--color "red" "blue" "green")))
     (should (equal
              (sendai-face :foreground color)
@@ -154,7 +154,7 @@
 
 (ert-deftest sendai-tests/face/mixed/inherit-tty ()
   "Check that `sendai-face' properly splits constant and variable specs."
-  (let ((sendai-theme-inherit-tty-colors t)
+  (let ((sendai-inherit-tty-colors t)
         (color (sendai--color "red" "blue" "green")))
     (should (equal
              (sendai-face :weight 'bold
@@ -183,7 +183,7 @@
 
 (ert-deftest sendai-tests/make-face/extra-spec ()
   "Check that `sendai-make-face' skips conflicting display rules."
-  (let ((sendai-theme-inherit-tty-colors t)
+  (let ((sendai-inherit-tty-colors t)
         (color (sendai--color "red" "blue" "green")))
     (should (equal
              (sendai-make-face `(((type graphic)) :foreground "red"))
@@ -237,7 +237,7 @@
 
 (ert-deftest sendai-tests/make-face/mixed ()
   "Check that `sendai-make-face' works for multiple display rules."
-  (let ((sendai-theme-inherit-tty-colors t)
+  (let ((sendai-inherit-tty-colors t)
         (color (sendai--color "red" "blue" "green")))
     (should (equal
              (sendai-make-face `(((type graphic)) :foreground ,color)
