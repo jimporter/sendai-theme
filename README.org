@@ -6,6 +6,19 @@
   #+CAPTION: Sendai in action
   [[file:etc/screenshot.png]]
 
+** Configuration
+
+   Sendai endeavors to provide correct colors on both GUI and TTY frames via
+   separate color definitions for basic TTYs, 256-color TTYs, and true-color
+   (24-bit) displays. On 256-color TTYs, you can optionally use the 8 basic TTY
+   color definitions (and their bright variants) where appropriate by enabling
+   =sendai-inherit-tty-colors=. This is useful if you set your terminal
+   emulator's theme to match Sendai's palette.
+
+   If you use =emacsclient=, you may also want to set =sendai-default-class= to
+   one of the color classes to prefer that class in cases where full =defface=
+   specifications aren't supported (e.g. with =vc-annotate-color-map=).
+
 ** License
 
    This code is licensed under the terms of the GNU General Public License,
