@@ -4,7 +4,7 @@
 
 ;; Author: Jim Porter
 ;; URL: https://sr.ht/~jimporter/sendai-theme/
-;; Version: 0.1.0
+;; Version: 0.1.1-git
 ;; Keywords: theme
 ;; Package-Requires: ((emacs "27.1"))
 
