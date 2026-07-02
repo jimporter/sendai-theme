@@ -42,16 +42,22 @@
 (setq-default enable-local-variables nil)
 
 (let* ((emacs-src (getenv "EMACS_SRC"))
-       (files (list (expand-file-name "README.org")
-                    (expand-file-name "sendai-theme.el")
-                    (expand-file-name "src/menu.c" emacs-src)
-                    (expand-file-name "autogen.sh" emacs-src))))
+       (files `((,(expand-file-name "README.org") nil)
+                (,(expand-file-name "sendai-theme.el")
+                 "^corresponding")
+                (,(expand-file-name "src/menu.c" emacs-src)
+                 "^#ifdef HAVE_NTGUI$")
+                (,(expand-file-name "autogen.sh" emacs-src)
+                 "^## $1 = program"))))
   (add-to-list 'custom-theme-load-path default-directory)
   (load-theme 'sendai t)
 
-  (dolist (file files)
+  (pcase-dolist (`(,file ,regex) files)
     (find-file file)
-    (ignore-errors (scroll-up-command))
+    (when regex
+      (re-search-forward regex)
+      (goto-char (line-beginning-position))
+      (recenter 0))
     (other-window 1))
 
   ;; Clear the message from the minibuffer.
