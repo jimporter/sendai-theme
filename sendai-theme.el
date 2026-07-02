@@ -48,7 +48,7 @@ corresponding index into `sendai--color' vectors.")
   "Sendai-theme options."
   :group 'faces)
 
-(defcustom sendai-theme-inherit-tty-colors nil
+(defcustom sendai-inherit-tty-colors nil
   "Use basic TTY colors when in xterm-256color mode."
   :type 'boolean
   :group 'sendai-theme)
@@ -265,7 +265,7 @@ CLASS-NAMES, that display class is ignored entirely."
 
 (defun sendai-make-face (&rest spec)
   "Fill a face spec (SPEC) with real colors."
-  (let ((class-names (if sendai-theme-inherit-tty-colors
+  (let ((class-names (if sendai-inherit-tty-colors
                          '(true-color tty-color 256-color)
                        '(true-color 256-color))))
     (mapcan
