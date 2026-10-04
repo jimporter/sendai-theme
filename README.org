@@ -31,3 +31,7 @@ to contribute code, please make sure you've filled out the assignment form and
 that it's up to date. In any case, before submitting patches, it's probably best
 to send a message to [[https://lists.sr.ht/~jimporter/sendai-theme-devel][the mailing list]] first so that we can discuss the best way
 to do things.
+
+*** AI Contribution Guidelines
+
+Don't.
